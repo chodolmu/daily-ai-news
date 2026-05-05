@@ -34,7 +34,7 @@ VAULT = ROOT / "vault"
 DAILY = VAULT / "daily"
 TEMPLATES = ROOT / "templates"
 TEMPLATE_ASSETS = TEMPLATES / "assets"
-SITE = ROOT / "site"
+SITE = ROOT / "docs"
 SITE_ASSETS = SITE / "assets"
 SITE_DATA = SITE / "data"
 

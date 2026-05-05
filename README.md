@@ -142,7 +142,7 @@ Obsidian 실행 → `Open folder as vault` → `C:\AI\DailyAINews\vault` 선택.
 
 ## 사이트 (GitHub Pages)
 
-빌드된 정적 사이트는 `site/` 폴더에 생성되며, GitHub로 push되면 자동 배포된다.
+빌드된 정적 사이트는 `docs/` 폴더에 생성되며, GitHub로 push되면 자동 배포된다. (GitHub Pages는 `/docs` 또는 root만 source로 지원)
 
 ### 1회 셋업 (PowerShell, 작업 디렉토리에서)
 
@@ -160,12 +160,12 @@ git push -u origin main
 # 3. GitHub Pages 활성화 (브라우저)
 #    → 저장소 Settings → Pages
 #    → Source: "Deploy from a branch"
-#    → Branch: main / folder: /site
+#    → Branch: main / folder: /docs
 #    → Save
 ```
 
 이후 매일 `python scripts/run.py`가 끝나면 자동으로:
-1. `python scripts/builder.py`가 호출되어 `site/` 갱신
+1. `python scripts/builder.py`가 호출되어 `docs/` 갱신
 2. `git add -A && git commit -m "daily update YYYY-MM-DD" && git push` 자동 수행
 3. GitHub Pages가 1~2분 뒤 새 내용으로 갱신
 
@@ -180,7 +180,7 @@ python scripts\run.py --build
 ### 빌드 산출물 구조
 
 ```
-site/
+docs/
 ├── index.html              # 최신 날짜로 redirect
 ├── assets/
 │   ├── style.css
