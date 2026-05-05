@@ -73,11 +73,22 @@ def _missing_dates(last_run_date: str | None, today: datetime) -> list[datetime]
     return dates or [today]
 
 
-def process_date(target: datetime) -> int:
+def process_date(target: datetime, include_yesterday: bool = False) -> int:
+    """target 날짜를 처리.
+
+    include_yesterday=True 이면 어제 0~24시 + target 0~현재 글까지 모아서
+    target 일일 노트에 함께 기록. (8시 같은 이른 시간에 실행 시 누락 방지용)
+    seen_urls로 어제 글이 어제 노트와 중복되는 일은 자동 차단됨.
+    """
     print(f"\n=== {target.strftime('%Y-%m-%d')} 처리 시작 ===")
     items = scrape_for_date(target)
+    if include_yesterday:
+        yesterday = target - timedelta(days=1)
+        prev_items = scrape_for_date(yesterday)
+        if prev_items:
+            print(f"  + 어제({yesterday.strftime('%Y-%m-%d')})치 {len(prev_items)}건 추가")
+        items = prev_items + items  # 어제 먼저, 그 다음 오늘
     if not items:
-        # 빈 daily 노트도 만들어서 "확인했음"을 기록
         write_daily(target, [])
         return 0
     processed = process_items(items, min_quality=4)
@@ -198,9 +209,12 @@ def main() -> int:
     dates = _missing_dates(state.get("last_run_date"), today)
     print(f"[run] 처리 대상: {[d.strftime('%Y-%m-%d') for d in dates]}")
     total = 0
-    for d in dates:
+    for i, d in enumerate(dates):
         try:
-            total += process_date(d)
+            # 마지막(=오늘) 처리 시에는 어제치도 함께 수집해 누락 방지
+            # (8시 실행이라 오늘 8시간치만 보면 어제 글도 못 잡힘)
+            is_last_today = (i == len(dates) - 1) and (d.date() == today.date())
+            total += process_date(d, include_yesterday=is_last_today)
         except Exception as e:
             print(f"[run] {d.date()} 실패: {e}")
             traceback.print_exc()

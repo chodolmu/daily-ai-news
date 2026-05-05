@@ -32,7 +32,7 @@ TIMEOUT = 20
 # (빡빡 모드 — 토큰 절약 + 진짜 핵심만 남기기)
 MIN_HN_POINTS = 200         # HackerNews 점수
 MIN_GH_STARS_TODAY = 200    # GitHub Trending 오늘 받은 별
-MIN_GEEKNEWS_VOTES = 10     # GeekNews 추천 수
+MIN_GEEKNEWS_VOTES = 5      # GeekNews 추천 수 (한국어 소스라 점수 분포가 낮음)
 # Anthropic 공식 발표는 임계값 없이 모두 통과
 
 # 제외 키워드 — 제목에 포함되면 AI 키워드 통과해도 버린다 (펀딩/채용/주가 등 노이즈 컷)
