@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daily AI News · 2026-05-04</title>
+<meta name="description" content="매일 정리되는 AI 소식 — 2026-05-04" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand-mini" href="../">Daily AI News</a>
+    <span class="last-updated">마지막 업데이트 · 2026-05-05 23:23</span>
+  </div>
+</div>
+
+<header class="page-header">
+  <h1 class="brand">Daily AI News</h1>
+  <p class="subtitle">매일 정리되는 AI 소식</p>
+
+  <div class="header-bottom">
+    <nav class="nav-c" aria-label="날짜 이동" id="navC"
+         data-current="2026-05-04" data-latest="2026-05-05">
+      <a class="today-link" href="../">오늘</a>
+        <a class="arrow" href="../2026-05-03/" aria-label="이전 날짜">‹</a>
+      <button class="date-pill" type="button" id="datePillC">
+        <span class="date-text">2026년 5월 4일</span>
+        <span class="day-text">월요일</span>
+        <span class="caret">▾</span>
+      </button>
+        <a class="arrow" href="../2026-05-05/" aria-label="다음 날짜">›</a>
+
+      <div class="calendar-pop" role="dialog" aria-label="날짜 선택" id="calendarPop">
+        <!-- JS로 동적 채움 -->
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+    <div class="hero-row">
+      <article class="card hero src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+          <span class="score">GN 추천 7</span>
+        </div>
+        <h3>OpenAI가 대규모 저지연 음성 AI를 제공하는 방법</h3>
+        <p class="summary">OpenAI는 9억 명 이상의 주간 활성 사용자에게 자연스러운 음성 대화를 제공하기 위해 WebRTC 기반 아키텍처를 재설계함.
+표준 WebRTC의 ICE, DTLS/SRTP, 코덱 협상 등은 유지하면서 내부 패킷 라우팅을 relay + transceiver 구조로 변경함.
+RTCP 품질 제어를 활용해 대규모 환경에서도 저지연 실시간 음성 통신을 안정적으로 처리하는 방식을 공개함.</p>
+        <div class="application">실시간 음성 AI 서비스를 구축할 때 WebRTC 표준을 유지하면서 내부 relay/transceiver 패턴으로 확장성을 확보하는 아키텍처 참고 자료로 활용 가능. 대규모 동시 접속 음성 앱의 인프라 설계 시 지연 최소화 전략으로 적용할 수 있음.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29168" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card hero src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+          <span class="score">GN 추천 14</span>
+        </div>
+        <h3>Agentic Coding은 함정이다</h3>
+        <p class="summary">Agentic coding은 사람이 요구사항과 계획을 세우고 AI 에이전트가 구현하는 방식이지만, 생성·커밋되는 코드와 개발자 사이의 거리를 점점 벌리는 구조적 문제가 있음.
+숙련된 개발자가 아키텍처 수준에서 비판적으로 검토해야 성공할 수 있으나, AI에 과도하게 의존하면 그 검토에 필요한 핵심 역량 자체가 약화됨.
+결국 코드 품질과 유지보수성이 저하되는 악순환에 빠질 위험이 있으며, AI 코딩 도구의 한계를 인식한 균형 잡힌 활용이 필요함.</p>
+        <div class="application">팀 내 AI 코딩 에이전트 도입 시, 생성된 코드에 대한 아키텍처 리뷰 프로세스를 필수로 두고 개발자가 직접 코드를 읽고 수정하는 비율을 일정 수준 이상 유지하는 가이드라인을 수립할 때 참고할 수 있음.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29155" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="grid">
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+          <span class="score">GN 추천 16</span>
+        </div>
+        <h3>장기 실행 에이전트 - 에이전트가 며칠 동안 실행되면 무엇이 달라지는가</h3>
+        <p class="summary">AI 에이전트가 단일 채팅이 아닌 수일~수주간 자율 실행되는 새로운 패러다임이 등장하고 있음.
+기존 에이전트는 컨텍스트 윈도우 소진, 자기 평가 과신, 이전 수정 사항 재도입 등의 문제를 가짐.
+장기 실행 에이전트는 여러 컨텍스트 윈도우와 샌드박스를 넘나들며 실패 복구와 중단 지점 재개가 가능해야 함.
+이를 위해 체크포인팅, 메모리 관리, 자기 검증 메커니즘 등 새로운 설계 패턴이 필요함.</p>
+        <div class="application">CI/CD 파이프라인 자동화나 대규모 코드 마이그레이션처럼 며칠 걸리는 작업에 에이전트를 투입할 때, 체크포인트 기반 재개와 컨텍스트 압축 전략을 설계에 반영할 수 있음.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29153" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+          <span class="score">GN 추천 11</span>
+        </div>
+        <h3>Kimi K2.6가 코딩 챌린지에서 Claude, GPT-5.5, Gemini를 제침</h3>
+        <p class="summary">Moonshot AI의 오픈 가중치 모델 Kimi K2.6이 AI Coding Contest Day 12의 Word Gem Puzzle에서 22 매치 포인트, 7승 1무 0패로 우승했다.
+Xiaomi의 MiMo V2 등 다른 모델들도 경쟁에 참여했으며, Claude·GPT-5.5·Gemini 등 주요 상용 모델을 모두 앞섰다.
+오픈 가중치 모델이 폐쇄형 상용 모델을 코딩 벤치마크에서 이긴 사례로, 오픈소스 진영의 경쟁력 강화를 보여준다.</p>
+        <div class="application">코딩 에이전트나 자동화 파이프라인 구축 시 Kimi K2.6 같은 오픈 가중치 모델을 자체 서버에 배포해 API 비용 없이 코드 생성 품질을 확보할 수 있는지 평가해볼 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29138" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 434</span>
+        </div>
+        <h3>에이전틱 코딩은 함정이다</h3>
+        <p class="summary">AI 코딩 에이전트에 과도하게 의존하면 디버깅·문제 해결 능력이 수개월 내 급격히 저하된다는 연구 결과를 소개한다.
+에이전트를 효과적으로 감독하려면 코딩 역량이 필요하지만, 에이전트 의존이 바로 그 역량을 퇴화시키는 역설이 존재한다.
+클라우드 장애 시 팀 전체가 마비되는 벤더 종속, 예측 불가능한 토큰 비용, 주니어 개발자의 성장 저해 등 구조적 문제도 지적한다.
+저자는 AI를 보조 도구로 격하하고, 구현의 20~100%는 직접 코딩하며 스스로 할 수 없는 작업은 자동화하지 말 것을 권고한다.</p>
+        <div class="application">팀 내 AI 코딩 에이전트 도입 시 '직접 코딩 비율 최소 기준'을 정하고, 주니어 개발자에게는 에이전트 없이 디버깅하는 시간을 주간 단위로 확보하는 정책을 수립할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://larsfaye.com/articles/agentic-coding-is-a-trap" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 163</span>
+        </div>
+        <h3>LLM은 더 높은 수준의 추상화가 아니다</h3>
+        <p class="summary">이전의 추상화 계층(어셈블리→C→파이썬)은 결정론적 함수로 동일 입력에 동일 출력을 보장했지만, LLM은 확률적 출력을 생성하므로 근본적으로 다른 범주에 속한다.
+LLM의 실제 출력은 f(x)→P(y|z₁|z₂|…zₙ) 형태로, 원하는 결과 외에 보안 취약점이나 자격 증명 노출 같은 예기치 않은 부산물이 포함될 수 있다.
+개발자가 원하는 기능만 확인하고 위험한 부작용을 간과하는 '테스트 착각' 문제가 발생할 수 있다.
+LLM을 단순히 다음 단계 추상화로 취급하지 말고, 비판적 사고를 유지하며 출력물을 검증해야 한다고 주장한다.</p>
+        <div class="application">LLM 생성 코드를 프로덕션에 반영할 때 기능 동작뿐 아니라 보안 취약점·불필요한 의존성·자격 증명 노출 여부까지 체계적으로 리뷰하는 체크리스트를 도입할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://www.lelanthran.com/chap15/content.html" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+          <span class="score">GN 추천 7</span>
+        </div>
+        <h3>확률적 창업자의 부상</h3>
+        <p class="summary">AI 네이티브 시대에 소프트웨어가 확률적 시스템으로 전환되면서 창업자에게 요구되는 자질이 근본적으로 변화하고 있음.
+기존에는 2년짜리 로드맵을 충실히 실행하는 결정론적 창업자가 투자 대상이었으나, 이제는 불확실성 속에서 빠르게 실험하는 유형이 부상.
+AI 시스템의 비결정론적 특성상 계획 중심이 아닌 실험·적응 중심의 리더십이 핵심 역량으로 대두됨.</p>
+        <div class="application">AI 스타트업 창업 또는 투자 심사 시, 로드맵 완성도보다 빠른 실험 주기와 불확실성 대응 능력을 핵심 평가 기준으로 설정할 수 있음.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29176" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+          <span class="score">GN 추천 13</span>
+        </div>
+        <h3>에이전트 경제의 블루오션 기회</h3>
+        <p class="summary">2026년 1분기부터 AI가 채팅 인터페이스에서 자율 실행 에이전트 중심으로 전환되며 기업 소프트웨어 지형이 재편되고 있음.
+MCP와 A2A 프로토콜이 기존 SaaS의 UI 중심 경쟁 우위를 무력화하고, 에이전트가 데이터 레이어에 직접 접근하는 구조로 변화 중.
+이 구조적 불연속은 기존 플레이어보다 신규 진입자에게 유리한 블루오션 기회를 제공하며, 투자 지형도 함께 변동하고 있음.</p>
+        <div class="application">기존 SaaS 제품을 운영 중이라면 MCP/A2A 프로토콜 기반 에이전트 연동 API를 우선 개발하여 UI 의존도를 줄이고, 에이전트 친화적 데이터 접근 계층을 설계할 것.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29171" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+          <span class="score">GN 추천 6</span>
+        </div>
+        <h3>나는 Bun이 걱정된다</h3>
+        <p class="summary">Bun은 빠른 JavaScript/TypeScript 런타임으로 인기를 얻었으나, 2025년 12월 Anthropic에 인수된 이후 제품 방향성과 운영 방식에 대한 우려가 커지고 있음.
+Antropic의 기업 전략에 따라 Bun의 독립적 오픈소스 생태계 유지가 어려워질 수 있다는 점이 핵심 걱정.
+대기업 인수 후 오픈소스 프로젝트가 방치되거나 방향이 바뀐 선례들이 있어 커뮤니티가 경계하는 상황.</p>
+        <div class="application">Bun 기반 프로젝트를 운영 중이라면 Anthropic 인수 이후 라이선스·정책 변경 가능성을 모니터링하고, 대체 런타임(Node.js, Deno)으로의 마이그레이션 경로를 미리 확보해 둘 것.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29169" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+          <span class="score">GN 추천 13</span>
+        </div>
+        <h3>Codex CLI에 /goal 기능 추가</h3>
+        <p class="summary">Codex CLI 0.128.0 버전에서 목표 기반 자동 반복 실행 기능인 /goal이 추가됨.
+Ralph loop 개념을 적용하여, 설정한 목표가 완료될 때까지 에이전트가 스스로 달성 여부를 평가함.
+목표 미달성 시 자율적으로 루프를 반복하며 작업을 계속 수행하는 구조.</p>
+        <div class="application">반복적인 코드 리팩토링이나 테스트 통과 같은 명확한 완료 조건이 있는 작업에 /goal을 설정해 자동으로 반복 실행시킬 수 있음.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29158" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 108</span>
+        </div>
+        <h3>헤어드라이어로 폴리마켓 날씨 베팅을 조작한 사람이 있다</h3>
+        <p class="summary">누군가 폴리마켓(Polymarket)의 날씨 예측 베팅 시장을 조작한 혐의를 받고 있다.
+해당 인물은 기상 관측소 근처에서 헤어드라이어를 사용해 온도 센서 측정값을 인위적으로 올린 것으로 알려졌다.
+이를 통해 특정 온도 기준을 초과하는 쪽에 베팅하여 부당 이익을 취하려 한 것으로 보인다.
+예측 시장의 오라클 데이터 소스 조작 취약성이 드러난 사건이다.</p>
+        <div class="application">예측 시장이나 블록체인 오라클 설계 시 물리적 센서 데이터의 무결성 검증 및 다중 소스 교차 확인 메커니즘을 반드시 구현해야 한다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://www.engadget.com/big-tech/someone-allegedly-used-a-hairdryer-to-rig-polymarket-weather-bets-155312411.html" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+          <span class="score">GN 추천 55</span>
+        </div>
+        <h3>Amazon에서 약 1,000번 면접을 진행하며 얻은 교훈</h3>
+        <p class="summary">아마존에서 17년간 근무하며 약 1,000번의 면접을 진행한 경험을 공유.
+그 중 약 600회는 Bar Raiser 면접으로, 채용 기준을 높이는 역할을 수행함.
+기술적으로 뛰어난 후보자가 탈락하는 주된 이유는 기술 부족이 아니라 자기 표현 방식에 있음.
+행동 면접(Behavioral Interview)이 채용 결정에 기술 면접보다 더 큰 영향을 미침.</p>
+        <div class="application">기술 면접 준비 시 STAR 기법 등 행동 면접 대비에 동등한 시간을 투자하고, 자신의 기여와 의사결정 과정을 명확히 설명하는 연습을 병행할 것.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29141" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 663</span>
+        </div>
+        <h3>DeepClaude – DeepSeek V4 Pro를 활용한 Claude Code 에이전트 루프</h3>
+        <p class="summary">DeepClaude는 Claude Code의 에이전트 루프에 DeepSeek V4 Pro 모델을 통합한 오픈소스 프로젝트다.
+DeepSeek의 추론 능력과 Claude의 코드 생성 능력을 결합하여 복합적인 코딩 작업을 처리한다.
+두 모델의 강점을 조합해 단일 모델 대비 더 정교한 코드 에이전트 워크플로우를 구현하는 것이 목표다.</p>
+        <div class="application">Claude Code 사용 시 복잡한 추론이 필요한 코딩 작업에서 DeepSeek V4 Pro를 추론 단계에 활용하고, 코드 생성은 Claude에 맡기는 하이브리드 파이프라인을 구성할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/aattaran/deepclaude" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 474</span>
+        </div>
+        <h3>BYOMesh – 기존 대비 100배 대역폭을 제공하는 새로운 LoRa 메시 라디오</h3>
+        <p class="summary">BYOMesh는 기존 LoRa 메시 네트워크 대비 100배 높은 대역폭을 제공하는 새로운 메시 라디오 프로젝트다.
+LoRa 기반 메시 네트워크는 저전력 장거리 통신에 강점이 있으나 대역폭이 낮다는 한계가 있었다.
+BYOMesh는 이 병목을 해결하여 오프그리드 환경에서도 보다 실용적인 데이터 전송을 가능하게 한다.
+인터넷 인프라가 없는 지역이나 재난 상황에서의 통신 대안으로 주목받고 있다.</p>
+        <div class="application">재난 대응, 산악 지역, 축제 현장 등 인터넷 인프라가 없는 환경에서 자체 메시 네트워크를 구축해 텍스트·센서 데이터 전송에 활용할 수 있다. IoT 센서 네트워크 구성 시 기존 LoRa 대비 더 많은 데이터를 처리하는 백본으로 검토 가능하다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://partyon.xyz/@nullagent/116499715071759135" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Daily AI News · 자동 생성 · 매일 08:00 갱신</span>
+    <span>
+      <a href="https://github.com/chodolmu/daily-ai-news" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  window.__SITE__ = {
+    current: "2026-05-04",
+    latest: "2026-05-05",
+    assetPrefix: "../",
+    calendar: {"days": {"2026-05-01": 6, "2026-05-02": 8, "2026-05-03": 5, "2026-05-04": 14, "2026-05-05": 16}, "latest": "2026-05-05", "earliest": "2026-05-01"}
+  };
+</script>
+<script src="../assets/calendar.js"></script>
+</body>
+</html>
