@@ -69,11 +69,6 @@
         {% if it.application %}
         <div class="application">{{ it.application }}</div>
         {% endif %}
-        {% if it.tags %}
-        <div class="tags">
-          {% for t in it.tags %}<span class="tag">#{{ t }}</span>{% endfor %}
-        </div>
-        {% endif %}
         <div class="card-footer">
           <a class="read-more" href="{{ it.url }}" target="_blank" rel="noopener">원문 보기</a>
         </div>
@@ -94,11 +89,6 @@
         <p class="summary">{{ it.summary }}</p>
         {% if it.application %}
         <div class="application">{{ it.application }}</div>
-        {% endif %}
-        {% if it.tags %}
-        <div class="tags">
-          {% for t in it.tags %}<span class="tag">#{{ t }}</span>{% endfor %}
-        </div>
         {% endif %}
         <div class="card-footer">
           <a class="read-more" href="{{ it.url }}" target="_blank" rel="noopener">원문 보기</a>
