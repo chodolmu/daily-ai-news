@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daily AI News · 2026-05-01</title>
+<meta name="description" content="매일 정리되는 AI 소식 — 2026-05-01" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand-mini" href="../">Daily AI News</a>
+    <span class="last-updated">마지막 업데이트 · 2026-05-05 23:14</span>
+  </div>
+</div>
+
+<header class="page-header">
+  <h1 class="brand">Daily AI News</h1>
+  <p class="subtitle">매일 정리되는 AI 소식</p>
+
+  <div class="header-bottom">
+    <nav class="nav-c" aria-label="날짜 이동" id="navC"
+         data-current="2026-05-01" data-latest="2026-05-05">
+      <a class="today-link" href="../">오늘</a>
+        <span class="arrow disabled" aria-label="이전 날짜 없음">‹</span>
+      <button class="date-pill" type="button" id="datePillC">
+        <span class="date-text">2026년 5월 1일</span>
+        <span class="day-text">금요일</span>
+        <span class="caret">▾</span>
+      </button>
+        <a class="arrow" href="../2026-05-05/" aria-label="다음 날짜">›</a>
+
+      <div class="calendar-pop" role="dialog" aria-label="날짜 선택" id="calendarPop">
+        <!-- JS로 동적 채움 -->
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+    <div class="hero-row">
+      <article class="card hero src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 465</span>
+        </div>
+        <h3>PyTorch Lightning AI 학습 라이브러리에서 '샤이-훌루드' 테마 악성코드 발견</h3>
+        <p class="summary">PyTorch Lightning의 의존성 패키지에서 악성코드가 발견되었다.
+해당 악성코드는 듄(Dune) 시리즈의 샤이-훌루드를 테마로 명명되었다.
+Semgrep 팀이 공급망 공격을 탐지하여 보고했으며, AI 학습 파이프라인을 노린 공격이다.
+악성 의존성을 통해 AI/ML 개발 환경에 백도어를 심는 방식으로 작동한다.</p>
+        <div class="application">PyTorch Lightning 사용 프로젝트에서 의존성 버전을 즉시 점검하고, pip audit이나 Semgrep 같은 공급망 보안 도구를 CI/CD에 통합하여 악성 패키지 유입을 사전 차단할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://semgrep.dev/blog/2026/malicious-dependency-in-pytorch-lightning-used-for-ai-training/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card hero src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 139</span>
+        </div>
+        <h3>LLM을 위한 고급 양자화 알고리즘</h3>
+        <p class="summary">Intel이 개발한 Auto-Round는 LLM 가중치 양자화를 위한 고급 알고리즘이다.
+SignRound 기반 접근법으로 라운딩 값을 최적화하여 양자화 손실을 최소화한다.
+GPTQ, AWQ 등 기존 방식 대비 낮은 비트(4bit, 2bit)에서도 정확도 저하가 적다.
+Hugging Face Transformers 및 다양한 백엔드(GPU/CPU)와 통합이 용이하다.</p>
+        <div class="application">로컬 환경에서 LLM을 4bit 양자화하여 VRAM 부족 문제를 해결하고 추론 속도를 높이는 데 활용할 수 있다. 기존 GPTQ/AWQ 양자화 결과가 불만족스러울 때 Auto-Round로 대체하여 정확도-효율 트레이드오프를 개선할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/intel/auto-round" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="grid">
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 382</span>
+        </div>
+        <h3>애플이 실수로 Apple Support 앱에 Claude.md 파일을 남겨둔 채 배포</h3>
+        <p class="summary">애플의 Apple Support 앱 내부에서 Claude.md 파일이 발견되었다.
+이는 애플이 내부 개발 과정에서 Anthropic의 Claude를 활용하고 있음을 시사한다.
+Claude.md는 Claude Code 에이전트에 프로젝트별 지시사항을 전달하는 설정 파일이다.
+앱 빌드 시 해당 파일을 제거하지 않고 그대로 출시한 것으로 보인다.</p>
+        <div class="application">대기업의 AI 코딩 도구 도입 사례로, 사내 개발 워크플로에 Claude Code 도입을 검토할 때 참고할 수 있다. 또한 빌드 파이프라인에서 내부 설정 파일이 유출되지 않도록 .gitignore 및 배포 스크립트 점검이 필요함을 상기시킨다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://x.com/aaronp613/status/2049986504617820551" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 143</span>
+        </div>
+        <h3>Anthropic의 Mythos 제한을 비판했던 OpenAI, 자사 Cyber 모델 접근도 제한</h3>
+        <p class="summary">OpenAI가 자사의 강력한 AI 모델 'Cyber'에 대한 접근을 제한하기로 결정했다.
+이는 앞서 Anthropic이 Mythos 모델의 공개를 제한했을 때 OpenAI가 이를 비판했던 것과 대조된다.
+강력한 AI 모델의 안전성 우려로 인해 업계 전반에서 접근 제한이 확산되는 추세다.
+결국 OpenAI도 경쟁사와 동일한 안전 조치를 취하며 이전 입장을 번복한 셈이다.</p>
+        <div class="application">최첨단 AI 모델 API 활용 계획 시, 접근 제한 정책 변동 가능성을 고려해 대체 모델이나 폴백 전략을 미리 수립해야 한다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 127</span>
+        </div>
+        <h3>그룹 평균은 개인의 뇌가 행동을 제어하는 방식을 가린다: 연구</h3>
+        <p class="summary">스탠퍼드 연구진이 뇌 스캔 데이터를 분석한 결과, 그룹 평균 기반의 뇌 영상 연구가 개인별 뇌 활동 패턴의 차이를 숨긴다는 사실을 밝혔다.
+개인 수준에서 뇌가 행동을 제어하는 방식은 집단 평균과 크게 다를 수 있으며, 이는 정밀 의학 접근의 필요성을 시사한다.
+이 연구는 개인화된 뇌 매핑이 신경과학 및 임상 응용에서 더 정확한 결과를 제공할 수 있음을 강조한다.</p>
+        <div class="application">AI 기반 뇌-컴퓨터 인터페이스(BCI)나 신경 디코딩 모델 설계 시, 그룹 평균 대신 개인별 뇌 활동 패턴을 학습하는 개인화 모델을 적용해 정확도를 높일 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://med.stanford.edu/news/all-news/2026/04/brain-scans-individual-versus-group.html" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 136</span>
+        </div>
+        <h3>뇌 스캔으로 ADHD의 3가지 하위 유형 밝혀져</h3>
+        <p class="summary">워싱턴포스트 보도에 따르면, 뇌 영상 연구를 통해 ADHD가 단일 질환이 아닌 최소 3가지 뇌 기반 하위 유형으로 구분된다는 사실이 밝혀졌다.
+각 하위 유형은 뇌의 서로 다른 영역에서 극단적인 활동 패턴을 보이며, 이는 기존의 증상 기반 진단 방식을 넘어서는 객관적 분류 근거를 제공한다.
+이번 연구는 ADHD 환자마다 약물 반응이 다른 이유를 설명할 수 있는 신경학적 근거를 마련했으며, 향후 맞춤형 치료 전략 수립에 기여할 것으로 기대된다.</p>
+        <div class="application">ADHD 디지털 치료제나 뉴로피드백 앱 개발 시 하위 유형별 맞춤 프로토콜을 설계하는 데 활용할 수 있다. 뇌 영상 데이터 기반 AI 분류 모델 학습에도 참고 가능하다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://www.washingtonpost.com/health/2026/04/30/adhd-subtype-extreme-brain-scans/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Daily AI News · 자동 생성 · 매일 08:00 갱신</span>
+    <span>
+      <a href="https://github.com/chodolmu/daily-ai-news" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  window.__SITE__ = {
+    current: "2026-05-01",
+    latest: "2026-05-05",
+    assetPrefix: "../",
+    calendar: {"days": {"2026-05-01": 6, "2026-05-05": 16}, "latest": "2026-05-05", "earliest": "2026-05-01"}
+  };
+</script>
+<script src="../assets/calendar.js"></script>
+</body>
+</html>
