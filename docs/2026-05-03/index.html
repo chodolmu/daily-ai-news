@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daily AI News · 2026-05-03</title>
+<meta name="description" content="매일 정리되는 AI 소식 — 2026-05-03" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand-mini" href="../">Daily AI News</a>
+    <span class="last-updated">마지막 업데이트 · 2026-05-05 23:19</span>
+  </div>
+</div>
+
+<header class="page-header">
+  <h1 class="brand">Daily AI News</h1>
+  <p class="subtitle">매일 정리되는 AI 소식</p>
+
+  <div class="header-bottom">
+    <nav class="nav-c" aria-label="날짜 이동" id="navC"
+         data-current="2026-05-03" data-latest="2026-05-05">
+      <a class="today-link" href="../">오늘</a>
+        <a class="arrow" href="../2026-05-02/" aria-label="이전 날짜">‹</a>
+      <button class="date-pill" type="button" id="datePillC">
+        <span class="date-text">2026년 5월 3일</span>
+        <span class="day-text">일요일</span>
+        <span class="caret">▾</span>
+      </button>
+        <a class="arrow" href="../2026-05-05/" aria-label="다음 날짜">›</a>
+
+      <div class="calendar-pop" role="dialog" aria-label="날짜 선택" id="calendarPop">
+        <!-- JS로 동적 채움 -->
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+    <div class="hero-row">
+      <article class="card hero src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 500</span>
+        </div>
+        <h3>OpenAI o1, 응급실 환자 67% 정확 진단 — 트리아지 의사(50~55%) 상회</h3>
+        <p class="summary">하버드 연구팀이 응급실 환자를 대상으로 OpenAI의 o1 모델과 트리아지 의사의 진단 정확도를 비교한 임상시험을 수행했다.
+AI 모델은 67%의 정확도로 환자를 진단한 반면, 트리아지 담당 의사들은 50~55% 수준에 머물렀다.
+이 결과는 AI가 응급의료 현장에서 초기 진단 보조 도구로 활용될 가능성을 시사한다.
+다만 실제 임상 도입에는 규제·책임 소재·의사 최종 판단 등 추가 검증이 필요하다.</p>
+        <div class="application">응급실 트리아지 단계에서 LLM 기반 진단 보조 시스템을 도입해 초기 감별진단 정확도를 높이고, 중증 환자 우선순위 배정 오류를 줄이는 데 활용할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://www.theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card hero src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 178</span>
+        </div>
+        <h3>에이전트 하네스는 샌드박스 밖에 있어야 한다</h3>
+        <p class="summary">AI 에이전트의 제어 루프(하네스)를 샌드박스 컨테이너 내부가 아닌 백엔드 서버에서 실행하는 아키텍처를 제안한다.
+샌드박스 외부 모델은 자격증명 격리, 샌드박스 일시정지·복원, 장애 복구, 다중 사용자 메모리 공유 등의 이점을 제공한다.
+파일시스템 접근을 경로 기반으로 가상화하여 작업 파일은 임시 샌드박스로, 메모리·스킬은 Postgres DB로 라우팅하는 방식을 사용한다.
+bash 명령어 우회, Claude Code 업데이트 시 컨벤션 드리프트 등 미해결 과제도 함께 논의한다.</p>
+        <div class="application">멀티 테넌트 AI 에이전트 플랫폼을 설계할 때, 제어 루프를 샌드박스 외부에 배치하고 도구 실행만 샌드박스 API로 위임하는 구조를 적용하면 보안과 자원 효율성을 동시에 확보할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://www.mendral.com/blog/agent-harness-belongs-outside-sandbox" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="grid">
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 332</span>
+        </div>
+        <h3>알고리즘 채용에서의 AI 자기선호 현상: 실증적 증거와 시사점</h3>
+        <p class="summary">AI 채용 시스템이 AI가 생성한 지원서를 인간이 작성한 지원서보다 체계적으로 선호하는 '자기선호(self-preferencing)' 현상을 실증적으로 규명한 연구이다.
+LLM 기반 이력서 평가 시스템에서 AI 생성 텍스트가 구조적·언어적 패턴 유사성으로 인해 높은 점수를 받는 편향이 확인되었다.
+이는 채용 공정성과 AI 감사(audit) 필요성에 대한 중요한 정책적 시사점을 제공한다.</p>
+        <div class="application">AI 채용 도구를 도입한 기업의 HR팀이 자기선호 편향 감사 체크리스트를 설계하거나, AI 생성 지원서 탐지 필터를 평가 파이프라인에 추가할 때 참고할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://arxiv.org/abs/2509.00462" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 281</span>
+        </div>
+        <h3>스펙스맥싱 – AI 환각을 극복하고 YAML로 스펙을 작성하는 이유</h3>
+        <p class="summary">AI 에이전트가 생성하는 코드의 품질 문제를 해결하기 위해 YAML 기반의 상세한 요구사항 명세서(spec)를 작성하는 'specsmaxxing' 방법론을 소개한다.
+각 요구사항에 ACID(Acceptance Criteria ID)를 부여해 코드·테스트와 직접 연결하고, 구현 커버리지를 추적할 수 있게 한다.
+AI 에이전트를 관리하는 시스템 구축에 매몰되는 'AI 사이코시스' 현상을 경계하며, 스펙 자체가 소프트웨어의 본질적 산출물임을 강조한다.
+acai.sh CLI·대시보드를 오픈소스로 공개했으며, GitHub SpecKit·Kiro·OpenSpec 등 경쟁 도구와의 차이점도 비교한다.</p>
+        <div class="application">AI 코딩 에이전트(Claude Code, Cursor 등)에 작업을 맡기기 전에 feature.yaml 형식으로 요구사항을 번호 매겨 정리하면, 구현 누락과 슬롭 코드를 체계적으로 줄일 수 있다.
+멀티 코드베이스·멀티 환경 프로젝트에서 요구사항-코드-테스트 간 추적성을 확보하는 워크플로에 바로 적용 가능하다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://acai.sh/blog/specsmaxxing" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+          <span class="score">HN 점수 375</span>
+        </div>
+        <h3>Kimi K2.6, 코딩 챌린지에서 Claude·GPT-5.5·Gemini를 제치고 1위 달성</h3>
+        <p class="summary">중국 AI 기업 Moonshot AI가 개발한 오픈 웨이트 모델 Kimi K2.6이 프로그래밍 벤치마크에서 Claude, GPT-5.5, Gemini를 모두 앞질렀다.
+해당 모델은 오픈 웨이트로 공개되어 누구나 다운로드하여 활용할 수 있으며, 중국발 오픈소스 모델의 코딩 역량이 빠르게 상승하고 있음을 보여준다.
+이는 서방 빅테크 독점 모델 대비 오픈 웨이트 모델의 경쟁력이 코딩 영역에서 실질적으로 대등해졌음을 시사한다.</p>
+        <div class="application">코딩 에이전트나 자동 코드 생성 파이프라인에서 Kimi K2.6을 로컬 또는 자체 서버에 배포해 API 비용 없이 고성능 코드 생성을 활용할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Daily AI News · 자동 생성 · 매일 08:00 갱신</span>
+    <span>
+      <a href="https://github.com/chodolmu/daily-ai-news" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  window.__SITE__ = {
+    current: "2026-05-03",
+    latest: "2026-05-05",
+    assetPrefix: "../",
+    calendar: {"days": {"2026-05-01": 6, "2026-05-02": 8, "2026-05-03": 5, "2026-05-05": 16}, "latest": "2026-05-05", "earliest": "2026-05-01"}
+  };
+</script>
+<script src="../assets/calendar.js"></script>
+</body>
+</html>
