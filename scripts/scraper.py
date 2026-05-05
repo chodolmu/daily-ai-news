@@ -29,10 +29,21 @@ UA = "Mozilla/5.0 (DailyAINews scraper)"
 TIMEOUT = 20
 
 # 트렌드 임계값 — 이 미만이면 수집 단계에서 버린다
-MIN_HN_POINTS = 100         # HackerNews 점수
-MIN_GH_STARS_TODAY = 50     # GitHub Trending 오늘 받은 별
-MIN_GEEKNEWS_VOTES = 5      # GeekNews 추천 수
+# (빡빡 모드 — 토큰 절약 + 진짜 핵심만 남기기)
+MIN_HN_POINTS = 200         # HackerNews 점수
+MIN_GH_STARS_TODAY = 200    # GitHub Trending 오늘 받은 별
+MIN_GEEKNEWS_VOTES = 10     # GeekNews 추천 수
 # Anthropic 공식 발표는 임계값 없이 모두 통과
+
+# 제외 키워드 — 제목에 포함되면 AI 키워드 통과해도 버린다 (펀딩/채용/주가 등 노이즈 컷)
+EXCLUDE_KEYWORDS = [
+    "hiring", "we're hiring", "we are hiring", "careers at",
+    "raises", "raised", "series a", "series b", "series c",
+    "valuation", "funding round", "ipo",
+    "stock price", "market cap", "share price",
+    "채용", "공고",
+]
+EXCLUDE_PATTERN = re.compile("|".join(re.escape(k) for k in EXCLUDE_KEYWORDS), re.IGNORECASE)
 
 AI_KEYWORDS = [
     "ai", "llm", "gpt", "claude", "anthropic", "openai", "gemini", "deepmind",
@@ -50,6 +61,12 @@ AI_PATTERN = re.compile("|".join(re.escape(k) for k in AI_KEYWORDS), re.IGNORECA
 def is_ai_related(*texts: str) -> bool:
     blob = " ".join(t for t in texts if t)
     return bool(AI_PATTERN.search(blob))
+
+
+def is_excluded(*texts: str) -> bool:
+    """제외 키워드(펀딩/채용/주가 등)가 포함되면 True."""
+    blob = " ".join(t for t in texts if t)
+    return bool(EXCLUDE_PATTERN.search(blob))
 
 
 def load_seen() -> dict:
@@ -87,6 +104,8 @@ def fetch_hackernews(target_date: datetime, limit: int = 100) -> list[dict]:
         title = hit.get("title") or ""
         link = hit.get("url") or f"https://news.ycombinator.com/item?id={hit.get('objectID')}"
         if not is_ai_related(title):
+            continue
+        if is_excluded(title):
             continue
         points = hit.get("points", 0)
         out.append({
@@ -138,6 +157,8 @@ def fetch_geeknews(target_date: datetime) -> list[dict]:
         summary = BeautifulSoup(getattr(entry, "summary", ""), "lxml").get_text(" ", strip=True)
         if not is_ai_related(title, summary):
             continue
+        if is_excluded(title, summary):
+            continue
         link = getattr(entry, "link", "")
         votes = _fetch_geeknews_votes(link)
         if votes < MIN_GEEKNEWS_VOTES:
@@ -188,6 +209,8 @@ def fetch_github_trending(target_date: datetime) -> list[dict]:
         desc_el = repo.select_one("p")
         desc = desc_el.get_text(" ", strip=True) if desc_el else ""
         if not is_ai_related(title, desc):
+            continue
+        if is_excluded(title, desc):
             continue
         today_stars = _parse_today_stars(repo)
         if today_stars < MIN_GH_STARS_TODAY:

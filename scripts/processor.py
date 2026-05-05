@@ -47,8 +47,8 @@ raw_summary: {raw_summary}
 
 [지시]
 1. title_ko: 제목을 자연스러운 한국어로 (이미 한국어면 그대로).
-2. summary_ko: 본문 핵심을 3~4줄(한 줄당 40~80자)로 한국어 요약. 광고성/홍보 표현은 제거.
-3. application_ko: 이 정보를 실제로 어떻게 활용할 수 있는지 1~2줄(한국어). 추상적 미사여구 금지, 구체적인 사용 시나리오.
+2. summary_ko: 본문 핵심을 2~3줄(한 줄당 40~80자)로 한국어 요약. 광고성/홍보 표현은 제거.
+3. application_ko: 이 정보를 실제로 어떻게 활용할 수 있는지 1줄(한국어). 추상적 미사여구 금지, 구체적인 사용 시나리오.
 4. tags: 관련 태그 3~6개 (영문 lower-case, 예: "rag", "agent", "fine-tuning").
 5. nodes: 본문에서 등장하는 위키 노드를 카테고리별로 추출.
    - concepts: 기술/개념/방법론 (예: "RAG", "Mixture of Experts", "Constitutional AI")
