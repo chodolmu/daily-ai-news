@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+logs/
+.DS_Store
+Thumbs.db
+
+# 로컬 상태 파일 (사용자별, 머신별)
+data/seen_urls.json
+data/last_run.json
+
+# Obsidian vault — 로컬 전용. site/ 폴더에 빌드된 결과만 push
+vault/
+
+# Obsidian이 실수로 만든 빈 보관함 (의도된 vault는 vault/)
+DailyAiNews/
+
+# 목업은 디자인 작업 기록 — 사이트는 site/에서 빌드됨
+# (mockup/는 git에 포함시켜도 무방)
+

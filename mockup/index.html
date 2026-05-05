@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daily AI News</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+  /* =========================================================
+     Daily AI News — 미니멀 (데스크탑 Hero+Grid / 모바일 Linear)
+     ========================================================= */
+
+  :root {
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --border: #ececec;
+    --border-strong: #d8d8d8;
+    --text: #0f0f0f;
+    --text-2: #404040;
+    --text-3: #6b6b6b;
+    --text-4: #9a9a9a;
+    --accent: #0f0f0f;
+    --accent-soft: #f4f4f4;
+    --hero-bg: #0f0f0f;
+    --hero-text: #fafafa;
+    --hero-text-2: #d4d4d4;
+
+    --src-hn: #ff6600;
+    --src-gh: #24292f;
+    --src-gn: #2563eb;
+    --src-an: #d97757;
+
+    --radius-sm: 6px;
+    --radius: 10px;
+    --radius-lg: 14px;
+    --shadow: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-hover: 0 12px 28px rgba(0,0,0,0.08);
+    --maxw: 1240px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", Roboto, sans-serif;
+    font-feature-settings: "tnum", "ss01";
+    line-height: 1.55;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; }
+
+  /* ---------- 상단 미니바 ---------- */
+  .topbar {
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .topbar-inner {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 12px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 12px; color: var(--text-3);
+  }
+  .topbar .brand-mini { font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+  .topbar .brand-mini::before {
+    content: ""; display: inline-block;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); margin-right: 8px; vertical-align: middle;
+  }
+  .topbar .last-updated { font-variant-numeric: tabular-nums; }
+
+  /* ---------- 헤더 ---------- */
+  header.page-header {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 56px 24px 32px;
+  }
+  .brand {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    color: var(--text);
+  }
+  .subtitle {
+    margin-top: 12px;
+    font-size: 16px;
+    color: var(--text-3);
+    letter-spacing: -0.005em;
+  }
+  .header-bottom {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: flex-end;
+  }
+
+  /* ====== 날짜 네비 (드롭다운 + 캘린더) ====== */
+  .nav-c { display: inline-flex; align-items: center; gap: 6px; position: relative; }
+  .nav-c .today-link {
+    margin-right: 6px;
+    padding: 0 14px; height: 36px;
+    border: 0; background: transparent;
+    border-radius: 99px;
+    font-size: 13px; color: var(--text-3); font-weight: 500;
+    cursor: pointer; font-family: inherit;
+    transition: background 0.12s, color 0.12s;
+  }
+  .nav-c .today-link:hover { background: var(--accent-soft); color: var(--text); }
+  .nav-c .arrow {
+    width: 36px; height: 36px;
+    border: 1px solid var(--border); background: var(--surface);
+    border-radius: 50%;
+    cursor: pointer; color: var(--text-3); font-size: 16px;
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: background 0.12s, color 0.12s, border-color 0.12s;
+  }
+  .nav-c .arrow:hover {
+    background: var(--accent-soft); color: var(--text);
+    border-color: var(--border-strong);
+  }
+  .nav-c .date-pill {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 8px 16px;
+    border: 0; background: transparent;
+    border-radius: 99px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.12s;
+    margin: 0 4px;
+  }
+  .nav-c .date-pill:hover { background: var(--accent-soft); }
+  .nav-c .date-pill .date-text {
+    font-size: 18px; font-weight: 700; letter-spacing: -0.015em;
+    color: var(--text); font-variant-numeric: tabular-nums;
+  }
+  .nav-c .date-pill .day-text {
+    font-size: 13px; color: var(--text-3); font-weight: 500;
+  }
+  .nav-c .date-pill .caret {
+    color: var(--text-3); font-size: 10px;
+    transition: transform 0.18s;
+  }
+  .nav-c .date-pill.open .caret { transform: rotate(180deg); }
+
+  .nav-c .calendar-pop {
+    position: absolute; top: calc(100% + 12px); right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    padding: 16px;
+    width: 280px;
+    display: none;
+    z-index: 50;
+  }
+  .nav-c.open .calendar-pop { display: block; }
+  .nav-c .cal-head {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .nav-c .cal-head .month-title {
+    font-size: 14px; font-weight: 700; letter-spacing: -0.01em;
+  }
+  .nav-c .cal-head button {
+    width: 26px; height: 26px; border: 0; background: transparent;
+    border-radius: 6px; cursor: pointer; color: var(--text-3); font-size: 14px;
+  }
+  .nav-c .cal-head button:hover { background: var(--accent-soft); color: var(--text); }
+  .nav-c .cal-grid {
+    display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px;
+  }
+  .nav-c .cal-grid .dow {
+    font-size: 10px; color: var(--text-4); text-align: center;
+    padding: 4px 0; font-weight: 600; letter-spacing: 0.05em;
+  }
+  .nav-c .cal-grid .day {
+    aspect-ratio: 1; display: inline-flex;
+    align-items: center; justify-content: center;
+    font-size: 12px; color: var(--text-2); cursor: pointer;
+    border-radius: 6px;
+    font-variant-numeric: tabular-nums;
+    transition: background 0.1s;
+    position: relative;
+  }
+  .nav-c .cal-grid .day:hover { background: var(--accent-soft); }
+  .nav-c .cal-grid .day.has-data::after {
+    content: ""; position: absolute; bottom: 3px;
+    width: 3px; height: 3px; border-radius: 50%; background: var(--text-3);
+  }
+  .nav-c .cal-grid .day.active {
+    background: var(--accent); color: var(--bg); font-weight: 700;
+  }
+  .nav-c .cal-grid .day.active::after { background: var(--bg); opacity: 0.7; }
+  .nav-c .cal-grid .day.muted { color: var(--text-4); opacity: 0.4; }
+
+
+  /* ---------- 메인 컨테이너 ---------- */
+  main { max-width: var(--maxw); margin: 0 auto; padding: 32px 24px 64px; }
+
+  /* ---------- 카드 공통 ---------- */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    display: flex; flex-direction: column; gap: 14px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--src-color, transparent);
+    transition: width 0.18s;
+  }
+  .card.src-hn { --src-color: var(--src-hn); }
+  .card.src-gh { --src-color: var(--src-gh); }
+  .card.src-gn { --src-color: var(--src-gn); }
+  .card.src-an { --src-color: var(--src-an); }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-strong);
+  }
+  .card:hover::before { width: 5px; }
+
+  .card-header {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    font-size: 12px; color: var(--text-3);
+  }
+  .source-name {
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-2);
+  }
+  .card.src-hn .source-name { color: var(--src-hn); }
+  .card.src-gh .source-name { color: var(--src-gh); }
+  .card.src-gn .source-name { color: var(--src-gn); }
+  .card.src-an .source-name { color: var(--src-an); }
+  .score {
+    font-size: 12px; color: var(--text-3); font-variant-numeric: tabular-nums;
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+  .score::before {
+    content: ""; display: inline-block;
+    width: 3px; height: 3px; border-radius: 50%;
+    background: var(--text-4);
+  }
+  .top-marker {
+    margin-left: auto; font-size: 11px; font-weight: 700;
+    color: var(--text);
+    background: var(--accent-soft);
+    padding: 3px 8px; border-radius: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    word-break: keep-all;
+  }
+  .card .summary {
+    font-size: 14px;
+    color: var(--text-2);
+    line-height: 1.65;
+    word-break: keep-all;
+  }
+  .card .application {
+    font-size: 13px;
+    color: var(--text-2);
+    line-height: 1.6;
+    padding: 12px 14px;
+    background: var(--accent-soft);
+    border-radius: var(--radius-sm);
+    word-break: keep-all;
+  }
+  .card .application::before {
+    content: "활용";
+    display: inline-block;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+    color: var(--text-3);
+    text-transform: uppercase;
+    margin-right: 8px;
+    padding: 2px 6px;
+    background: var(--surface);
+    border-radius: 3px;
+    vertical-align: 2px;
+  }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: 11px;
+    padding: 3px 8px;
+    color: var(--text-3);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .card-footer {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .read-more {
+    font-size: 13px; font-weight: 600;
+    color: var(--text);
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 14px;
+    background: var(--accent);
+    color: var(--bg);
+    border-radius: var(--radius-sm);
+    transition: background 0.15s, transform 0.1s;
+    min-height: 36px;
+  }
+  .read-more:hover { background: #2a2a2a; }
+  .read-more:active { transform: scale(0.98); }
+  .read-more::after { content: "→"; font-weight: 400; }
+
+  /* ---------- Hero 카드 (흰색 통일, 크기·여백으로만 강조) ---------- */
+  .card.hero {
+    padding: 32px;
+    min-height: 320px;
+  }
+  .card.hero h3 {
+    font-size: 26px;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+  }
+  .card.hero .summary { font-size: 15px; }
+  .card.hero:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+  }
+
+  /* ---------- 데스크탑 레이아웃: Hero + Grid ---------- */
+  .hero-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+    margin-bottom: 18px;
+  }
+  .grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+
+  /* 1024px 이하: hero 1열, grid 2열 */
+  @media (max-width: 1024px) {
+    .hero-row { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .card.hero { min-height: 0; padding: 28px; }
+    .card.hero h3 { font-size: 22px; }
+  }
+
+  /* ---------- 모바일: Linear 한 줄씩 ---------- */
+  @media (max-width: 768px) {
+    main { padding: 20px 16px 48px; max-width: 720px; }
+    header.page-header { padding: 32px 16px 20px; }
+    .topbar-inner { padding: 10px 16px; }
+    .header-bottom { justify-content: stretch; }
+
+    /* 모바일에서 네비 너비 정렬 */
+    .nav-c { width: 100%; justify-content: space-between; }
+    .nav-c .date-pill { flex: 1; justify-content: center; }
+    .nav-c .calendar-pop { left: 0; right: 0; width: auto; }
+
+    .hero-row, .grid {
+      display: flex; flex-direction: column; gap: 12px;
+      grid-template-columns: none;
+    }
+    .hero-row { margin-bottom: 12px; }
+
+    .card { padding: 18px; gap: 12px; border-radius: var(--radius); }
+    .card.hero { padding: 22px; min-height: 0; }
+    .card.hero h3 { font-size: 19px; }
+    .card h3 { font-size: 16px; }
+    .card .summary { font-size: 14px; }
+    .card .application { font-size: 13px; padding: 11px 12px; }
+
+    .brand { font-size: 32px; }
+    .subtitle { font-size: 14px; }
+    .today-date { font-size: 18px; }
+    .today-day { font-size: 14px; }
+
+    .read-more { padding: 10px 16px; min-height: 44px; }
+    .date-nav button, .date-nav .date-input-wrap { height: 44px; min-width: 44px; }
+  }
+
+  /* 320px 같은 좁은 화면 안전장치 */
+  @media (max-width: 360px) {
+    .brand { font-size: 28px; }
+    main { padding: 16px 12px 40px; }
+    .card { padding: 16px; }
+  }
+
+  /* ---------- 푸터 ---------- */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .footer-inner {
+    max-width: var(--maxw); margin: 0 auto;
+    padding: 28px 24px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    font-size: 13px; color: var(--text-3);
+  }
+  .footer-inner a { color: var(--text-2); font-weight: 500; }
+  .footer-inner a:hover { color: var(--text); }
+  @media (max-width: 768px) {
+    .footer-inner { padding: 20px 16px; flex-direction: column; }
+  }
+
+  /* 접근성: 키보드 포커스 */
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="brand-mini">Daily AI News</span>
+    <span class="last-updated">마지막 업데이트 · 2026-05-05 08:12</span>
+  </div>
+</div>
+
+<header class="page-header">
+  <h1 class="brand">Daily AI News</h1>
+  <p class="subtitle">매일 정리되는 AI 소식</p>
+
+  <div class="header-bottom">
+
+    <nav class="nav-c" aria-label="날짜 이동" id="navC">
+      <button class="today-link" type="button">오늘</button>
+      <button class="arrow" aria-label="이전 날짜">‹</button>
+      <button class="date-pill" type="button" id="datePillC">
+        <span class="date-text">2026년 5월 5일</span>
+        <span class="day-text">화요일</span>
+        <span class="caret">▾</span>
+      </button>
+      <button class="arrow" aria-label="다음 날짜">›</button>
+
+      <div class="calendar-pop" role="dialog" aria-label="날짜 선택">
+        <div class="cal-head">
+          <button aria-label="이전 달">‹</button>
+          <span class="month-title">2026년 5월</span>
+          <button aria-label="다음 달">›</button>
+        </div>
+        <div class="cal-grid">
+          <span class="dow">일</span><span class="dow">월</span><span class="dow">화</span>
+          <span class="dow">수</span><span class="dow">목</span><span class="dow">금</span><span class="dow">토</span>
+
+          <span class="day muted">26</span><span class="day muted">27</span><span class="day muted">28</span>
+          <span class="day muted">29</span><span class="day muted">30</span>
+          <span class="day has-data">1</span><span class="day has-data">2</span>
+
+          <span class="day">3</span><span class="day has-data">4</span>
+          <span class="day has-data active">5</span>
+          <span class="day">6</span><span class="day">7</span><span class="day">8</span><span class="day">9</span>
+
+          <span class="day">10</span><span class="day">11</span><span class="day">12</span>
+          <span class="day">13</span><span class="day">14</span><span class="day">15</span><span class="day">16</span>
+
+          <span class="day">17</span><span class="day">18</span><span class="day">19</span>
+          <span class="day">20</span><span class="day">21</span><span class="day">22</span><span class="day">23</span>
+
+          <span class="day">24</span><span class="day">25</span><span class="day">26</span>
+          <span class="day">27</span><span class="day">28</span><span class="day">29</span><span class="day">30</span>
+
+          <span class="day">31</span>
+          <span class="day muted">1</span><span class="day muted">2</span><span class="day muted">3</span>
+          <span class="day muted">4</span><span class="day muted">5</span><span class="day muted">6</span>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+<script>
+  // 날짜 드롭다운 — 캘린더 펼침/닫힘
+  const navC = document.getElementById('navC');
+  const pillC = document.getElementById('datePillC');
+  pillC.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navC.classList.toggle('open');
+    pillC.classList.toggle('open');
+  });
+  document.addEventListener('click', (e) => {
+    if (!navC.contains(e.target)) {
+      navC.classList.remove('open');
+      pillC.classList.remove('open');
+    }
+  });
+</script>
+
+<main>
+
+  <!-- Hero 영역 (모바일에선 자동으로 일렬) -->
+  <div class="hero-row">
+
+    <article class="card hero src-hn">
+      <div class="card-header">
+        <span class="source-name">HackerNews</span>
+        <span class="score">444점</span>
+        <span class="top-marker">오늘의 톱</span>
+      </div>
+      <h3>구글 크롬, 사용자 동의 없이 4GB AI 모델을 기기에 자동 설치</h3>
+      <p class="summary">구글 크롬이 사용자에게 알리거나 동의를 구하지 않고 Gemini Nano라는 4GB 규모 AI 모델을 로컬 기기에 자동 다운로드·설치하고 있다. 브라우저 내장 AI 기능을 위한 것으로 보이지만, 저장 공간 점유와 프라이버시 측면에서 문제가 제기된다. 기본 활성화 + 옵션은 깊숙이 숨겨져 있다.</p>
+      <div class="application">기업 IT 관리자는 그룹 정책에서 Gemini Nano 자동 다운로드를 비활성화해 불필요한 디스크 사용과 네트워크 트래픽을 차단할 수 있다.</div>
+      <div class="tags">
+        <span class="tag">#gemini-nano</span><span class="tag">#chrome</span>
+        <span class="tag">#privacy</span><span class="tag">#edge-ai</span>
+      </div>
+      <div class="card-footer">
+        <a class="read-more" href="https://www.thatprivacyguy.com/blog/chrome-silent-nano-install/" target="_blank" rel="noopener">원문 보기</a>
+      </div>
+    </article>
+
+    <article class="card hero src-hn">
+      <div class="card-header">
+        <span class="source-name">HackerNews</span>
+        <span class="score">430점</span>
+        <span class="top-marker">인프라 심층</span>
+      </div>
+      <h3>OpenAI가 대규모로 저지연 음성 AI를 제공하는 방법</h3>
+      <p class="summary">OpenAI가 실시간 음성 AI 서비스의 저지연 인프라를 공개했다. 음성 토큰 스트리밍 처리, GPU 추론 최적화, 네트워크 엣지 배치를 결합해 대규모 동시 접속 환경에서 수백 밀리초 이내 응답을 달성한다. 모델 경량화 + 인프라 분산이 핵심이다.</p>
+      <div class="application">실시간 음성 서비스 구축 시 추론 서버의 지역별 엣지 배치 전략과 스트리밍 파이프라인 설계를 벤치마크할 수 있다.</div>
+      <div class="tags">
+        <span class="tag">#voice-ai</span><span class="tag">#low-latency</span>
+        <span class="tag">#streaming</span><span class="tag">#edge-computing</span>
+      </div>
+      <div class="card-footer">
+        <a class="read-more" href="https://openai.com/index/delivering-low-latency-voice-ai-at-scale/" target="_blank" rel="noopener">원문 보기</a>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- 그리드 영역 -->
+  <div class="grid">
+
+    <article class="card src-gh">
+      <div class="card-header">
+        <span class="source-name">GitHub</span>
+        <span class="score">2829 stars/today</span>
+      </div>
+      <h3>Karpathy의 Claude Code 개선용 CLAUDE.md 스킬 파일</h3>
+      <p class="summary">Karpathy가 관찰한 LLM 코딩 함정과 실수를 정리해 시스템 프롬프트로 가공한 단일 CLAUDE.md. 과도한 추상화·불필요한 복잡성 등 잘 알려진 패턴을 사전에 차단한다.</p>
+      <div class="application">프로젝트 루트에 두면 즉시 코드 생성 품질 개선. 팀의 LLM 코딩 표준 시작점.</div>
+      <div class="tags"><span class="tag">#claude-code</span><span class="tag">#prompt-engineering</span><span class="tag">#llm</span></div>
+      <div class="card-footer">
+        <a class="read-more" href="https://github.com/forrestchang/andrej-karpathy-skills" target="_blank" rel="noopener">원문 보기</a>
+      </div>
+    </article>
+
+    <article class="card src-hn">
+      <div class="card-header">
+        <span class="source-name">HackerNews</span>
+        <span class="score">308점</span>
+      </div>
+      <h3>나만의 LLM을 처음부터 직접 훈련하기</h3>
+      <p class="summary">데이터 수집부터 토크나이저, 모델 아키텍처, 사전훈련 전 과정을 코드로 다루는 오픈소스 프로젝트. 대규모 프레임워크 의존 없이 핵심 원리를 따라가기 좋다.</p>
+      <div class="application">LLM 내부 구조 학습 또는 도메인 특화 소형 LM 설계의 베이스라인.</div>
+      <div class="tags"><span class="tag">#llm</span><span class="tag">#pre-training</span><span class="tag">#transformer</span></div>
+      <div class="card-footer">
+        <a class="read-more" href="https://github.com/angelos-p/llm-from-scratch" target="_blank" rel="noopener">원문 보기</a>
+      </div>
+    </article>
+
+    <article class="card src-hn">
+      <div class="card-header">
+        <span class="source-name">HackerNews</span>
+        <span class="score">293점</span>
+      </div>
+      <h3>에이전트 스킬: AI 코딩 에이전트를 위한 SE 워크플로우</h3>
+      <p class="summary">정의→계획→구현→검증→리뷰→배포의 6단계 라이프사이클을 강제하는 프레임워크. 반합리화 테이블, 점진적 컨텍스트 공개 등 5가지 설계 원칙. 도구 비종속.</p>
+      <div class="application">팀 단위 에이전트 가이드라인 수립 시 스펙·테스트·리뷰 누락을 자동 차단.</div>
+      <div class="tags"><span class="tag">#agent</span><span class="tag">#workflow</span><span class="tag">#code-review</span></div>
+      <div class="card-footer">
+        <a class="read-more" href="https://addyosmani.com/blog/agent-skills/" target="_blank" rel="noopener">원문 보기</a>
+      </div>
+    </article>
+
+    <article class="card src-gh">
+      <div class="card-header">
+        <span class="source-name">GitHub</span>
+        <span class="score">2441 stars/today</span>
+      </div>
+      <h3>ruvnet/ruflo</h3>
+      <p class="summary">Rust로 작성된 자율 에이전트 프레임워크. 멀티 에이전트 워크플로우 정의와 실행을 한 바이너리에서 처리. 빠르게 별을 받는 트렌드 저장소.</p>
+      <div class="application">Rust 환경에서 에이전트 시스템을 구축할 때 출발점으로 검토 가능.</div>
+      <div class="tags"><span class="tag">#agent</span><span class="tag">#rust</span><span class="tag">#workflow</span></div>
+      <div class="card-footer">
+        <a class="read-more" href="https://github.com/ruvnet/ruflo" target="_blank" rel="noopener">원문 보기</a>
+      </div>
+    </article>
+
+    <article class="card src-gh">
+      <div class="card-header">
+        <span class="source-name">GitHub</span>
+        <span class="score">2389 stars/today</span>
+      </div>
+      <h3>Hmbown/DeepSeek-TUI</h3>
+      <p class="summary">DeepSeek 모델용 터미널 UI. 로컬·원격 모델을 한 인터페이스에서 호출하고 코드 작성·디버깅을 보조. 가벼운 의존성과 키보드 중심 UX.</p>
+      <div class="application">CLI에서 LLM 코딩을 자주 쓰는 개발자에게 즉시 도입 가능.</div>
+      <div class="tags"><span class="tag">#deepseek</span><span class="tag">#tui</span><span class="tag">#developer-tools</span></div>
+      <div class="card-footer">
+        <a class="read-more" href="https://github.com/Hmbown/DeepSeek-TUI" target="_blank" rel="noopener">원문 보기</a>
+      </div>
+    </article>
+
+    <article class="card src-hn">
+      <div class="card-header">
+        <span class="source-name">HackerNews</span>
+        <span class="score">165점</span>
+      </div>
+      <h3>LLM에 대해 이야기해 봅시다</h3>
+      <p class="summary">Brooks의 '은탄환은 없다' 프레임으로 LLM 코딩 도구의 한계 분석. DORA 2025 데이터: 처리량은 ↑ 전달 불안정성도 ↑. CircleCI 데이터로 복구시간 25%↑ · 배포실패 30%↑.</p>
+      <div class="application">AI 도구 도입 시 속도-안정성 트레이드오프를 경영진에게 설명하는 정량 근거.</div>
+      <div class="tags"><span class="tag">#llm</span><span class="tag">#productivity</span><span class="tag">#devops</span></div>
+      <div class="card-footer">
+        <a class="read-more" href="https://www.b-list.org/weblog/2026/apr/09/llms/" target="_blank" rel="noopener">원문 보기</a>
+      </div>
+    </article>
+
+    <article class="card src-gn">
+      <div class="card-header">
+        <span class="source-name">GeekNews</span>
+        <span class="score">17 추천</span>
+      </div>
+      <h3>Understand-Anything: 코드를 인터랙티브 지식 그래프로 변환</h3>
+      <p class="summary">멀티 에이전트 파이프라인으로 프로젝트의 모든 파일·함수·클래스·의존성을 자동 분석. /understand 명령으로 시작, 웹 대시보드 제공. 코드베이스의 구조적 관계를 시각화.</p>
+      <div class="application">레거시 코드베이스 인수인계나 신규 팀원 온보딩 시 의존성·모듈 관계 파악 시간을 단축.</div>
+      <div class="tags"><span class="tag">#knowledge-graph</span><span class="tag">#code-analysis</span><span class="tag">#multi-agent</span></div>
+      <div class="card-footer">
+        <a class="read-more" href="https://news.hada.io/topic?id=29178" target="_blank" rel="noopener">원문 보기</a>
+      </div>
+    </article>
+
+    <article class="card src-hn">
+      <div class="card-header">
+        <span class="source-name">HackerNews</span>
+        <span class="score">131점</span>
+      </div>
+      <h3>CVE-2026-31431: Copy Fail과 루트리스 컨테이너 취약점</h3>
+      <p class="summary">컨테이너 런타임의 copy 실패 처리 과정에서 발생하는 보안 취약점. 루트리스 환경에서 권한 상승 경로가 존재하며, 컨테이너 격리 경계를 우회 가능. 보안 강화 목적의 루트리스가 무력화되는 사례.</p>
+      <div class="application">컨테이너 인프라 운영 시 즉시 패치 확인 + 루트리스 환경의 copy 권한 설정 점검.</div>
+      <div class="tags"><span class="tag">#cve</span><span class="tag">#container-security</span><span class="tag">#rootless</span></div>
+      <div class="card-footer">
+        <a class="read-more" href="https://www.dragonsreach.it/2026/05/04/cve-2026-31431-copy-fail-rootless-containers/" target="_blank" rel="noopener">원문 보기</a>
+      </div>
+    </article>
+
+    <article class="card src-gh">
+      <div class="card-header">
+        <span class="source-name">GitHub</span>
+        <span class="score">306 stars/today</span>
+      </div>
+      <h3>Context Mode: AI 코딩 에이전트의 컨텍스트 윈도우 최적화</h3>
+      <p class="summary">에이전트 도구 출력을 샌드박스 처리해 컨텍스트 사용량을 98% 줄이는 오픈소스. Claude Code, Cursor, Copilot 등 14개 플랫폼 지원. 토큰 비용과 응답 품질 동시 개선.</p>
+      <div class="application">Claude Code·Cursor에서 긴 빌드 로그·파일 출력으로 컨텍스트가 소진되는 문제를 차단.</div>
+      <div class="tags"><span class="tag">#context-window</span><span class="tag">#token-optimization</span></div>
+      <div class="card-footer">
+        <a class="read-more" href="https://github.com/mksglu/context-mode" target="_blank" rel="noopener">원문 보기</a>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Daily AI News · 자동 생성 · 매일 08:00 갱신</span>
+    <span>
+      <a href="https://github.com/chodolmu/daily-ai-news" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

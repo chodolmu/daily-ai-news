@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daily AI News · {{ date_str }}</title>
+<meta name="description" content="매일 정리되는 AI 소식 — {{ date_str }}" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="{{ asset_prefix }}assets/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand-mini" href="{{ asset_prefix }}">Daily AI News</a>
+    <span class="last-updated">마지막 업데이트 · {{ last_updated }}</span>
+  </div>
+</div>
+
+<header class="page-header">
+  <h1 class="brand">Daily AI News</h1>
+  <p class="subtitle">매일 정리되는 AI 소식</p>
+
+  <div class="header-bottom">
+    <nav class="nav-c" aria-label="날짜 이동" id="navC"
+         data-current="{{ date_str }}" data-latest="{{ latest_date }}">
+      <a class="today-link" href="{{ asset_prefix }}">오늘</a>
+      {% if prev_date %}
+        <a class="arrow" href="{{ asset_prefix }}{{ prev_date }}/" aria-label="이전 날짜">‹</a>
+      {% else %}
+        <span class="arrow disabled" aria-label="이전 날짜 없음">‹</span>
+      {% endif %}
+      <button class="date-pill" type="button" id="datePillC">
+        <span class="date-text">{{ date_long }}</span>
+        <span class="day-text">{{ day_name }}</span>
+        <span class="caret">▾</span>
+      </button>
+      {% if next_date %}
+        <a class="arrow" href="{{ asset_prefix }}{{ next_date }}/" aria-label="다음 날짜">›</a>
+      {% else %}
+        <span class="arrow disabled" aria-label="다음 날짜 없음">›</span>
+      {% endif %}
+
+      <div class="calendar-pop" role="dialog" aria-label="날짜 선택" id="calendarPop">
+        <!-- JS로 동적 채움 -->
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  {% if items|length == 0 %}
+    <div class="empty-state">
+      <p>이 날짜에는 수집된 항목이 없습니다.</p>
+    </div>
+  {% else %}
+    {% if hero_items %}
+    <div class="hero-row">
+      {% for it in hero_items %}
+      <article class="card hero src-{{ it.source_code }}">
+        <div class="card-header">
+          <span class="source-name">{{ it.source }}</span>
+          <span class="score">{{ it.score_label }}</span>
+        </div>
+        <h3>{{ it.title }}</h3>
+        <p class="summary">{{ it.summary }}</p>
+        {% if it.application %}
+        <div class="application">{{ it.application }}</div>
+        {% endif %}
+        {% if it.tags %}
+        <div class="tags">
+          {% for t in it.tags %}<span class="tag">#{{ t }}</span>{% endfor %}
+        </div>
+        {% endif %}
+        <div class="card-footer">
+          <a class="read-more" href="{{ it.url }}" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if grid_items %}
+    <div class="grid">
+      {% for it in grid_items %}
+      <article class="card src-{{ it.source_code }}">
+        <div class="card-header">
+          <span class="source-name">{{ it.source }}</span>
+          <span class="score">{{ it.score_label }}</span>
+        </div>
+        <h3>{{ it.title }}</h3>
+        <p class="summary">{{ it.summary }}</p>
+        {% if it.application %}
+        <div class="application">{{ it.application }}</div>
+        {% endif %}
+        {% if it.tags %}
+        <div class="tags">
+          {% for t in it.tags %}<span class="tag">#{{ t }}</span>{% endfor %}
+        </div>
+        {% endif %}
+        <div class="card-footer">
+          <a class="read-more" href="{{ it.url }}" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+  {% endif %}
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Daily AI News · 자동 생성 · 매일 08:00 갱신</span>
+    <span>
+      <a href="https://github.com/chodolmu/daily-ai-news" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  window.__SITE__ = {
+    current: "{{ date_str }}",
+    latest: "{{ latest_date }}",
+    assetPrefix: "{{ asset_prefix }}",
+    calendar: {{ calendar_json | safe }}
+  };
+</script>
+<script src="{{ asset_prefix }}assets/calendar.js"></script>
+</body>
+</html>
