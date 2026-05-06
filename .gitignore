@@ -10,6 +10,7 @@ Thumbs.db
 
 # 로컬 상태 파일 (사용자별, 머신별)
 data/seen_urls.json
+data/seen_urls.json.*
 data/last_run.json
 
 # Obsidian vault — 로컬 전용. site/ 폴더에 빌드된 결과만 push

@@ -7,23 +7,22 @@
 
 수집 결과는 표준화된 dict 리스트로 반환:
   {source, title, url, published, raw_summary, lang}
+
+운영 정책: run.py가 "어제 하루치"만 처리하므로 같은 URL이 두 번 들어올 일이 없다.
+따라서 seen_urls 같은 전역 중복 차단 장치는 두지 않는다 (하루 안의 소스 간 중복만 제거).
 """
 from __future__ import annotations
 
-import json
 import re
 import time
-from datetime import datetime, timedelta, timezone
+from datetime import datetime
 from pathlib import Path
-from typing import Iterable
 
 import feedparser
 import requests
 from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "data"
-SEEN_FILE = DATA_DIR / "seen_urls.json"
 
 UA = "Mozilla/5.0 (DailyAINews scraper)"
 TIMEOUT = 20
@@ -67,20 +66,6 @@ def is_excluded(*texts: str) -> bool:
     """제외 키워드(펀딩/채용/주가 등)가 포함되면 True."""
     blob = " ".join(t for t in texts if t)
     return bool(EXCLUDE_PATTERN.search(blob))
-
-
-def load_seen() -> dict:
-    if SEEN_FILE.exists():
-        return json.loads(SEEN_FILE.read_text(encoding="utf-8"))
-    return {}
-
-
-def save_seen(seen: dict) -> None:
-    SEEN_FILE.write_text(json.dumps(seen, ensure_ascii=False, indent=2), encoding="utf-8")
-
-
-def _today_key(now: datetime | None = None) -> str:
-    return (now or datetime.now()).strftime("%Y-%m-%d")
 
 
 # --- HackerNews ---------------------------------------------------------------
@@ -262,41 +247,24 @@ def fetch_anthropic(target_date: datetime) -> list[dict]:
 
 # --- aggregate ----------------------------------------------------------------
 def scrape_for_date(target_date: datetime) -> list[dict]:
-    """target_date 하루치를 전 소스에서 모아 중복 제거.
-
-    중요: seen_urls.json 저장은 여기서 하지 않는다. 후속 단계(processor → vault writer)가
-    성공한 항목만 mark_seen()으로 등록해야 실패 시 영영 차단되는 사고를 막을 수 있다.
-    """
-    seen = load_seen()
+    """target_date 하루치를 전 소스에서 모아 URL 단위로 중복 제거."""
     items: list[dict] = []
     items.extend(fetch_anthropic(target_date))
     items.extend(fetch_geeknews(target_date))
     items.extend(fetch_hackernews(target_date))
     items.extend(fetch_github_trending(target_date))
 
+    seen_urls: set[str] = set()
     deduped = []
     for item in items:
         url = item.get("url")
-        if not url or url in seen:
+        if not url or url in seen_urls:
             continue
+        seen_urls.add(url)
         deduped.append(item)
-    print(f"[scraper] {target_date.date()}: {len(deduped)} new items "
+    print(f"[scraper] {target_date.date()}: {len(deduped)} items "
           f"(anthropic+geeknews+hn+gh-trending)")
     return deduped
-
-
-def mark_seen(items: list[dict], target_date: datetime) -> None:
-    """vault 기록까지 성공한 항목을 seen_urls.json에 등록."""
-    if not items:
-        return
-    seen = load_seen()
-    date_str = target_date.strftime("%Y-%m-%d")
-    for it in items:
-        url = it.get("url")
-        if not url:
-            continue
-        seen[url] = {"date": date_str, "source": it.get("source", "?")}
-    save_seen(seen)
 
 
 if __name__ == "__main__":
