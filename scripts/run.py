@@ -88,14 +88,39 @@ def process_date(target: datetime, include_yesterday: bool = False) -> int:
         if prev_items:
             print(f"  + 어제({yesterday.strftime('%Y-%m-%d')})치 {len(prev_items)}건 추가")
         items = prev_items + items  # 어제 먼저, 그 다음 오늘
+
+    daily_path = ROOT / "vault" / "daily" / f"{target.strftime('%Y-%m-%d')}.md"
+    existing_count = _read_count(daily_path)
+
     if not items:
-        write_daily(target, [])
+        # scrape 0건. 기존 노트가 비어있을 때만 빈 노트 생성. 채워진 노트는 절대 덮지 않음.
+        if existing_count == 0:
+            write_daily(target, [])
+        else:
+            print(f"  [skip] 새 항목 없음 — 기존 노트({existing_count}건) 유지")
         return 0
+
     processed, attempted_ok = process_items(items, min_quality=4)
-    write_daily(target, processed)
+    if len(processed) < existing_count:
+        # 새 처리 결과가 기존보다 적으면 덮어쓰기 거부. 같은 날 재실행 안전장치.
+        print(f"  [skip] 새 결과({len(processed)}건) < 기존({existing_count}건) — 덮어쓰기 거부")
+    else:
+        write_daily(target, processed)
     # vault 기록까지 성공한 시점에 seen 등록 (품질 미달 포함, processor 실패만 제외)
     mark_seen(attempted_ok, target)
     return len(processed)
+
+
+def _read_count(path) -> int:
+    """일일 노트 frontmatter의 count 필드 반환. 없으면 0."""
+    if not path.exists():
+        return 0
+    import re
+    try:
+        m = re.search(r"^count:\s*(\d+)", path.read_text(encoding="utf-8"), re.M)
+        return int(m.group(1)) if m else 0
+    except Exception:
+        return 0
 
 
 def maybe_run_weekly(state: dict, today: datetime) -> None:
