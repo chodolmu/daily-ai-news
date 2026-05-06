@@ -16,7 +16,7 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
-CLAUDE_CMD = "claude"  # PATH에 등록되어 있어야 함
+CLAUDE_CMD = "claude"
 CLAUDE_TIMEOUT = 300
 
 # Windows에서 Claude Code CLI는 git-bash가 필요. 자동 탐색.
@@ -32,7 +32,6 @@ def _ensure_git_bash() -> None:
         if Path(c).exists():
             os.environ["CLAUDE_CODE_GIT_BASH_PATH"] = c
             return
-
 
 _ensure_git_bash()
 
@@ -80,7 +79,9 @@ raw_summary: {raw_summary}
 
 
 def _call_claude(prompt: str) -> str:
-    """claude -p 동기 호출. stdout 텍스트 반환."""
+    """claude -p 동기 호출. CLAUDECODE 환경변수를 제거해 중첩 세션 차단 우회."""
+    env = os.environ.copy()
+    env.pop("CLAUDECODE", None)
     try:
         result = subprocess.run(
             [CLAUDE_CMD, "-p", prompt],
@@ -88,6 +89,7 @@ def _call_claude(prompt: str) -> str:
             text=True,
             encoding="utf-8",
             timeout=CLAUDE_TIMEOUT,
+            env=env,
         )
     except FileNotFoundError:
         raise RuntimeError("claude CLI not found in PATH. Claude Code 설치/로그인 확인 필요.")

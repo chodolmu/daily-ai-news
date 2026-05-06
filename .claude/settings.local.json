@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell(Get-ScheduledTask *)"
+      "PowerShell(Get-ScheduledTask *)",
+      "PowerShell(C:\\\\Users\\\\chodo\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe -c \"import anthropic; print\\('ok'\\)\" 2>&1)",
+      "PowerShell(C:\\\\Users\\\\chodo\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe -m pip install anthropic -q)",
+      "PowerShell(C:\\\\Users\\\\chodo\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe -c \"import anthropic; print\\('ok'\\)\")",
+      "PowerShell(if \\($env:ANTHROPIC_API_KEY\\) { Write-Host \"API KEY 있음 \\(길이: $\\($env:ANTHROPIC_API_KEY.Length\\)\\)\" } else { Write-Host \"API KEY 없음\" })"
     ]
   }
 }
