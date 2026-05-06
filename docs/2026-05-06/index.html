@@ -15,7 +15,7 @@
 <div class="topbar">
   <div class="topbar-inner">
     <a class="brand-mini" href="../">Daily AI News</a>
-    <span class="last-updated">마지막 업데이트 · 2026-05-06 23:05</span>
+    <span class="last-updated">마지막 업데이트 · 2026-05-06 23:07</span>
   </div>
 </div>
 
@@ -43,8 +43,88 @@
 </header>
 
 <main>
-    <div class="empty-state">
-      <p>이 날짜에는 수집된 항목이 없습니다.</p>
+    <div class="hero-row">
+      <article class="card hero src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>모두가 AI를 가져도 회사는 여전히 아무것도 배우지 못할 때</h3>
+        <p class="summary">직원 개인의 AI 생산성 향상이 자동으로 조직 차원의 학습으로 이어지지 않으며, 개인의 발견이 팀·조직 역량으로 전이되는 경로가 핵심 과제임.
+Copilot, ChatGPT Enterprise, Claude 등 도구 도입만으로는 부족하고, AI 활용 지식을 조직적으로 공유·축적하는 구조가 필요함.
+AI 도입의 복잡한 중간 단계에서 개인 실험과 조직 학습 사이의 간극을 메우는 전략이 중요함.</p>
+        <div class="application">사내 AI 활용 사례를 주간 단위로 수집·공유하는 내부 위키나 슬랙 채널을 운영하여 개인 노하우를 팀 자산으로 전환하라.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29217" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card hero src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>AI 에이전트가 Cloudflare 계정 생성, 도메인 구매, 배포까지 가능해졌다</h3>
+        <p class="summary">Cloudflare가 AI 에이전트가 직접 계정을 생성하고 도메인을 구매하며 프로젝트를 배포할 수 있는 기능을 공개했다.
+Stripe 결제 연동을 통해 에이전트가 자율적으로 인프라 프로비저닝과 결제까지 처리할 수 있는 엔드투엔드 워크플로우를 지원한다.
+이를 통해 사람의 개입 없이 에이전트가 웹 애플리케이션을 기획부터 배포까지 완료하는 시나리오가 현실화되고 있다.</p>
+        <div class="application">AI 코딩 에이전트에 Cloudflare API를 연동하여 프로토타입 앱의 도메인 등록부터 배포까지 자동화하는 파이프라인 구축에 활용 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://blog.cloudflare.com/agents-stripe-projects/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="grid">
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>저커버그, 메타의 저작권 침해를 '직접 승인하고 독려'한 것으로 드러나</h3>
+        <p class="summary">출판사들과 작가 스콧 터로우 등이 메타를 상대로 제기한 저작권 침해 소송에서, 마크 저커버그가 AI 훈련을 위한 저작물 무단 사용을 직접 승인하고 장려했다는 주장이 제기되었다.
+메타가 AI 모델 학습에 저작권 보호 콘텐츠를 대규모로 활용한 것이 핵심 쟁점이며, CEO의 직접적 관여가 법적 책임 확대로 이어질 수 있다.
+이번 소송은 AI 기업의 학습 데이터 활용에 대한 법적 기준을 설정하는 중요한 선례가 될 전망이다.</p>
+        <div class="application">AI 모델 학습 데이터 수집 시 저작권 리스크를 사전 점검하고, 라이선스 확보 또는 합성 데이터 활용 등 대안 전략을 수립하는 데 참고할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://variety.com/2026/digital/news/meta-ai-mark-zuckerberg-copyright-infringement-lawsuit-publishers-scott-turow-1236738383/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>oh-my-free-models - 무료 LLM 중 지금 가장 빠른 모델로 코딩 에이전트를 라우팅하는 로컬 프록시</h3>
+        <p class="summary">oh-my-free-models(omfm)는 여러 무료 LLM provider 중 현재 가장 빠른 모델로 요청을 자동 라우팅하는 로컬 프록시임.
+OpenAI 또는 Anthropic 호환 에이전트의 baseURL을 localhost로 변경하고 무료 모델을 설정하면 동작함.
+latency, rate-limit, quota 변동에도 자동으로 최적 모델을 선택해 요청을 안정적으로 처리함.</p>
+        <div class="application">Cursor, Continue 등 코딩 에이전트에서 무료 모델 여러 개를 로테이션하며 rate-limit 없이 안정적으로 사용할 때 로컬 프록시로 설정.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29215" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>엉클 밥: "코드를 직접 짜던 시대는 끝났다"</h3>
+        <p class="summary">Clean Code 저자 Uncle Bob이 AI가 개발자보다 압도적으로 빠르게 코드를 작성하는 시대가 왔음을 선언했다.
+하루 걸리던 작업을 AI가 5분 만에 완료할 수 있으므로, 개발자가 직접 코드를 작성하는 시대는 끝났다고 주장한다.
+개발자의 역할이 코드 작성자에서 AI 산출물의 검증자·설계자로 변화해야 한다고 촉구했다.</p>
+        <div class="application">팀 내 코드 리뷰 프로세스를 AI 생성 코드 검증 중심으로 재설계하고, 개발자 역량 평가 기준을 설계·검증 능력 위주로 전환하는 데 참고할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29202" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>AI의 세 가지 역(逆)법칙</h3>
+        <p class="summary">아시모프의 로봇 3법칙이 로봇의 행동을 규제했다면, 이 글은 AI를 사용하는 인간이 지켜야 할 세 가지 역법칙을 제안한다.
+첫째 AI를 의인화하지 말 것, 둘째 AI 출력을 맹목적으로 신뢰하지 말 것, 셋째 AI 사용 결과에 대한 책임을 포기하지 말 것이다.
+검색엔진의 AI 답변이나 대화형 챗봇 설계가 비판적 사고를 약화시키는 현실적 문제를 지적한다.</p>
+        <div class="application">사내 AI 도입 가이드라인이나 AI 윤리 정책 수립 시 '인간 측 행동 규범' 프레임워크로 직접 활용할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://susam.net/inverse-laws-of-robotics.html" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
     </div>
 </main>
 
@@ -62,7 +142,7 @@
     current: "2026-05-06",
     latest: "2026-05-06",
     assetPrefix: "../",
-    calendar: {"days": {"2026-05-01": 6, "2026-05-02": 8, "2026-05-03": 5, "2026-05-04": 14, "2026-05-05": 18, "2026-05-06": 0}, "latest": "2026-05-06", "earliest": "2026-05-01"}
+    calendar: {"days": {"2026-05-01": 6, "2026-05-02": 8, "2026-05-03": 5, "2026-05-04": 14, "2026-05-05": 18, "2026-05-06": 6}, "latest": "2026-05-06", "earliest": "2026-05-01"}
   };
 </script>
 <script src="../assets/calendar.js"></script>
