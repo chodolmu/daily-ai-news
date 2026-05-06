@@ -148,18 +148,28 @@ def process_item(item: dict) -> dict | None:
     return out
 
 
-def process_items(items: list[dict], min_quality: int = 4) -> list[dict]:
-    """모든 항목 처리. quality 임계값만 적용, 개수 제한 없음.
-    수집 단계에서 이미 점수/스타로 1차 필터된 항목들이 들어온다."""
-    processed = []
+def process_items(items: list[dict], min_quality: int = 4) -> tuple[list[dict], list[dict]]:
+    """모든 항목 처리.
+
+    Returns:
+        (kept, attempted_ok)
+        kept: quality >= min_quality 통과한 항목 (vault에 기록됨)
+        attempted_ok: processor가 정상 응답한 모든 항목 (품질 미달 포함).
+                      mark_seen 대상 — 다시 처리할 가치가 없는 것들.
+                      processor가 아예 실패한 항목은 여기서 빠져, 다음 실행 때 재시도된다.
+    """
+    kept: list[dict] = []
+    attempted_ok: list[dict] = []
     for i, it in enumerate(items, 1):
         print(f"  [{i}/{len(items)}] processing: {it['title'][:60]}")
         result = process_item(it)
-        if result and result["quality"] >= min_quality:
-            processed.append(result)
-    # 보기 좋게 quality 내림차순 정렬
-    processed.sort(key=lambda x: x["quality"], reverse=True)
-    return processed
+        if result is None:
+            continue  # processor 실패 — seen에 넣지 않아 다음 실행 때 재시도
+        attempted_ok.append(it)
+        if result["quality"] >= min_quality:
+            kept.append(result)
+    kept.sort(key=lambda x: x["quality"], reverse=True)
+    return kept, attempted_ok
 
 
 if __name__ == "__main__":

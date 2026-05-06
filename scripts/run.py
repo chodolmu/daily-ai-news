@@ -31,8 +31,8 @@ if sys.platform == "win32":
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from scraper import scrape_for_date  # noqa: E402
-from processor import process_items  # noqa: E402
+from scraper import scrape_for_date, mark_seen  # noqa: E402
+from processor import process_items, process_item  # noqa: E402
 from vault_writer import write_daily  # noqa: E402
 from filter_weekly import run_weekly_filter  # noqa: E402
 from curate_monthly import run_monthly_curation  # noqa: E402
@@ -91,8 +91,10 @@ def process_date(target: datetime, include_yesterday: bool = False) -> int:
     if not items:
         write_daily(target, [])
         return 0
-    processed = process_items(items, min_quality=4)
+    processed, attempted_ok = process_items(items, min_quality=4)
     write_daily(target, processed)
+    # vault 기록까지 성공한 시점에 seen 등록 (품질 미달 포함, processor 실패만 제외)
+    mark_seen(attempted_ok, target)
     return len(processed)
 
 
