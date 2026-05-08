@@ -1,0 +1,127 @@
+{
+  "processed_dates": [
+    "2026-05-02",
+    "2026-05-03",
+    "2026-05-04",
+    "2026-05-05",
+    "2026-05-06",
+    "2026-05-07",
+    "2026-05-08",
+    "2026-05-09"
+  ],
+  "last_run": "2026-05-09T00:46:17",
+  "applied": [
+    {
+      "date": "2026-05-07",
+      "title": "AI 코딩 에이전트를 위한 프로덕션급 엔지니어링 스킬 모음",
+      "decision": "memory",
+      "name": "ref_agent_skills_osmani",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "ts": "2026-05-08T00:05:53"
+    },
+    {
+      "date": "2026-05-07",
+      "title": "ByteDance DeerFlow: 오픈소스 장기 작업 SuperAgent 프레임워크",
+      "decision": "memory",
+      "name": "ref_deerflow_superagent",
+      "url": "https://github.com/bytedance/deer-flow",
+      "ts": "2026-05-08T00:06:19"
+    },
+    {
+      "date": "2026-05-07",
+      "title": "AI가 당신의 데이터베이스를 삭제한 게 아니라, 당신이 삭제한 것이다",
+      "decision": "memory",
+      "name": "ref_ai_agent_guardrails",
+      "url": "https://news.hada.io/topic?id=29213",
+      "ts": "2026-05-08T00:06:47"
+    },
+    {
+      "date": "2026-05-06",
+      "title": "에이전틱 코딩의 교훈: 코드가 저렴해진 시대에 우리는 무엇을 해야 하는가",
+      "decision": "memory",
+      "name": "ref_agentic_coding_lessons",
+      "url": "https://www.dbreunig.com/2026/05/04/10-lessons-for-agentic-coding.html",
+      "ts": "2026-05-08T00:07:21"
+    },
+    {
+      "date": "2026-05-06",
+      "title": "Ruflo: Claude 기반 멀티 에이전트 오케스트레이션 플랫폼",
+      "decision": "memory",
+      "name": "ref_ruflo_multi_agent",
+      "url": "https://github.com/ruvnet/ruflo",
+      "ts": "2026-05-08T00:07:37"
+    },
+    {
+      "date": "2026-05-05",
+      "title": "에이전틱 코딩은 함정이다",
+      "decision": "memory",
+      "name": "ref_agentic_coding_trap",
+      "url": "https://larsfaye.com/articles/agentic-coding-is-a-trap",
+      "ts": "2026-05-08T00:08:09"
+    },
+    {
+      "date": "2026-05-05",
+      "title": "DeepClaude – DeepSeek V4 Pro를 활용한 Claude Code 에이전트 루프",
+      "decision": "memory",
+      "name": "ref_deepclaude_hybrid_agent",
+      "url": "https://github.com/aattaran/deepclaude",
+      "ts": "2026-05-08T00:08:26"
+    },
+    {
+      "date": "2026-05-05",
+      "title": "장기 실행 에이전트 - 에이전트가 며칠 동안 실행되면 무엇이 달라지는가",
+      "decision": "memory",
+      "name": "ref_long_running_agent_patterns",
+      "url": "https://news.hada.io/topic?id=29153",
+      "ts": "2026-05-08T00:08:42"
+    },
+    {
+      "date": "2026-05-04",
+      "title": "스펙스맥싱 – AI 환각을 극복하고 YAML로 스펙을 작성하는 이유",
+      "decision": "memory",
+      "name": "ref_specsmaxxing_yaml_spec",
+      "url": "https://acai.sh/blog/specsmaxxing",
+      "ts": "2026-05-08T00:09:07"
+    },
+    {
+      "date": "2026-05-04",
+      "title": "에이전트 하네스는 샌드박스 밖에 있어야 한다",
+      "decision": "memory",
+      "name": "ref_agent_harness_outside_sandbox",
+      "url": "https://www.mendral.com/blog/agent-harness-belongs-outside-sandbox",
+      "ts": "2026-05-08T00:09:24"
+    },
+    {
+      "date": "2026-05-03",
+      "title": "Open Design: 코딩 에이전트를 디자인 엔진으로 활용하기",
+      "decision": "memory",
+      "name": "ref_open_design_agent_ui",
+      "url": "https://github.com/nexu-io/open-design",
+      "ts": "2026-05-08T00:09:49"
+    },
+    {
+      "date": "2026-05-03",
+      "title": "우버, 2026년 AI 예산을 클로드 코드에 4개월 만에 소진",
+      "decision": "memory",
+      "name": "ref_ai_coding_tool_cost_uber",
+      "url": "https://www.briefs.co/news/uber-torches-entire-2026-ai-budget-on-claude-code-in-four-months/",
+      "ts": "2026-05-08T00:10:05"
+    },
+    {
+      "date": "2026-05-08",
+      "title": "실제 엔지니어를 위한 스킬 - Matt Pocock",
+      "decision": "memory",
+      "name": "auto_reference_ref_matt_pocock_agent_skills",
+      "url": "https://news.hada.io/topic?id=29259",
+      "ts": "2026-05-09T00:40:26"
+    },
+    {
+      "date": "2026-05-09",
+      "title": "로컬 딥 리서치 - 로컬 및 클라우드 LLM 통합 검색 프레임워크",
+      "decision": "memory",
+      "name": "auto_reference_ref_local_deep_research",
+      "url": "https://github.com/LearningCircuit/local-deep-research",
+      "ts": "2026-05-09T00:46:17"
+    }
+  ]
+}

@@ -11,6 +11,9 @@
 3. **품질 필터** — LLM이 매긴 quality 4 이상만 유지 (광고/이미 알려진 내용 1차 차단)
 4. **위키화** — 글에서 등장하는 개념·인물·조직·논문을 노드로 추출, `[[위키링크]]`로 연결
 5. **저장** — Obsidian vault에 마크다운으로 기록 (그래프뷰로 망 형태 시각화)
+6. **자동 변환** — vault 항목 중 행동 가능한 것만 LLM이 판정해서 자동으로 `~/.claude/skills/` 또는
+   `~/.claude/projects/C--Users-chodo/memory/`에 적용. 사용자 컨텍스트(ZooMerge, Mystic Tarot, Claude Code,
+   한국어)와 직접 관련 + 중복 없음 + 6개월 유효성 모두 통과한 항목만. 의심스러우면 자동 스킵.
 
 ### 주간 필터 (매주 월요일 자동)
 지난 7일치 항목 LLM 재검토 → 광고/이미알려진 내용을 frontmatter `hidden_indices`에 표시.
@@ -73,6 +76,9 @@ python scripts\run.py --weekly
 
 # 월간 큐레이션만
 python scripts\run.py --monthly
+
+# vault → ~/.claude/ 변환만 (최근 7일)
+python scripts\run.py --extract
 ```
 
 또는 `run.bat` 더블클릭.

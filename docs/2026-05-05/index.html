@@ -15,7 +15,7 @@
 <div class="topbar">
   <div class="topbar-inner">
     <a class="brand-mini" href="../">Daily AI News</a>
-    <span class="last-updated">마지막 업데이트 · 2026-05-07 08:05</span>
+    <span class="last-updated">마지막 업데이트 · 2026-05-09 00:46</span>
   </div>
 </div>
 
@@ -25,7 +25,7 @@
 
   <div class="header-bottom">
     <nav class="nav-c" aria-label="날짜 이동" id="navC"
-         data-current="2026-05-05" data-latest="2026-05-06">
+         data-current="2026-05-05" data-latest="2026-05-09">
       <a class="today-link" href="../">오늘</a>
         <a class="arrow" href="../2026-05-04/" aria-label="이전 날짜">‹</a>
       <button class="date-pill" type="button" id="datePillC">
@@ -44,229 +44,195 @@
 
 <main>
     <div class="hero-row">
-      <article class="card hero src-hn">
+      <article class="card hero src-gn">
         <div class="card-header">
-          <span class="source-name">HackerNews</span>
+          <span class="source-name">GeekNews</span>
         </div>
-        <h3>에이전틱 코딩의 교훈: 코드가 저렴해진 시대에 우리는 무엇을 해야 하는가</h3>
-        <p class="summary">AI 에이전트가 코드를 빠르고 저렴하게 생성하는 시대에 개발자가 따라야 할 10가지 원칙을 제시한다. 구현을 통해 학습하고, 자주 재구축하며, 행위 기반 테스트와 의도 문서화에 투자할 것을 강조한다. 코드 생성 자체는 저렴하지만 유지보수·보안·지원 비용은 여전히 크다는 '무료 강아지' 비유로 숨겨진 비용을 경고한다.</p>
-        <div class="application">Claude Code 등 AI 코딩 에이전트 도입 시 E2E 테스트·의도 문서화·스펙 최신화 워크플로를 먼저 구축하고, 생성된 코드의 유지보수 비용을 사전에 산정하는 체크리스트로 활용할 수 있다.</div>
+        <h3>OpenAI가 대규모 저지연 음성 AI를 제공하는 방법</h3>
+        <p class="summary">OpenAI는 9억 명 이상의 주간 활성 사용자에게 자연스러운 음성 대화를 제공하기 위해 WebRTC 기반 아키텍처를 재설계함.
+표준 WebRTC의 ICE, DTLS/SRTP, 코덱 협상 등은 유지하면서 내부 패킷 라우팅을 relay + transceiver 구조로 변경함.
+RTCP 품질 제어를 활용해 대규모 환경에서도 저지연 실시간 음성 통신을 안정적으로 처리하는 방식을 공개함.</p>
+        <div class="application">실시간 음성 AI 서비스를 구축할 때 WebRTC 표준을 유지하면서 내부 relay/transceiver 패턴으로 확장성을 확보하는 아키텍처 참고 자료로 활용 가능. 대규모 동시 접속 음성 앱의 인프라 설계 시 지연 최소화 전략으로 적용할 수 있음.</div>
         <div class="card-footer">
-          <a class="read-more" href="https://www.dbreunig.com/2026/05/04/10-lessons-for-agentic-coding.html" target="_blank" rel="noopener">원문 보기</a>
+          <a class="read-more" href="https://news.hada.io/topic?id=29168" target="_blank" rel="noopener">원문 보기</a>
         </div>
       </article>
-      <article class="card hero src-hn">
+      <article class="card hero src-gn">
         <div class="card-header">
-          <span class="source-name">HackerNews</span>
+          <span class="source-name">GeekNews</span>
         </div>
-        <h3>에이전트 스킬: AI 코딩 에이전트에 시니어 엔지니어링 습관을 심는 프레임워크</h3>
-        <p class="summary">AI 코딩 에이전트는 기본적으로 최단 경로로 '완료'를 향해 달리며 스펙 작성, 테스트, 코드 리뷰 같은 시니어 엔지니어 작업을 건너뛴다. Addy Osmani는 6단계 라이프사이클(정의→계획→구현→검증→리뷰→배포)에 맞춘 7개 슬래시 커맨드 스킬 체계를 제안한다. 반합리화 테이블, 점진적 공개, 스코프 규율 등 5가지 설계 원칙으로 에이전트가 숙련 엔지니어의 프로세스를 따르도록 강제한다.</p>
-        <div class="application">Claude Code나 Cursor 등 AI 코딩 에이전트에 /spec, /plan, /test 같은 커스텀 스킬을 등록해 코드 품질 검증 단계를 자동화하는 워크플로를 구축할 수 있다.</div>
+        <h3>Agentic Coding은 함정이다</h3>
+        <p class="summary">Agentic coding은 사람이 요구사항과 계획을 세우고 AI 에이전트가 구현하는 방식이지만, 생성·커밋되는 코드와 개발자 사이의 거리를 점점 벌리는 구조적 문제가 있음.
+숙련된 개발자가 아키텍처 수준에서 비판적으로 검토해야 성공할 수 있으나, AI에 과도하게 의존하면 그 검토에 필요한 핵심 역량 자체가 약화됨.
+결국 코드 품질과 유지보수성이 저하되는 악순환에 빠질 위험이 있으며, AI 코딩 도구의 한계를 인식한 균형 잡힌 활용이 필요함.</p>
+        <div class="application">팀 내 AI 코딩 에이전트 도입 시, 생성된 코드에 대한 아키텍처 리뷰 프로세스를 필수로 두고 개발자가 직접 코드를 읽고 수정하는 비율을 일정 수준 이상 유지하는 가이드라인을 수립할 때 참고할 수 있음.</div>
         <div class="card-footer">
-          <a class="read-more" href="https://addyosmani.com/blog/agent-skills/" target="_blank" rel="noopener">원문 보기</a>
+          <a class="read-more" href="https://news.hada.io/topic?id=29155" target="_blank" rel="noopener">원문 보기</a>
         </div>
       </article>
     </div>
 
     <div class="grid">
-      <article class="card src-hn">
+      <article class="card src-gn">
         <div class="card-header">
-          <span class="source-name">HackerNews</span>
+          <span class="source-name">GeekNews</span>
         </div>
-        <h3>구글 크롬, 사용자 동의 없이 4GB 규모의 AI 모델을 기기에 몰래 설치</h3>
-        <p class="summary">구글 크롬이 사용자 동의나 알림 없이 Gemini Nano라는 약 4GB 크기의 온디바이스 AI 모델을 자동으로 다운로드·설치하고 있는 것으로 밝혀졌다.
-이 모델은 크롬의 내장 AI 기능(번역, 요약 등)에 활용되며, 저장 공간이 제한된 기기에서는 상당한 부담이 될 수 있다.
-프라이버시 및 사용자 자율권 측면에서 사전 동의 절차 없이 대용량 파일을 배포하는 방식에 대한 비판이 제기되고 있다.</p>
-        <div class="application">기업 IT 관리자는 크롬 정책(chrome://flags 또는 그룹 정책)에서 Gemini Nano 자동 다운로드를 비활성화하여 디스크 공간과 네트워크 대역폭을 관리할 수 있다.</div>
+        <h3>장기 실행 에이전트 - 에이전트가 며칠 동안 실행되면 무엇이 달라지는가</h3>
+        <p class="summary">AI 에이전트가 단일 채팅이 아닌 수일~수주간 자율 실행되는 새로운 패러다임이 등장하고 있음.
+기존 에이전트는 컨텍스트 윈도우 소진, 자기 평가 과신, 이전 수정 사항 재도입 등의 문제를 가짐.
+장기 실행 에이전트는 여러 컨텍스트 윈도우와 샌드박스를 넘나들며 실패 복구와 중단 지점 재개가 가능해야 함.
+이를 위해 체크포인팅, 메모리 관리, 자기 검증 메커니즘 등 새로운 설계 패턴이 필요함.</p>
+        <div class="application">CI/CD 파이프라인 자동화나 대규모 코드 마이그레이션처럼 며칠 걸리는 작업에 에이전트를 투입할 때, 체크포인트 기반 재개와 컨텍스트 압축 전략을 설계에 반영할 수 있음.</div>
         <div class="card-footer">
-          <a class="read-more" href="https://www.thatprivacyguy.com/blog/chrome-silent-nano-install/" target="_blank" rel="noopener">원문 보기</a>
-        </div>
-      </article>
-      <article class="card src-gh">
-        <div class="card-header">
-          <span class="source-name">GitHub Trending</span>
-        </div>
-        <h3>Local Deep Research: 로컬 환경에서 동작하는 딥 리서치 도구</h3>
-        <p class="summary">SimpleQA 벤치마크에서 약 95% 정확도를 달성하는 로컬 딥 리서치 도구로, Qwen3.6-27B 모델을 RTX 3090에서 구동 가능하다.
-Ollama, llama.cpp 등 로컬 LLM과 Google 등 클라우드 LLM을 모두 지원하며, arXiv·PubMed·개인 문서 등 10개 이상의 검색 엔진을 연동한다.
-모든 처리가 로컬에서 암호화된 상태로 이루어져 데이터 프라이버시를 보장한다.</p>
-        <div class="application">사내 기밀 문서와 논문 DB를 연결해 외부 API 없이 로컬 GPU만으로 심층 리서치 자동화 파이프라인을 구축할 수 있다.</div>
-        <div class="card-footer">
-          <a class="read-more" href="https://github.com/LearningCircuit/local-deep-research" target="_blank" rel="noopener">원문 보기</a>
-        </div>
-      </article>
-      <article class="card src-gh">
-        <div class="card-header">
-          <span class="source-name">GitHub Trending</span>
-        </div>
-        <h3>ByteDance DeerFlow: 오픈소스 장기 작업 수행 SuperAgent 프레임워크</h3>
-        <p class="summary">ByteDance가 공개한 오픈소스 SuperAgent 프레임워크로, 리서치·코딩·콘텐츠 생성 등 장시간 소요되는 복합 작업을 자동 처리한다.
-샌드박스, 메모리, 도구, 스킬, 서브에이전트, 메시지 게이트웨이 등을 조합하여 수 분에서 수 시간 단위의 다양한 난이도 작업을 수행한다.</p>
-        <div class="application">복잡한 리서치-코딩-보고서 작성 파이프라인을 자동화할 때 DeerFlow를 베이스로 커스텀 에이전트를 구축하여 반복 업무를 줄일 수 있다.</div>
-        <div class="card-footer">
-          <a class="read-more" href="https://github.com/bytedance/deer-flow" target="_blank" rel="noopener">원문 보기</a>
+          <a class="read-more" href="https://news.hada.io/topic?id=29153" target="_blank" rel="noopener">원문 보기</a>
         </div>
       </article>
       <article class="card src-gn">
         <div class="card-header">
           <span class="source-name">GeekNews</span>
         </div>
-        <h3>AI로 인한 고용 종말이 (아마도) 일어나지 않을 이유</h3>
-        <p class="summary">Anthropic, Microsoft AI CEO들이 5년 내 신입 일자리 소멸을 경고하지만, 2026년 현재 미국 실업률은 4.3%로 안정적이다.
-에즈라 클라인의 NYT 사설을 중심으로, 통계 지표가 보여주는 현실과 AI 위기론 사이의 괴리를 분석한다.
-개발자 수요는 여전히 지속되고 있으며, 데이터 기반으로 보면 대량 실업 시나리오는 아직 근거가 부족하다.</p>
-        <div class="application">AI 도입에 따른 인력 구조조정 계획 수립 시, 실제 고용 지표와 비교하여 과잉 대응을 방지하는 근거 자료로 활용할 수 있다.</div>
+        <h3>Kimi K2.6가 코딩 챌린지에서 Claude, GPT-5.5, Gemini를 제침</h3>
+        <p class="summary">Moonshot AI의 오픈 가중치 모델 Kimi K2.6이 AI Coding Contest Day 12의 Word Gem Puzzle에서 22 매치 포인트, 7승 1무 0패로 우승했다.
+Xiaomi의 MiMo V2 등 다른 모델들도 경쟁에 참여했으며, Claude·GPT-5.5·Gemini 등 주요 상용 모델을 모두 앞섰다.
+오픈 가중치 모델이 폐쇄형 상용 모델을 코딩 벤치마크에서 이긴 사례로, 오픈소스 진영의 경쟁력 강화를 보여준다.</p>
+        <div class="application">코딩 에이전트나 자동화 파이프라인 구축 시 Kimi K2.6 같은 오픈 가중치 모델을 자체 서버에 배포해 API 비용 없이 코드 생성 품질을 확보할 수 있는지 평가해볼 수 있다.</div>
         <div class="card-footer">
-          <a class="read-more" href="https://news.hada.io/topic?id=29185" target="_blank" rel="noopener">원문 보기</a>
+          <a class="read-more" href="https://news.hada.io/topic?id=29138" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>에이전틱 코딩은 함정이다</h3>
+        <p class="summary">AI 코딩 에이전트에 과도하게 의존하면 디버깅·문제 해결 능력이 수개월 내 급격히 저하된다는 연구 결과를 소개한다.
+에이전트를 효과적으로 감독하려면 코딩 역량이 필요하지만, 에이전트 의존이 바로 그 역량을 퇴화시키는 역설이 존재한다.
+클라우드 장애 시 팀 전체가 마비되는 벤더 종속, 예측 불가능한 토큰 비용, 주니어 개발자의 성장 저해 등 구조적 문제도 지적한다.
+저자는 AI를 보조 도구로 격하하고, 구현의 20~100%는 직접 코딩하며 스스로 할 수 없는 작업은 자동화하지 말 것을 권고한다.</p>
+        <div class="application">팀 내 AI 코딩 에이전트 도입 시 '직접 코딩 비율 최소 기준'을 정하고, 주니어 개발자에게는 에이전트 없이 디버깅하는 시간을 주간 단위로 확보하는 정책을 수립할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://larsfaye.com/articles/agentic-coding-is-a-trap" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>LLM은 더 높은 수준의 추상화가 아니다</h3>
+        <p class="summary">이전의 추상화 계층(어셈블리→C→파이썬)은 결정론적 함수로 동일 입력에 동일 출력을 보장했지만, LLM은 확률적 출력을 생성하므로 근본적으로 다른 범주에 속한다.
+LLM의 실제 출력은 f(x)→P(y|z₁|z₂|…zₙ) 형태로, 원하는 결과 외에 보안 취약점이나 자격 증명 노출 같은 예기치 않은 부산물이 포함될 수 있다.
+개발자가 원하는 기능만 확인하고 위험한 부작용을 간과하는 '테스트 착각' 문제가 발생할 수 있다.
+LLM을 단순히 다음 단계 추상화로 취급하지 말고, 비판적 사고를 유지하며 출력물을 검증해야 한다고 주장한다.</p>
+        <div class="application">LLM 생성 코드를 프로덕션에 반영할 때 기능 동작뿐 아니라 보안 취약점·불필요한 의존성·자격 증명 노출 여부까지 체계적으로 리뷰하는 체크리스트를 도입할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://www.lelanthran.com/chap15/content.html" target="_blank" rel="noopener">원문 보기</a>
         </div>
       </article>
       <article class="card src-gn">
         <div class="card-header">
           <span class="source-name">GeekNews</span>
         </div>
-        <h3>Understand-Anything - 코드/지식베이스를 인터랙티브 지식 그래프로 변환하는 플러그인</h3>
-        <p class="summary">멀티 에이전트 파이프라인이 프로젝트의 파일·함수·클래스·의존성을 자동 분석해 인터랙티브 지식 그래프로 시각화하는 AI 플러그인이다. /understand 명령으로 분석을 시작하고 /understand-dashboard로 웹 대시보드를 실행하여 코드 구조를 탐색할 수 있다.</p>
-        <div class="application">대규모 레거시 코드베이스에 새로 투입된 개발자가 모듈 간 의존성과 호출 관계를 지식 그래프로 파악하여 온보딩 시간을 단축할 수 있다.</div>
+        <h3>확률적 창업자의 부상</h3>
+        <p class="summary">AI 네이티브 시대에 소프트웨어가 확률적 시스템으로 전환되면서 창업자에게 요구되는 자질이 근본적으로 변화하고 있음.
+기존에는 2년짜리 로드맵을 충실히 실행하는 결정론적 창업자가 투자 대상이었으나, 이제는 불확실성 속에서 빠르게 실험하는 유형이 부상.
+AI 시스템의 비결정론적 특성상 계획 중심이 아닌 실험·적응 중심의 리더십이 핵심 역량으로 대두됨.</p>
+        <div class="application">AI 스타트업 창업 또는 투자 심사 시, 로드맵 완성도보다 빠른 실험 주기와 불확실성 대응 능력을 핵심 평가 기준으로 설정할 수 있음.</div>
         <div class="card-footer">
-          <a class="read-more" href="https://news.hada.io/topic?id=29178" target="_blank" rel="noopener">원문 보기</a>
+          <a class="read-more" href="https://news.hada.io/topic?id=29176" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>에이전트 경제의 블루오션 기회</h3>
+        <p class="summary">2026년 1분기부터 AI가 채팅 인터페이스에서 자율 실행 에이전트 중심으로 전환되며 기업 소프트웨어 지형이 재편되고 있음.
+MCP와 A2A 프로토콜이 기존 SaaS의 UI 중심 경쟁 우위를 무력화하고, 에이전트가 데이터 레이어에 직접 접근하는 구조로 변화 중.
+이 구조적 불연속은 기존 플레이어보다 신규 진입자에게 유리한 블루오션 기회를 제공하며, 투자 지형도 함께 변동하고 있음.</p>
+        <div class="application">기존 SaaS 제품을 운영 중이라면 MCP/A2A 프로토콜 기반 에이전트 연동 API를 우선 개발하여 UI 의존도를 줄이고, 에이전트 친화적 데이터 접근 계층을 설계할 것.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29171" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>나는 Bun이 걱정된다</h3>
+        <p class="summary">Bun은 빠른 JavaScript/TypeScript 런타임으로 인기를 얻었으나, 2025년 12월 Anthropic에 인수된 이후 제품 방향성과 운영 방식에 대한 우려가 커지고 있음.
+Antropic의 기업 전략에 따라 Bun의 독립적 오픈소스 생태계 유지가 어려워질 수 있다는 점이 핵심 걱정.
+대기업 인수 후 오픈소스 프로젝트가 방치되거나 방향이 바뀐 선례들이 있어 커뮤니티가 경계하는 상황.</p>
+        <div class="application">Bun 기반 프로젝트를 운영 중이라면 Anthropic 인수 이후 라이선스·정책 변경 가능성을 모니터링하고, 대체 런타임(Node.js, Deno)으로의 마이그레이션 경로를 미리 확보해 둘 것.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29169" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>Codex CLI에 /goal 기능 추가</h3>
+        <p class="summary">Codex CLI 0.128.0 버전에서 목표 기반 자동 반복 실행 기능인 /goal이 추가됨.
+Ralph loop 개념을 적용하여, 설정한 목표가 완료될 때까지 에이전트가 스스로 달성 여부를 평가함.
+목표 미달성 시 자율적으로 루프를 반복하며 작업을 계속 수행하는 구조.</p>
+        <div class="application">반복적인 코드 리팩토링이나 테스트 통과 같은 명확한 완료 조건이 있는 작업에 /goal을 설정해 자동으로 반복 실행시킬 수 있음.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29158" target="_blank" rel="noopener">원문 보기</a>
         </div>
       </article>
       <article class="card src-hn">
         <div class="card-header">
           <span class="source-name">HackerNews</span>
         </div>
-        <h3>AI가 당신의 데이터베이스를 삭제한 게 아니라, 당신이 삭제한 것이다</h3>
-        <p class="summary">AI 코딩 도구가 프로덕션 데이터베이스를 삭제하는 등의 사고가 발생할 때, 근본 원인은 AI가 아니라 이를 검증 없이 실행한 개발자와 부실한 안전장치에 있다.
-AI가 생성한 코드를 무비판적으로 수용하는 '자동화 편향'의 위험성을 지적하며, 코드 리뷰·권한 분리·샌드박스 등 기본적인 엔지니어링 원칙의 중요성을 강조한다.
-결국 AI는 도구일 뿐이며, 프로덕션 환경에 대한 최종 책임은 여전히 인간 개발자에게 있다는 점을 상기시킨다.</p>
-        <div class="application">AI 코딩 에이전트 도입 시 프로덕션 DB 접근 권한을 최소화하고, AI 생성 코드에 대한 필수 리뷰 단계와 실행 전 드라이런 정책을 팀 워크플로에 추가할 수 있다.</div>
+        <h3>헤어드라이어로 폴리마켓 날씨 베팅을 조작한 사람이 있다</h3>
+        <p class="summary">누군가 폴리마켓(Polymarket)의 날씨 예측 베팅 시장을 조작한 혐의를 받고 있다.
+해당 인물은 기상 관측소 근처에서 헤어드라이어를 사용해 온도 센서 측정값을 인위적으로 올린 것으로 알려졌다.
+이를 통해 특정 온도 기준을 초과하는 쪽에 베팅하여 부당 이익을 취하려 한 것으로 보인다.
+예측 시장의 오라클 데이터 소스 조작 취약성이 드러난 사건이다.</p>
+        <div class="application">예측 시장이나 블록체인 오라클 설계 시 물리적 센서 데이터의 무결성 검증 및 다중 소스 교차 확인 메커니즘을 반드시 구현해야 한다.</div>
         <div class="card-footer">
-          <a class="read-more" href="https://idiallo.com/blog/ai-didnt-delete-your-database-you-did" target="_blank" rel="noopener">원문 보기</a>
+          <a class="read-more" href="https://www.engadget.com/big-tech/someone-allegedly-used-a-hairdryer-to-rig-polymarket-weather-bets-155312411.html" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>Amazon에서 약 1,000번 면접을 진행하며 얻은 교훈</h3>
+        <p class="summary">아마존에서 17년간 근무하며 약 1,000번의 면접을 진행한 경험을 공유.
+그 중 약 600회는 Bar Raiser 면접으로, 채용 기준을 높이는 역할을 수행함.
+기술적으로 뛰어난 후보자가 탈락하는 주된 이유는 기술 부족이 아니라 자기 표현 방식에 있음.
+행동 면접(Behavioral Interview)이 채용 결정에 기술 면접보다 더 큰 영향을 미침.</p>
+        <div class="application">기술 면접 준비 시 STAR 기법 등 행동 면접 대비에 동등한 시간을 투자하고, 자신의 기여와 의사결정 과정을 명확히 설명하는 연습을 병행할 것.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29141" target="_blank" rel="noopener">원문 보기</a>
         </div>
       </article>
       <article class="card src-hn">
         <div class="card-header">
           <span class="source-name">HackerNews</span>
         </div>
-        <h3>모두가 AI를 갖고 있지만 회사는 여전히 아무것도 배우지 못할 때</h3>
-        <p class="summary">AI 도구를 도입해도 조직의 학습 문화와 지식 공유 체계가 없으면 실질적 변화가 일어나지 않는다는 점을 지적한다.
-개인 단위의 AI 활용은 늘어나지만, 조직 차원의 학습·피드백 루프가 부재하면 같은 실수를 반복하게 된다.
-AI 시대에 진짜 경쟁력은 도구 자체가 아니라 조직적 학습 역량과 지식 순환 구조에 있다고 주장한다.</p>
-        <div class="application">사내 AI 도입 시 개인 사용에 그치지 않도록, 팀 단위 프롬프트 라이브러리·사례 공유 채널·회고 프로세스를 함께 설계하는 데 참고할 수 있다.</div>
+        <h3>DeepClaude – DeepSeek V4 Pro를 활용한 Claude Code 에이전트 루프</h3>
+        <p class="summary">DeepClaude는 Claude Code의 에이전트 루프에 DeepSeek V4 Pro 모델을 통합한 오픈소스 프로젝트다.
+DeepSeek의 추론 능력과 Claude의 코드 생성 능력을 결합하여 복합적인 코딩 작업을 처리한다.
+두 모델의 강점을 조합해 단일 모델 대비 더 정교한 코드 에이전트 워크플로우를 구현하는 것이 목표다.</p>
+        <div class="application">Claude Code 사용 시 복잡한 추론이 필요한 코딩 작업에서 DeepSeek V4 Pro를 추론 단계에 활용하고, 코드 생성은 Claude에 맡기는 하이브리드 파이프라인을 구성할 수 있다.</div>
         <div class="card-footer">
-          <a class="read-more" href="https://www.robert-glaser.de/when-everyone-has-ai-and-the-company-still-learns-nothing/" target="_blank" rel="noopener">원문 보기</a>
+          <a class="read-more" href="https://github.com/aattaran/deepclaude" target="_blank" rel="noopener">원문 보기</a>
         </div>
       </article>
       <article class="card src-hn">
         <div class="card-header">
           <span class="source-name">HackerNews</span>
         </div>
-        <h3>나만의 LLM을 처음부터 직접 훈련하기</h3>
-        <p class="summary">LLM을 처음부터 직접 구축하는 과정을 단계별로 안내하는 오픈소스 프로젝트이다.
-데이터 수집, 토크나이저 구성, 모델 아키텍처 설계, 사전훈련 전 과정을 코드와 함께 다룬다.
-교육 목적으로 LLM의 내부 작동 원리를 실습 수준에서 이해할 수 있도록 구성되어 있다.</p>
-        <div class="application">LLM 내부 구조를 직접 구현해보며 트랜스포머 아키텍처와 훈련 파이프라인을 실무 수준으로 이해하는 학습 교재로 활용할 수 있다.</div>
+        <h3>BYOMesh – 기존 대비 100배 대역폭을 제공하는 새로운 LoRa 메시 라디오</h3>
+        <p class="summary">BYOMesh는 기존 LoRa 메시 네트워크 대비 100배 높은 대역폭을 제공하는 새로운 메시 라디오 프로젝트다.
+LoRa 기반 메시 네트워크는 저전력 장거리 통신에 강점이 있으나 대역폭이 낮다는 한계가 있었다.
+BYOMesh는 이 병목을 해결하여 오프그리드 환경에서도 보다 실용적인 데이터 전송을 가능하게 한다.
+인터넷 인프라가 없는 지역이나 재난 상황에서의 통신 대안으로 주목받고 있다.</p>
+        <div class="application">재난 대응, 산악 지역, 축제 현장 등 인터넷 인프라가 없는 환경에서 자체 메시 네트워크를 구축해 텍스트·센서 데이터 전송에 활용할 수 있다. IoT 센서 네트워크 구성 시 기존 LoRa 대비 더 많은 데이터를 처리하는 백본으로 검토 가능하다.</div>
         <div class="card-footer">
-          <a class="read-more" href="https://github.com/angelos-p/llm-from-scratch" target="_blank" rel="noopener">원문 보기</a>
-        </div>
-      </article>
-      <article class="card src-hn">
-        <div class="card-header">
-          <span class="source-name">HackerNews</span>
-        </div>
-        <h3>OpenAI가 대규모 저지연 음성 AI를 제공하는 방법</h3>
-        <p class="summary">OpenAI가 실시간 음성 AI 서비스를 대규모로 운영하면서 낮은 지연시간을 달성하는 기술적 방법론을 소개하는 글이다.
-원문 접근이 제한되어 상세 내용 확인이 불가하나, 음성 AI의 추론 최적화·인프라 스케일링·스트리밍 아키텍처 등이 핵심 주제로 추정된다.</p>
-        <div class="application">자체 음성 AI 서비스 구축 시 실시간 스트리밍 추론 파이프라인의 지연시간 최적화 설계에 참고할 수 있다.</div>
-        <div class="card-footer">
-          <a class="read-more" href="https://openai.com/index/delivering-low-latency-voice-ai-at-scale/" target="_blank" rel="noopener">원문 보기</a>
-        </div>
-      </article>
-      <article class="card src-gh">
-        <div class="card-header">
-          <span class="source-name">GitHub Trending</span>
-        </div>
-        <h3>AI 코딩 에이전트를 위한 프로덕션급 엔지니어링 스킬 모음</h3>
-        <p class="summary">Addy Osmani가 공개한 AI 코딩 에이전트용 엔지니어링 스킬 컬렉션이다.
-프로덕션 환경에서 AI 에이전트가 실제 코딩 작업을 수행할 때 필요한 실무 역량과 패턴을 정리한 오픈소스 프로젝트로, GitHub 트렌딩에 올랐다.</p>
-        <div class="application">Cursor, Claude Code 등 AI 코딩 에이전트에 커스텀 스킬을 추가할 때 참고 템플릿으로 활용하여 에이전트의 코드 품질을 높일 수 있다.</div>
-        <div class="card-footer">
-          <a class="read-more" href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">원문 보기</a>
-        </div>
-      </article>
-      <article class="card src-hn">
-        <div class="card-header">
-          <span class="source-name">HackerNews</span>
-        </div>
-        <h3>Y Combinator의 OpenAI 지분 (0.6%?)</h3>
-        <p class="summary">Y Combinator가 OpenAI 초기 투자를 통해 약 0.6%의 지분을 보유하고 있는 것으로 추정된다.
-OpenAI의 기업 가치가 급등하면서 YC의 해당 지분 가치도 수십억 달러에 달할 수 있다.
-스타트업 액셀러레이터의 초기 투자가 AI 붐을 통해 어떤 수익을 낼 수 있는지를 보여주는 사례다.</p>
-        <div class="application">AI 스타트업 초기 투자 시 액셀러레이터 지분 구조와 후속 밸류에이션 변화를 분석하는 참고 사례로 활용할 수 있다.</div>
-        <div class="card-footer">
-          <a class="read-more" href="https://daringfireball.net/2026/05/y_combinators_stake_in_openai" target="_blank" rel="noopener">원문 보기</a>
-        </div>
-      </article>
-      <article class="card src-gh">
-        <div class="card-header">
-          <span class="source-name">GitHub Trending</span>
-        </div>
-        <h3>InsForge: 코딩 에이전트를 위한 Postgres 기반 올인원 백엔드</h3>
-        <p class="summary">InsForge는 PostgreSQL 기반의 백엔드 플랫폼으로, 인증·스토리지·컴퓨팅·호스팅·AI 게이트웨이를 통합 제공한다.
-코딩 에이전트가 독립적으로 앱을 빌드·배포할 수 있도록 설계된 오픈소스 인프라 프로젝트이다.</p>
-        <div class="application">AI 코딩 에이전트에 자체 백엔드 인프라를 제공해, 에이전트가 DB·인증·배포까지 자율적으로 처리하는 워크플로를 구축할 때 활용할 수 있다.</div>
-        <div class="card-footer">
-          <a class="read-more" href="https://github.com/InsForge/InsForge" target="_blank" rel="noopener">원문 보기</a>
-        </div>
-      </article>
-      <article class="card src-gh">
-        <div class="card-header">
-          <span class="source-name">GitHub Trending</span>
-        </div>
-        <h3>Dexter: 심층 금융 리서치를 위한 자율 에이전트</h3>
-        <p class="summary">Dexter는 금융 분야에 특화된 자율 에이전트로, 딥 리서치 기능을 통해 재무 데이터를 자동으로 수집·분석한다.
-GitHub 트렌딩에 오른 오픈소스 프로젝트로, 투자 리서치 워크플로우를 에이전트 기반으로 자동화하는 것이 목표다.</p>
-        <div class="application">개별 종목이나 섹터에 대한 재무제표·뉴스·리포트를 자동 수집·요약하는 투자 리서치 파이프라인 구축에 활용할 수 있다.</div>
-        <div class="card-footer">
-          <a class="read-more" href="https://github.com/virattt/dexter" target="_blank" rel="noopener">원문 보기</a>
-        </div>
-      </article>
-      <article class="card src-gh">
-        <div class="card-header">
-          <span class="source-name">GitHub Trending</span>
-        </div>
-        <h3>Anthropic의 금융 서비스 솔루션 레포지토리</h3>
-        <p class="summary">Anthropic이 금융 서비스 분야에 특화된 Claude 활용 코드와 예제를 공개한 GitHub 레포지토리이다.
-금융 업계에서의 AI 적용 패턴, 규제 대응, 리스크 분석 등 도메인 특화 솔루션을 다룬다.
-GitHub Trending에 올라온 것으로 보아 금융권 AI 도입 관심이 높아지고 있음을 시사한다.</p>
-        <div class="application">금융권 AI 도입 시 규제 준수와 리스크 분석 파이프라인 구축의 참고 아키텍처로 활용할 수 있다.</div>
-        <div class="card-footer">
-          <a class="read-more" href="https://github.com/anthropics/financial-services" target="_blank" rel="noopener">원문 보기</a>
-        </div>
-      </article>
-      <article class="card src-gh">
-        <div class="card-header">
-          <span class="source-name">GitHub Trending</span>
-        </div>
-        <h3>Ruflo: Claude 기반 멀티 에이전트 오케스트레이션 플랫폼</h3>
-        <p class="summary">Claude 모델을 활용한 멀티 에이전트 스웜 배포 및 자율 워크플로우 조율 플랫폼이다.
-RAG 통합, 자기학습 스웜 인텔리전스, Claude Code/Codex 네이티브 연동을 지원하며
-엔터프라이즈급 아키텍처를 표방하는 오픈소스 프로젝트로 GitHub 트렌딩에 올랐다.</p>
-        <div class="application">Claude API 기반으로 여러 에이전트가 협업하는 자동화 파이프라인(예: 코드 리뷰+테스트+배포)을 구축할 때 오케스트레이션 레퍼런스로 활용할 수 있다.</div>
-        <div class="card-footer">
-          <a class="read-more" href="https://github.com/ruvnet/ruflo" target="_blank" rel="noopener">원문 보기</a>
-        </div>
-      </article>
-      <article class="card src-gh">
-        <div class="card-header">
-          <span class="source-name">GitHub Trending</span>
-        </div>
-        <h3>무료 LLM API 추론 리소스 목록</h3>
-        <p class="summary">API를 통해 무료로 사용할 수 있는 LLM 추론 리소스를 정리한 GitHub 저장소이다.
-각 서비스의 제공 모델, 요청 제한, 지원 기능 등을 비교할 수 있도록 목록화되어 있다.</p>
-        <div class="application">사이드 프로젝트나 프로토타입 개발 시 비용 없이 LLM API를 연동할 수 있는 무료 엔드포인트를 빠르게 찾아 활용할 수 있다.</div>
-        <div class="card-footer">
-          <a class="read-more" href="https://github.com/cheahjs/free-llm-api-resources" target="_blank" rel="noopener">원문 보기</a>
+          <a class="read-more" href="https://partyon.xyz/@nullagent/116499715071759135" target="_blank" rel="noopener">원문 보기</a>
         </div>
       </article>
     </div>
@@ -284,9 +250,9 @@ RAG 통합, 자기학습 스웜 인텔리전스, Claude Code/Codex 네이티브 
 <script>
   window.__SITE__ = {
     current: "2026-05-05",
-    latest: "2026-05-06",
+    latest: "2026-05-09",
     assetPrefix: "../",
-    calendar: {"days": {"2026-05-01": 6, "2026-05-02": 8, "2026-05-03": 5, "2026-05-04": 14, "2026-05-05": 18, "2026-05-06": 14}, "latest": "2026-05-06", "earliest": "2026-05-01"}
+    calendar: {"days": {"2026-05-02": 6, "2026-05-03": 8, "2026-05-04": 5, "2026-05-05": 14, "2026-05-06": 18, "2026-05-07": 14, "2026-05-08": 12, "2026-05-09": 7}, "latest": "2026-05-09", "earliest": "2026-05-02"}
   };
 </script>
 <script src="../assets/calendar.js"></script>

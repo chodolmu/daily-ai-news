@@ -13,7 +13,7 @@
 from __future__ import annotations
 
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -41,20 +41,22 @@ def _safe_filename(name: str) -> str:
     return cleaned[:100] or "unnamed"
 
 
-def _format_daily_note(target_date: datetime, items: list[dict]) -> str:
-    date_str = target_date.strftime("%Y-%m-%d")
-    weekday = ["월", "화", "수", "목", "금", "토", "일"][target_date.weekday()]
+def _format_daily_note(publish_date: datetime, content_date: datetime, items: list[dict]) -> str:
+    pub_str = publish_date.strftime("%Y-%m-%d")
+    content_str = content_date.strftime("%Y-%m-%d")
+    weekday = ["월", "화", "수", "목", "금", "토", "일"][publish_date.weekday()]
 
     lines: list[str] = []
     lines.append("---")
-    lines.append(f"date: {date_str}")
+    lines.append(f"date: {pub_str}")
+    lines.append(f"content_date: {content_str}")
     lines.append(f"count: {len(items)}")
     sources = sorted({it["source"] for it in items})
     lines.append(f"sources: [{', '.join(sources)}]")
     lines.append("type: daily")
     lines.append("---")
     lines.append("")
-    lines.append(f"# {date_str} ({weekday}) AI 뉴스")
+    lines.append(f"# {pub_str} ({weekday}) AI 뉴스")
     lines.append("")
     if not items:
         lines.append("> 오늘 수집된 항목이 없습니다.")
@@ -135,11 +137,14 @@ def _ensure_node_file(category: str, name: str) -> Path:
     return path
 
 
-def _append_reference(category: str, name: str, target_date: datetime, item: dict) -> None:
-    """노드 파일의 '언급된 뉴스' 섹션에 항목을 추가한다 (중복 제거)."""
+def _append_reference(category: str, name: str, publish_date: datetime, item: dict) -> None:
+    """노드 파일의 '언급된 뉴스' 섹션에 항목을 추가한다 (중복 제거).
+
+    날짜 라벨/백링크는 publish_date 기준 — 일일 노트가 publish_date.md에 저장되므로 [[YYYY-MM-DD]] 링크가 살아있게 됨.
+    """
     path = _ensure_node_file(category, name)
     content = path.read_text(encoding="utf-8")
-    date_str = target_date.strftime("%Y-%m-%d")
+    date_str = publish_date.strftime("%Y-%m-%d")
     title = item.get("title_ko") or item.get("title", "")
     ref_line = f"- {date_str} — [[{date_str}|{title}]] _(출처: {item['source']})_"
     if ref_line in content:
@@ -150,24 +155,28 @@ def _append_reference(category: str, name: str, target_date: datetime, item: dic
     path.write_text(content, encoding="utf-8")
 
 
-def write_daily(target_date: datetime, items: list[dict]) -> Path:
-    """일일 노트 + 위키 노드 모두 저장. 일일 노트 경로 반환."""
+def write_daily(publish_date: datetime, content_date: datetime, items: list[dict]) -> Path:
+    """일일 노트 + 위키 노드 모두 저장. 일일 노트 경로 반환.
+
+    publish_date: 발행 날짜 (=파일명, 폴더명, 헤더 표기)
+    content_date: 기사 수집 대상 날짜 (예: 발행 전날)
+    """
     DAILY.mkdir(parents=True, exist_ok=True)
     for d in CAT_DIRS.values():
         d.mkdir(parents=True, exist_ok=True)
 
-    daily_path = DAILY / f"{target_date.strftime('%Y-%m-%d')}.md"
-    daily_path.write_text(_format_daily_note(target_date, items), encoding="utf-8")
+    daily_path = DAILY / f"{publish_date.strftime('%Y-%m-%d')}.md"
+    daily_path.write_text(_format_daily_note(publish_date, content_date, items), encoding="utf-8")
 
-    # 위키 노드 누적 갱신
+    # 위키 노드 누적 갱신 — 백링크는 publish_date 기준
     for it in items:
         nodes = it.get("nodes", {})
         for cat in CAT_DIRS:
             for name in nodes.get(cat, []):
                 if name and name.strip():
-                    _append_reference(cat, name.strip(), target_date, it)
+                    _append_reference(cat, name.strip(), publish_date, it)
 
-    print(f"[vault] wrote {daily_path.name} + node refs")
+    print(f"[vault] wrote {daily_path.name} (content={content_date.strftime('%Y-%m-%d')}) + node refs")
     return daily_path
 
 
@@ -188,4 +197,6 @@ if __name__ == "__main__":
             "papers": [],
         },
     }]
-    write_daily(datetime.now(), sample_items)
+    today = datetime.now()
+    yesterday = today - timedelta(days=1)
+    write_daily(today, yesterday, sample_items)

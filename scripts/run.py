@@ -1,23 +1,30 @@
 """
 메인 진입점.
 
+날짜 모델:
+  - content_date = 기사가 발생한/수집되는 날짜 (예: 어제)
+  - publish_date = 사이트에 발행되는 날짜 (= content_date + 1일)
+  방송국 9시 뉴스가 어제 일을 오늘 보도하는 것과 동일. 폴더/헤더는 publish_date,
+  본문은 content_date 기사들로 구성.
+
 흐름:
-  1) 실행 시점의 "어제" 하루치만 처리 (어제는 이미 종료된 시점이라 누락·중복 없음)
-  2) data/last_run.json의 last_processed_date 다음날부터 어제까지 빠진 날짜 모두 백필
-  3) 각 날짜별로 scrape → process → vault에 기록
-  4) 월요일이면 주간 필터, 매월 1일이면 월간 큐레이션
-  5) last_run.json 갱신
+  1) "어제" content_date를 처리해 publish_date(=오늘) 노트로 저장
+  2) data/last_run.json의 last_processed_content_date 다음날부터 어제까지 빠진
+     content_date를 모두 백필 (각각 +1일이 publish_date)
+  3) 월요일이면 주간 필터, 매월 1일이면 월간 큐레이션
+  4) last_run.json 갱신
 
 수동 실행:
-  python scripts/run.py             # 누락분 자동 처리 (기본: 어제까지)
-  python scripts/run.py --date 2026-05-04   # 특정 날짜만 (last_run 안 건드림)
-  python scripts/run.py --weekly    # 주간 필터만
+  python scripts/run.py                       # 누락분 자동 처리
+  python scripts/run.py --date 2026-05-04    # 특정 content_date만 (last_run 안 건드림)
+  python scripts/run.py --weekly             # 주간 필터만
 """
 from __future__ import annotations
 
 import argparse
 import io
 import json
+import os
 import subprocess
 import sys
 import traceback
@@ -38,6 +45,7 @@ from vault_writer import write_daily  # noqa: E402
 from filter_weekly import run_weekly_filter  # noqa: E402
 from curate_monthly import run_monthly_curation  # noqa: E402
 from builder import build_site  # noqa: E402
+from skill_extractor import run_daily_extraction  # noqa: E402
 
 DATA_DIR = ROOT / "data"
 LAST_RUN = DATA_DIR / "last_run.json"
@@ -57,9 +65,9 @@ def _save_state(state: dict) -> None:
 
 
 def _dates_to_process(state: dict, today: datetime) -> list[datetime]:
-    """처리할 날짜 = (last_processed_date + 1) ~ 어제. 최대 14일."""
+    """처리할 content_date 목록 = (last_processed_content_date + 1) ~ 어제. 최대 14일."""
     yesterday = today - timedelta(days=1)
-    last = state.get("last_processed_date")
+    last = state.get("last_processed_content_date") or state.get("last_processed_date")
     if not last:
         return [yesterday]
     last_dt = datetime.strptime(last, "%Y-%m-%d")
@@ -74,15 +82,30 @@ def _dates_to_process(state: dict, today: datetime) -> list[datetime]:
     return dates
 
 
-def process_date(target: datetime) -> int:
-    """target 날짜(어제 또는 그 이전 백필일)의 글을 수집·처리해 vault에 기록."""
-    print(f"\n=== {target.strftime('%Y-%m-%d')} 처리 시작 ===")
-    items = scrape_for_date(target)
+def process_date(content_date: datetime) -> int:
+    """content_date의 글을 수집·처리해 publish_date(=content_date+1일) 노트로 vault에 기록.
+    기록 후 ~/.claude/ 환경으로의 변환도 자동 시도."""
+    publish_date = content_date + timedelta(days=1)
+    print(f"\n=== content={content_date.strftime('%Y-%m-%d')} → publish={publish_date.strftime('%Y-%m-%d')} 처리 시작 ===")
+    items = scrape_for_date(content_date)
     if not items:
-        write_daily(target, [])
+        write_daily(publish_date, content_date, [])
         return 0
     processed = process_items(items, min_quality=4)
-    write_daily(target, processed)
+    write_daily(publish_date, content_date, processed)
+
+    # vault 기록 후 → ~/.claude/skills, memory 자동 변환
+    # SKIP_EXTRACT=1 환경변수가 있으면 우회 (Claude CLI 호출이 느릴 때)
+    if os.environ.get("SKIP_EXTRACT"):
+        print("  [extract] SKIP_EXTRACT=1 — 스킵")
+    else:
+        try:
+            counts = run_daily_extraction(publish_date)
+            print(f"  [extract] skill={counts['skill']}, memory={counts['memory']}, skip={counts['skip']}")
+        except Exception as e:
+            print(f"  [extract] 실패 (무시하고 계속): {e}")
+            traceback.print_exc()
+
     return len(processed)
 
 
@@ -119,6 +142,22 @@ def maybe_run_monthly(state: dict, today: datetime) -> None:
         state["last_monthly_curation_date"] = today.strftime("%Y-%m-%d")
     except Exception as e:
         print(f"[monthly] 실패: {e}")
+        traceback.print_exc()
+
+    # 자동 메모리 가지치기 (월간 큐레이션과 함께 실행)
+    try:
+        from skill_pruner import run_pruning
+        run_pruning()
+    except Exception as e:
+        print(f"[prune] 실패: {e}")
+        traceback.print_exc()
+
+    # 메모리 sanity check (30일 주기)
+    try:
+        from memory_sanity_check import run_sanity_check
+        run_sanity_check()
+    except Exception as e:
+        print(f"[sanity] 실패: {e}")
         traceback.print_exc()
 
 
@@ -158,10 +197,11 @@ def build_and_push(today: datetime) -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--date", help="YYYY-MM-DD, 특정 날짜만 처리 (last_run 안 건드림)")
+    ap.add_argument("--date", help="YYYY-MM-DD content_date, 특정 날짜만 처리 (last_run 안 건드림). publish_date는 +1일이 됨.")
     ap.add_argument("--weekly", action="store_true", help="주간 필터만 실행")
     ap.add_argument("--monthly", action="store_true", help="월간 큐레이션만 실행")
     ap.add_argument("--build", action="store_true", help="사이트 빌드 + push만 실행")
+    ap.add_argument("--extract", action="store_true", help="vault → ~/.claude/ 변환만 실행 (최근 7일)")
     args = ap.parse_args()
 
     LOGS_DIR.mkdir(exist_ok=True)
@@ -171,6 +211,10 @@ def main() -> int:
     if args.build:
         build_and_push(today)
         return 0
+
+    if args.extract:
+        from skill_extractor import main as extract_main
+        return extract_main()
 
     if args.weekly:
         run_weekly_filter(today)
@@ -198,12 +242,13 @@ def main() -> int:
         build_and_push(today)
         return 0
 
-    print(f"[run] 처리 대상: {[d.strftime('%Y-%m-%d') for d in dates]}")
+    print(f"[run] 처리 대상 content_dates: {[d.strftime('%Y-%m-%d') for d in dates]}")
     total = 0
     for d in dates:
         try:
             total += process_date(d)
-            state["last_processed_date"] = d.strftime("%Y-%m-%d")
+            state["last_processed_content_date"] = d.strftime("%Y-%m-%d")
+            state.pop("last_processed_date", None)  # 구 키 정리
             _save_state(state)  # 한 날짜 끝날 때마다 저장 — 중간 실패해도 진행분 보존
         except Exception as e:
             print(f"[run] {d.date()} 실패: {e}")

@@ -6,7 +6,15 @@
       "PowerShell(C:\\\\Users\\\\chodo\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe -m pip install anthropic -q)",
       "PowerShell(C:\\\\Users\\\\chodo\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe -c \"import anthropic; print\\('ok'\\)\")",
       "PowerShell(if \\($env:ANTHROPIC_API_KEY\\) { Write-Host \"API KEY 있음 \\(길이: $\\($env:ANTHROPIC_API_KEY.Length\\)\\)\" } else { Write-Host \"API KEY 없음\" })",
-      "PowerShell($env:CLAUDECODE)"
+      "PowerShell($env:CLAUDECODE)",
+      "PowerShell(schtasks *)",
+      "PowerShell(Get-Date; Get-ChildItem C:\\\\AI\\\\DailyAINews\\\\docs -Directory | Where-Object { $_.Name -match '^\\\\d{4}-\\\\d{2}-\\\\d{2}$' } | Sort-Object Name -Descending | Select-Object -First 5 Name, LastWriteTime)",
+      "PowerShell($out = & \"C:\\\\Users\\\\chodo\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe\" \"C:\\\\AI\\\\DailyAINews\\\\scripts\\\\run.py\" 2>&1; $out | Select-Object -Last 80; \"---EXIT: $LASTEXITCODE---\")",
+      "PowerShell($out = & \"C:\\\\Users\\\\chodo\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe\" \"C:\\\\AI\\\\DailyAINews\\\\scripts\\\\run.py\" 2>&1; $out | Out-String; \"---EXIT: $LASTEXITCODE---\")",
+      "PowerShell(Get-CimInstance *)",
+      "PowerShell(Get-Process *)",
+      "PowerShell(Out-File *)",
+      "PowerShell(New-ScheduledTaskTrigger *)"
     ]
   }
 }

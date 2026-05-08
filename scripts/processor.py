@@ -18,6 +18,7 @@ from typing import Any
 
 CLAUDE_CMD = "claude"
 CLAUDE_TIMEOUT = 300
+CLAUDE_MODEL = "claude-haiku-4-5-20251001"
 
 # Windows에서 Claude Code CLI는 git-bash가 필요. 자동 탐색.
 def _ensure_git_bash() -> None:
@@ -84,7 +85,7 @@ def _call_claude(prompt: str) -> str:
     env.pop("CLAUDECODE", None)
     try:
         result = subprocess.run(
-            [CLAUDE_CMD, "-p", prompt],
+            [CLAUDE_CMD, "-p", prompt, "--model", CLAUDE_MODEL],
             capture_output=True,
             text=True,
             encoding="utf-8",
