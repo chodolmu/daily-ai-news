@@ -219,7 +219,19 @@ def _judge_item(item: dict, existing_skills: list[str], existing_memories: list[
 
 def _safe_filename(name: str) -> str:
     name = re.sub(r"[^a-z0-9_-]", "_", name.lower())
-    return re.sub(r"_+", "_", name).strip("_")[:60] or "untitled"
+    name = re.sub(r"_+", "_", name).strip("_")
+    # _apply_memory가 'auto_<type>_'를 다시 prepend하므로 LLM이 이미 붙인 prefix 제거.
+    # 재귀 제거 — 'auto_reference_auto_reference_xxx' 같은 케이스도 잡음.
+    while True:
+        m = re.match(r"^auto_(user|feedback|project|reference)_(.+)$", name)
+        if m:
+            name = m.group(2)
+            continue
+        if name.startswith("auto_"):
+            name = name[len("auto_"):]
+            continue
+        break
+    return name[:60] or "untitled"
 
 
 def _apply_skill(verdict: dict, source_url: str) -> bool:

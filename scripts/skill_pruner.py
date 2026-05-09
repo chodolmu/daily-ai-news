@@ -23,6 +23,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 PRUNE_LOG = DATA_DIR / "prune_log.jsonl"
+ACCESS_LOG = DATA_DIR / "memory_access_log.jsonl"
 
 CLAUDE_HOME = Path.home() / ".claude"
 MEMORY_DIR = CLAUDE_HOME / "projects" / "C--Users-chodo" / "memory"
@@ -55,17 +56,53 @@ def _extract_creation_date(path: Path) -> datetime | None:
         return None
 
 
-def _file_referenced_recently(path: Path, since_days: int) -> bool:
-    """파일 atime(접근 시간)으로 최근 참조 여부 추정.
-    Windows에서 atime은 기본 비활성일 수 있어 mtime 폴백."""
+def _load_access_index() -> dict[str, datetime]:
+    """memory_access_log.jsonl을 한 번 읽어 path → 마지막 access ts 매핑.
+
+    Windows NTFS는 기본적으로 atime 비활성이라 atime은 신뢰할 수 없다.
+    PreToolUse:Read hook이 기록하는 access log를 1차 신뢰 소스로 사용.
+    """
+    idx: dict[str, datetime] = {}
+    if not ACCESS_LOG.exists():
+        return idx
     try:
-        st = path.stat()
-        atime = datetime.fromtimestamp(st.st_atime)
-        mtime = datetime.fromtimestamp(st.st_mtime)
-        most_recent = max(atime, mtime)
-        return (datetime.now() - most_recent).days < since_days
+        with ACCESS_LOG.open("r", encoding="utf-8", errors="replace") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    e = json.loads(line)
+                    p = e.get("path")
+                    ts = e.get("ts")
+                    if not p or not ts:
+                        continue
+                    dt = datetime.fromisoformat(ts)
+                    if p not in idx or dt > idx[p]:
+                        idx[p] = dt
+                except Exception:
+                    continue
+    except Exception:
+        pass
+    return idx
+
+
+def _file_referenced_recently(path: Path, since_days: int, access_idx: dict[str, datetime]) -> bool:
+    """access log + mtime 둘 다 보고 최근 참조 여부 판정.
+    access log가 우선 — 진짜 Read한 신호. 없으면 mtime fallback (창조 시점이지 참조 아님 — 보수적)."""
+    cutoff = datetime.now() - timedelta(days=since_days)
+    # 1. access log 우선
+    last_access = access_idx.get(str(path))
+    if last_access and last_access > cutoff:
+        return True
+    # 2. mtime fallback (파일이 최근 갱신되었으면 보존 — 보수적)
+    try:
+        mtime = datetime.fromtimestamp(path.stat().st_mtime)
+        if mtime > cutoff:
+            return True
     except Exception:
         return True  # 알 수 없으면 보존
+    return False
 
 
 def _log(action: str, path: Path, reason: str) -> None:
@@ -100,12 +137,13 @@ def _remove_from_index(filenames: set[str]) -> int:
 def prune_stale(stale_days: int = STALE_DAYS) -> int:
     """오래된 미참조 auto 메모리 폐기. 폐기된 개수 반환."""
     files = _list_auto_memories()
+    access_idx = _load_access_index()
     to_remove: list[Path] = []
     for p in files:
         created = _extract_creation_date(p)
         if not created or (datetime.now() - created).days < stale_days:
             continue  # 아직 어림
-        if _file_referenced_recently(p, since_days=stale_days):
+        if _file_referenced_recently(p, since_days=stale_days, access_idx=access_idx):
             continue  # 최근 참조됨
         to_remove.append(p)
 

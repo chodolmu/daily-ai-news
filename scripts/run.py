@@ -160,6 +160,14 @@ def maybe_run_monthly(state: dict, today: datetime) -> None:
         print(f"[sanity] 실패: {e}")
         traceback.print_exc()
 
+    # 메모리 승격 점검 (30일 주기, claude-mem DB → MEMORY.md 후보)
+    try:
+        from memory_promotion_check import run_promotion_check
+        run_promotion_check()
+    except Exception as e:
+        print(f"[promotion] 실패: {e}")
+        traceback.print_exc()
+
 
 def build_and_push(today: datetime) -> None:
     """사이트 빌드 후 git push."""
@@ -193,6 +201,19 @@ def build_and_push(today: datetime) -> None:
         print(f"[push] git 명령 실패 (rc={e.returncode})")
     except Exception as e:
         print(f"[push] 실패: {e}")
+
+
+def _record_health(success: bool, error: str = "") -> None:
+    """run.py 종료 시점에 헬스체크용 상태 기록. 디스크에서 다시 로드해 race 방지."""
+    state = _load_state()
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    state["last_run_at"] = now
+    if success:
+        state["last_success_at"] = now
+        state["last_error"] = None
+    else:
+        state["last_error"] = error[:500]
+    _save_state(state)
 
 
 def main() -> int:
@@ -263,5 +284,17 @@ def main() -> int:
     return 0
 
 
+def _wrapped_main() -> int:
+    """main을 헬스체크로 감싸기 — 성공/실패 모두 last_run.json에 기록."""
+    try:
+        rc = main()
+        _record_health(success=(rc == 0))
+        return rc
+    except Exception as e:
+        traceback.print_exc()
+        _record_health(success=False, error=f"{type(e).__name__}: {e}")
+        return 1
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(_wrapped_main())

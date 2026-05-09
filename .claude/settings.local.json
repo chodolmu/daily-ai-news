@@ -14,7 +14,16 @@
       "PowerShell(Get-CimInstance *)",
       "PowerShell(Get-Process *)",
       "PowerShell(Out-File *)",
-      "PowerShell(New-ScheduledTaskTrigger *)"
+      "PowerShell(New-ScheduledTaskTrigger *)",
+      "PowerShell(Get-ScheduledTaskInfo *)",
+      "PowerShell(Unregister-ScheduledTask *)",
+      "PowerShell($j = Get-Content C:/Users/chodo/.claude.json -Raw | ConvertFrom-Json; \"---top level keys---\"; $j.PSObject.Properties.Name; \"---mcpServers---\"; if \\($j.mcpServers\\) { $j.mcpServers.PSObject.Properties.Name } else { \"\\(none at top level\\)\" }; \"---projects with mcpServers---\"; if \\($j.projects\\) { $j.projects.PSObject.Properties | ForEach-Object { if \\($_.Value.mcpServers\\) { \"$\\($_.Name\\): $\\($_.Value.mcpServers.PSObject.Properties.Name -join ','\\)\" } } })",
+      "PowerShell(claude mcp *)",
+      "Bash(cp C:/Users/chodo/.claude/settings.json C:/Users/chodo/.claude/settings.json.backup-2026-05-09)",
+      "Read(//c/Users/chodo/.claude/**)",
+      "PowerShell($py = \"C:\\\\Users\\\\chodo\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe\"; & $py -c \"import sqlite3; c = sqlite3.connect\\(r'C:\\\\Users\\\\chodo\\\\.claude-mem\\\\claude-mem.db'\\); cur = c.cursor\\(\\); cur.execute\\(\\\\\"SELECT name, sql FROM sqlite_master WHERE type='table'\\\\\"\\); [print\\(f'--- {n} ---\\\\n{s}\\\\n'\\) for n, s in cur.fetchall\\(\\)]\")",
+      "PowerShell(& \"C:\\\\Users\\\\chodo\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe\" \"C:\\\\AI\\\\DailyAINews\\\\scripts\\\\_inspect_mem_db.py\" 2>&1 | Select-Object -First 200)",
+      "PowerShell($json = '{\"tool_name\":\"Read\",\"tool_input\":{\"file_path\":\"C:/Users/chodo/.claude/projects/C--Users-chodo/memory/auto_reference_ref_specsmaxxing_yaml_spec.md\"}}'; Write-Host \"stdin payload: $json\"; $json | & \"C:\\\\Users\\\\chodo\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe\" \"C:\\\\AI\\\\DailyAINews\\\\scripts\\\\record_memory_access.py\" 2>&1; Write-Host \"exit: $LASTEXITCODE\"; \"---log full---\"; Get-Content C:\\\\AI\\\\DailyAINews\\\\data\\\\memory_access_log.jsonl)"
     ]
   }
 }
