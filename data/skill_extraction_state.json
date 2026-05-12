@@ -9,9 +9,10 @@
     "2026-05-08",
     "2026-05-09",
     "2026-05-10",
-    "2026-05-11"
+    "2026-05-11",
+    "2026-05-12"
   ],
-  "last_run": "2026-05-11T22:30:21",
+  "last_run": "2026-05-12T20:36:49",
   "applied": [
     {
       "date": "2026-05-07",
@@ -180,6 +181,14 @@
       "name": "auto_reference_ref_claude_code_html_output.md",
       "url": "https://news.hada.io/topic?id=29347",
       "ts": "2026-05-11T22:30:21"
+    },
+    {
+      "date": "2026-05-12",
+      "title": "Anthropic, 금융 서비스 전문 AI 에이전트/스킬/커넥터 오픈소스 공개",
+      "decision": "memory",
+      "name": "auto_reference_ref_anthropic_finance_agent_skills",
+      "url": "https://news.hada.io/topic?id=29372",
+      "ts": "2026-05-12T20:36:25"
     }
   ]
 }
