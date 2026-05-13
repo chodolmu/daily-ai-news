@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daily AI News · 2026-05-13</title>
+<meta name="description" content="매일 정리되는 AI 소식 — 2026-05-13" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand-mini" href="../">Daily AI News</a>
+    <span class="last-updated">마지막 업데이트 · 2026-05-13 20:56</span>
+  </div>
+</div>
+
+<header class="page-header">
+  <h1 class="brand">Daily AI News</h1>
+  <p class="subtitle">매일 정리되는 AI 소식</p>
+
+  <div class="header-bottom">
+    <nav class="nav-c" aria-label="날짜 이동" id="navC"
+         data-current="2026-05-13" data-latest="2026-05-13">
+      <a class="today-link" href="../">오늘</a>
+        <a class="arrow" href="../2026-05-12/" aria-label="이전 날짜">‹</a>
+      <button class="date-pill" type="button" id="datePillC">
+        <span class="date-text">2026년 5월 13일</span>
+        <span class="day-text">수요일</span>
+        <span class="caret">▾</span>
+      </button>
+        <span class="arrow disabled" aria-label="다음 날짜 없음">›</span>
+
+      <div class="calendar-pop" role="dialog" aria-label="날짜 선택" id="calendarPop">
+        <!-- JS로 동적 채움 -->
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+    <div class="hero-row">
+      <article class="card hero src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>TanStack NPM 공급망 침해 사건: 사후 분석</h3>
+        <p class="summary">5월 11일 공격자가 GitHub Actions 캐시 중독과 OIDC 토큰 추출로 42개 TanStack 패키지 84개 악성 버전을 배포했다. 악성 스크립트는 npm 설치 단계에서 AWS, GCP, GitHub 등 자격증명을 탈취해 end-to-end 암호화된 메신저로 유출했다. 외부 연구자가 20분 내 탐지해 빠른 대응이 가능했으나, 내부 알림 부재가 문제였다.</p>
+        <div class="application">GitHub Actions 워크플로우에서 pull_request_target 대신 pull_request 사용, 캐시 권한 검증, OIDC 토큰 per-publish 확인 정책 도입으로 기업 CI/CD 공급망 보안을 강화할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://tanstack.com/blog/npm-supply-chain-compromise-postmortem" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card hero src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>Claude Code, 여러 에이전트를 한 화면에서 관리하는 'Agent View' 공개</h3>
+        <p class="summary">Claude Code가 여러 백그라운드 에이전트 세션을 한 화면에서 발사·감시·응답할 수 있는 Agent View를 출시했다.
+각 에이전트 세션은 독립적인 supervisor 프로세스로 실행되며 터미널 없이도 지속된다.
+워크트리로 파일 충돌을 자동 격리하고, PR 생성 시 CI 상태를 행에 표시한다.</p>
+        <div class="application">로컬 개발 환경에서 여러 자율 에이전트를 동시 조직하고 진행 상황을 실시간 모니터링하며 빠르게 개입할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29431" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="grid">
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>Claude Code에 /goal 기능 추가</h3>
+        <p class="summary">Claude Code에 목표 기반 자동 반복 실행 기능이 추가됐다. 사용자가 목표를 설정하면 Claude가 여러 턴을 자동으로 연속 실행하며, 각 턴 후 fast model이 목표 달성 여부를 평가한다. 미완료 시 자동으로 다음 턴을 시작하고 완료하면 goal을 자동 제거한다.</p>
+        <div class="application">대규모 리팩토링, 마이그레이션, 테스트 커버리지 확대 같은 다단계 개발 작업을 사용자 개입 없이 자동화하여 개발 속도를 높일 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29428" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>Rapid-MLX - Apple Silicon 전용 초고속 로컬 AI 엔진</h3>
+        <p class="summary">Apple의 MLX 프레임워크 기반 네이티브 Metal 컴퓨트 커널을 활용한 로컬 AI 추론 엔진. Ollama 대비 최대 4.2배 빠른 속도로 Phi-4 Mini 14B 기준 180 tok/s(Ollama 56 tok/s 대비 3.2배) 달성.</p>
+        <div class="application">M-시리즈 맥 사용자가 인터넷 없이 로컬에서 고성능 LLM 추론을 실행해야 할 때, Ollama 대신 Rapid-MLX를 선택하면 3배 이상 빠른 응답으로 실시간 코딩 어시스턴트나 분석 작업 속도를 대폭 개선할 수 있음.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29410" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>agentmemory: AI 코딩 에이전트용 지속형 메모리 프레임워크</h3>
+        <p class="summary">AI 코딩 에이전트의 장기 맥락 손실을 방지하기 위한 지속형 메모리 시스템. 실제 벤치마크 기반 설계로 반복 실수 감소 및 에이전트 성능 향상을 목표로 함.</p>
+        <div class="application">claude-mem, 베이스 에이전트 프로젝트 관리 시스템에 벤치마크 기반 메모리 전략 통합하여 에이전트의 문맥 손실 방지 및 작업 효율성 개선.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/rohitg00/agentmemory" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>실전 엔지니어를 위한 스킬: Matt Pocock의 .claude 디렉토리</h3>
+        <p class="summary">TypeScript 교육자 Matt Pocock이 자신의 Claude Code .claude 디렉토리에서 사용 중인 실전 스킬들을 공개한 GitHub 레포.
+엔지니어들이 일상적으로 사용할 수 있는 프로덕션급 스킬 템플릿과 워크플로우 자동화 모음.</p>
+        <div class="application">Claude Code 스킬 개발 시 검증된 패턴과 구조를 참고하여 팀 전체의 생산성 도구 표준화할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>처음부터 구현하는 LLM — PyTorch로 ChatGPT 같은 모델 만들기</h3>
+        <p class="summary">PyTorch를 사용하여 ChatGPT 형태의 대규모 언어 모델을 밑바닥부터 단계별로 구현하는 교육 저장소.
+트랜스포머 아키텍처, 어텐션 메커니즘, 토큰화 등 LLM의 핵심 구성 요소를 실습 코드로 배울 수 있다.</p>
+        <div class="application">LLM 내부 동작 원리를 깊이 있게 이해해야 하는 개발자나 연구자가 구현 사례 코드를 참고해 자신의 도메인 특화 모델 구축에 활용할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/rasbt/LLMs-from-scratch" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>CUA: 컴퓨터 사용 에이전트용 오픈소스 인프라</h3>
+        <p class="summary">데스크톱 제어 AI 에이전트 학습·평가용 오픈소스 기반 플랫폼. 샌드박스, SDK, 벤치마크를 포함해 macOS, Linux, Windows 전역 데스크톱 조작 능력을 갖춘 에이전트 개발을 표준화.</p>
+        <div class="application">GUI 자동화·RPA·크로스 플랫폼 에이전트 개발 시 안전한 실험 환경 제공 및 성능 비교 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/trycua/cua" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>상호작용 모델 - 인간-AI 협업을 위한 확장 가능한 접근법</h3>
+        <p class="summary">기존 턴 기반 모델의 병목(사용자 입력 대기, 생성 중 새 입력 차단)을 극복한 새로운 모델 설계.
+모델이 오디오, 비디오, 텍스트를 200ms 단위로 실시간 동시 입력·출력하며 자연스러운 협업 실현.</p>
+        <div class="application">실시간 멀티모달 AI 어시스턴트 개발 시 턴 기반 지연을 제거해 사용자 경험 개선 및 협업 효율 극대화 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29441" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>AWS에서 Claude 플랫폼 일반 공개</h3>
+        <p class="summary">Claude 플랫폼이 AWS에서 일반 공개되었으며, AWS IAM 인증과 CloudTrail 감사 로깅을 통해 기존 AWS 인프라와 완전히 통합된다.
+Clause Managed Agents, 코드 실행, Skills, Advisor 등 모든 플랫폼 기능을 AWS 요금 청구에 통합하여 사용 가능하다.
+대부분의 AWS 상용 리전에서 제공되며, 네이티브 Claude API와 동시에 새 기능이 배포된다.</p>
+        <div class="application">AWS 고객이 기존 IAM 권한 체계를 유지하면서 Claude 에이전트와 API를 프로덕션 워크플로우에 통합할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://claude.com/blog/claude-platform-on-aws" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>AI 코딩 에이전트로 야간 수면 방해 원인 추적 도구 개발하기</h3>
+        <p class="summary">저자는 AI 코딩 에이전트(라즈베리파이 SSH 접근 부여)를 활용해 USB 마이크 2개, 스마트워치 수면 데이터, Home Assistant를 연동한 음성 감지 시스템을 주말 안에 완성했습니다. 마이크로폰과 수면 데이터를 웹 기반 음악 편집기 형태로 시각화하여 이웃 소음, 교통음 등 구체적인 수면 방해 요인을 파악했고 방음 패널 설치로 문제를 해결했습니다.</p>
+        <div class="application">AI 에이전트에게 실제 하드웨어(라즈베리파이 SSH)와 스마트홈 API 접근을 부여하여 프로토타이핑 시간을 단축할 수 있는 실용 패턴—주중엔 불가능한 프로젝트를 주말에 완성 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://martin.sh/i-let-ai-build-a-tool-to-help-me-figure-out-what-was-waking-me-up-at-night/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Superpowers — 에이전틱 스킬 프레임워크 및 소프트웨어 개발 방법론</h3>
+        <p class="summary">에이전트 기반 소프트웨어 개발을 위한 스킬 프레임워크와 실전 방법론을 제시하는 오픈소스 프로젝트.
+에이전트가 코드 생성, 테스트, 배포 등 개발 작업을 자율적으로 수행할 수 있도록 구조화된 스킬 모음과 운영 패턴을 제공.</p>
+        <div class="application">자신의 AI 코딩 에이전트 프로젝트에서 검증된 스킬 설계 패턴과 메타데이터 구조를 참고하여, 에이전트 능력을 체계적으로 정의하고 조합할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>AiToEarn – AI 에이전트 기반 멀티플랫폼 콘텐츠 마케팅</h3>
+        <p class="summary">크리에이터와 1인 기업을 위한 AI 에이전트 플랫폼. TikTok, YouTube, Instagram, Douyin 등 13+ 플랫폼에 한 번에 배포하고 자동화된 콘텐츠 생성, 발행, 참여, 수익화를 제공합니다.
+LLM 기반 댓글 생성, 비디오 생성 모델(Grok, Veo), MCP 프로토콜 통합으로 AI 어시스턴트와 연계되며, Electron 앱과 REST API 기반 아키텍처를 갖춤.</p>
+        <div class="application">TikTok/YouTube 멀티플랫폼 수익화 자동화가 필요한 크리에이터나 마케팅 팀이 콘텐츠 생성부터 분배, 사용자 상호작용까지 AI 에이전트로 일괄 자동화할 수 있습니다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/yikart/AiToEarn" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>React Doctor — React 에이전트가 작성한 나쁜 코드를 감지하는 도구</h3>
+        <p class="summary">AI 에이전트가 생성한 React 코드의 안티패턴과 버그를 자동으로 검출하는 린터 도구.
+React 컴포넌트 설계 원칙 위반, 성능 최적화 누락, 상태 관리 오류 등을 분석해 개선안을 제시한다.</p>
+        <div class="application">Claude Code 같은 AI 코딩 에이전트가 생성한 React 코드를 PR 전에 자동 검증하거나, 팀의 코드 리뷰 프로세스에 통합해 에이전트 산출물의 품질 게이트로 활용할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/millionco/react-doctor" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>소프트웨어 엔지니어링은 더 이상 평생 직업이 아닐 수 있다</h3>
+        <p class="summary">AI 도구 사용이 학습량을 줄이더라도 단기 생산성 이득이 크면 도입이 불가피함. 신체 역량 약화의 우려가 있어도 건설 노동자의 기계화처럼 직업 형태가 변화할 수밖에 없음. 엔지니어 역량 유지와 AI 활용의 균형 문제로 제기됨.</p>
+        <div class="application">팀의 AI 도입 정책 수립 시 단기 생산성과 장기 엔지니어 역량 개발의 트레이드오프를 명시적으로 인식하고 의도적 학습 시간 확보 기준을 설정할 때 근거 제공.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29416" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>개인용 AI 인프라: 인간 능력 증강을 위한 에이전트 AI 아키텍처</h3>
+        <p class="summary">개인 개발자 및 엔지니어가 에이전트 AI를 활용해 생산성을 극대화할 수 있는 오픈소스 인프라 프로젝트.
+자동화, 의사결정 지원, 업무 처리 최적화 등 실무 중심의 설계 가이드와 구현 예시 제공.
+ Daniel Miessler의 개인 AI 워크플로우 자동화 경험을 기반으로 한 커뮤니티 자산.</p>
+        <div class="application">자신의 AI 에이전트 시스템을 구축할 때 레이아웃·보안·통합 패턴을 참고하거나, 오픈소스 코드를 직접 포크해 회사/개인 자동화 파이프라인에 적용 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/danielmiessler/Personal_AI_Infrastructure" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>OpenHuman - 개인용 AI 슈퍼 인텔리전스</h3>
+        <p class="summary">GitHub에서 공개된 OpenHuman 프로젝트로, 사용자 개인 데이터 보호를 우선으로 설계된 강력한 AI 시스템입니다. 프라이빗하고 단순하면서도 강력한 성능을 목표로 하는 개인용 AI 수퍼인텔리전스 구현입니다.</p>
+        <div class="application">자신의 개인 데이터로 학습된 프라이빗 AI 어시스턴트를 구축하거나, 기존 클라우드 AI 서비스의 데이터 프라이버시 문제를 피해야 할 때 로컬 배포 가능한 개인용 AI로 운영할 수 있습니다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/tinyhumansai/openhuman" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Daily AI News · 자동 생성 · 매일 08:00 갱신</span>
+    <span>
+      <a href="https://github.com/chodolmu/daily-ai-news" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  window.__SITE__ = {
+    current: "2026-05-13",
+    latest: "2026-05-13",
+    assetPrefix: "../",
+    calendar: {"days": {"2026-05-02": 6, "2026-05-03": 8, "2026-05-04": 5, "2026-05-05": 14, "2026-05-06": 18, "2026-05-07": 14, "2026-05-08": 12, "2026-05-09": 7, "2026-05-10": 11, "2026-05-11": 11, "2026-05-12": 13, "2026-05-13": 17}, "latest": "2026-05-13", "earliest": "2026-05-02"}
+  };
+</script>
+<script src="../assets/calendar.js"></script>
+</body>
+</html>
