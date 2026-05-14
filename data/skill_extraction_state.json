@@ -11,9 +11,10 @@
     "2026-05-10",
     "2026-05-11",
     "2026-05-12",
-    "2026-05-13"
+    "2026-05-13",
+    "2026-05-14"
   ],
-  "last_run": "2026-05-13T20:56:05",
+  "last_run": "2026-05-14T20:57:57",
   "applied": [
     {
       "date": "2026-05-07",
@@ -214,6 +215,14 @@
       "name": "auto_reference_ref_claude_code_agent_view.md",
       "url": "https://news.hada.io/topic?id=29431",
       "ts": "2026-05-13T20:55:58"
+    },
+    {
+      "date": "2026-05-14",
+      "title": "K-Dense-AI의 과학 에이전트 스킬 세트",
+      "decision": "memory",
+      "name": "auto_reference_ref_k_dense_ai_scientific_skills",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "ts": "2026-05-14T20:57:35"
     }
   ]
 }
