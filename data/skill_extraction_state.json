@@ -12,9 +12,12 @@
     "2026-05-11",
     "2026-05-12",
     "2026-05-13",
-    "2026-05-14"
+    "2026-05-14",
+    "2026-05-15",
+    "2026-05-16",
+    "2026-05-17"
   ],
-  "last_run": "2026-05-14T20:57:57",
+  "last_run": "2026-05-17T22:14:27",
   "applied": [
     {
       "date": "2026-05-07",
@@ -223,6 +226,70 @@
       "name": "auto_reference_ref_k_dense_ai_scientific_skills",
       "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "ts": "2026-05-14T20:57:35"
+    },
+    {
+      "date": "2026-05-15",
+      "title": "CLI-Anything: 모든 소프트웨어를 에이전트 네이티브로",
+      "decision": "memory",
+      "name": "auto_reference_ref_cli_anything_agent_native.md",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "ts": "2026-05-17T21:59:54"
+    },
+    {
+      "date": "2026-05-15",
+      "title": "CodeGraph: Claude Code용 사전 인덱싱 코드 지식 그래프",
+      "decision": "memory",
+      "name": "auto_reference_ref_codegraph_local_knowledge_graph.md",
+      "url": "https://github.com/colbymchenry/codegraph",
+      "ts": "2026-05-17T22:00:26"
+    },
+    {
+      "date": "2026-05-15",
+      "title": "프로덕션 에이전트 구축: 프로토타입에서 엔터프라이즈 배포까지",
+      "decision": "memory",
+      "name": "auto_reference_ref_agents_towards_production",
+      "url": "https://github.com/NirDiamant/agents-towards-production",
+      "ts": "2026-05-17T22:00:52"
+    },
+    {
+      "date": "2026-05-15",
+      "title": "Dograh — 오픈소스 음성 에이전트 플랫폼",
+      "decision": "memory",
+      "name": "auto_reference_ref_dograh_voice_agent",
+      "url": "https://github.com/dograh-hq/dograh",
+      "ts": "2026-05-17T22:01:07"
+    },
+    {
+      "date": "2026-05-16",
+      "title": "Claude Code가 대규모 코드베이스에서 작동하는 방식: 베스트 프랙티스와 시작 지점",
+      "decision": "memory",
+      "name": "auto_reference_ref_claude_code_large_codebase_md",
+      "url": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
+      "ts": "2026-05-17T22:07:25"
+    },
+    {
+      "date": "2026-05-16",
+      "title": "로컬 LLM 선택 도구: 하드웨어 벤치마크 기반 모델 순위 추천",
+      "decision": "memory",
+      "name": "auto_reference_ref_whichllm_local_model_selector",
+      "url": "https://github.com/Andyyyy64/whichllm",
+      "ts": "2026-05-17T22:07:56"
+    },
+    {
+      "date": "2026-05-17",
+      "title": "대규모 코드베이스에서 Claude Code가 작동하는 방식: 모범 사례 및 시작점",
+      "decision": "memory",
+      "name": "",
+      "url": "https://news.hada.io/topic?id=29556",
+      "ts": "2026-05-17T22:13:03"
+    },
+    {
+      "date": "2026-05-17",
+      "title": "프론티어 AI가 공개 CTF 형식을 파괴했다",
+      "decision": "memory",
+      "name": "auto_reference_ref_frontier_ai_ctf_破壊",
+      "url": "https://kabir.au/blog/the-ctf-scene-is-dead",
+      "ts": "2026-05-17T22:14:27"
     }
   ]
 }
