@@ -15,9 +15,10 @@
     "2026-05-14",
     "2026-05-15",
     "2026-05-16",
-    "2026-05-17"
+    "2026-05-17",
+    "2026-05-18"
   ],
-  "last_run": "2026-05-17T22:14:27",
+  "last_run": "2026-05-18T21:00:41",
   "applied": [
     {
       "date": "2026-05-07",
@@ -290,6 +291,30 @@
       "name": "auto_reference_ref_frontier_ai_ctf_破壊",
       "url": "https://kabir.au/blog/the-ctf-scene-is-dead",
       "ts": "2026-05-17T22:14:27"
+    },
+    {
+      "date": "2026-05-18",
+      "title": "Agent Skills — 전문 AI 코딩 에이전트용 검증된 스킬 레지스트리",
+      "decision": "memory",
+      "name": "auto_reference_ref_agent_skills_registry_md",
+      "url": "https://github.com/tech-leads-club/agent-skills",
+      "ts": "2026-05-18T20:59:55"
+    },
+    {
+      "date": "2026-05-18",
+      "title": "학술 연구 스킬: Claude Code 실전 가이드",
+      "decision": "memory",
+      "name": "auto_reference_ref_academic_research_skills_md",
+      "url": "https://github.com/Imbad0202/academic-research-skills",
+      "ts": "2026-05-18T21:00:23"
+    },
+    {
+      "date": "2026-05-18",
+      "title": "12 요소 에이전트: 프로덕션급 LLM 소프트웨어 설계 원칙",
+      "decision": "memory",
+      "name": "auto_reference_ref_12_factor_agents",
+      "url": "https://github.com/humanlayer/12-factor-agents",
+      "ts": "2026-05-18T21:00:41"
     }
   ]
 }
