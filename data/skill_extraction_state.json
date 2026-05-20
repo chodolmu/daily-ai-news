@@ -17,9 +17,10 @@
     "2026-05-16",
     "2026-05-17",
     "2026-05-18",
-    "2026-05-19"
+    "2026-05-19",
+    "2026-05-20"
   ],
-  "last_run": "2026-05-19T21:12:11",
+  "last_run": "2026-05-20T23:54:25",
   "applied": [
     {
       "date": "2026-05-07",
@@ -340,6 +341,14 @@
       "name": "auto_reference_ref_ai_compound_growth_workflow",
       "url": "https://news.hada.io/topic?id=29606",
       "ts": "2026-05-19T21:12:11"
+    },
+    {
+      "date": "2026-05-20",
+      "title": "Anthropic이 Stainless 인수 — SDK·MCP 도구 역량 강화",
+      "decision": "memory",
+      "name": "auto_reference_ref_anthropic_stainless_sdk_mcp",
+      "url": "https://www.anthropic.com/news/anthropic-acquires-stainless",
+      "ts": "2026-05-20T23:53:53"
     }
   ]
 }
