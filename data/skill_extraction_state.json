@@ -18,9 +18,10 @@
     "2026-05-17",
     "2026-05-18",
     "2026-05-19",
-    "2026-05-20"
+    "2026-05-20",
+    "2026-05-21"
   ],
-  "last_run": "2026-05-20T23:54:25",
+  "last_run": "2026-05-21T23:10:54",
   "applied": [
     {
       "date": "2026-05-07",
@@ -349,6 +350,22 @@
       "name": "auto_reference_ref_anthropic_stainless_sdk_mcp",
       "url": "https://www.anthropic.com/news/anthropic-acquires-stainless",
       "ts": "2026-05-20T23:53:53"
+    },
+    {
+      "date": "2026-05-21",
+      "title": "oh-my-pi — 터미널용 AI 코딩 에이전트",
+      "decision": "memory",
+      "name": "auto_reference_ref_oh_my_pi_terminal_agent",
+      "url": "https://github.com/can1357/oh-my-pi",
+      "ts": "2026-05-21T23:10:35"
+    },
+    {
+      "date": "2026-05-21",
+      "title": "Multica — 관리형 AI 에이전트 플랫폼",
+      "decision": "memory",
+      "name": "auto_reference_ref_multica_managed_agents",
+      "url": "https://github.com/multica-ai/multica",
+      "ts": "2026-05-21T23:10:54"
     }
   ]
 }
