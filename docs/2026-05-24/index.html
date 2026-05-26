@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daily AI News · 2026-05-24</title>
+<meta name="description" content="매일 정리되는 AI 소식 — 2026-05-24" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand-mini" href="../">Daily AI News</a>
+    <span class="last-updated">마지막 업데이트 · 2026-05-26 23:46</span>
+  </div>
+</div>
+
+<header class="page-header">
+  <h1 class="brand">Daily AI News</h1>
+  <p class="subtitle">매일 정리되는 AI 소식</p>
+
+  <div class="header-bottom">
+    <nav class="nav-c" aria-label="날짜 이동" id="navC"
+         data-current="2026-05-24" data-latest="2026-05-26">
+      <a class="today-link" href="../">오늘</a>
+        <a class="arrow" href="../2026-05-23/" aria-label="이전 날짜">‹</a>
+      <button class="date-pill" type="button" id="datePillC">
+        <span class="date-text">2026년 5월 24일</span>
+        <span class="day-text">일요일</span>
+        <span class="caret">▾</span>
+      </button>
+        <a class="arrow" href="../2026-05-25/" aria-label="다음 날짜">›</a>
+
+      <div class="calendar-pop" role="dialog" aria-label="날짜 선택" id="calendarPop">
+        <!-- JS로 동적 채움 -->
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+    <div class="hero-row">
+      <article class="card hero src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Andrej Karpathy의 LLM 코딩 함정 분석 기반 CLAUDE.md 스킬</h3>
+        <p class="summary">Andrej Karpathy의 LLM 코딩 실패 패턴 관찰을 정리한 단일 CLAUDE.md 파일로, Claude Code의 코딩 행동을 개선합니다. 에이전트가 자주 빠지는 함정(과도한 추상화, 문서화 부족, 검증 누락 등)을 프롬프트 규칙으로 명시화하여 코드 품질을 높입니다.</p>
+        <div class="application">Claude Code로 프로젝트를 진행할 때 이 CLAUDE.md를 프로젝트 루트에 복사하면, 에이전트가 구체적 요구사항 이외의 과도한 개선/추상화를 피하고 검증 우선 코딩을 따르도록 자동 유도됩니다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card hero src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Anthropic 사이버보안 에이전트 스킬 — MITRE/NIST 기준 754개 보안 기술</h3>
+        <p class="summary">AI 에이전트용 구조화된 사이버보안 스킬 754개를 MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND, NIST AI RMF 5개 보안 프레임워크에 매핑했다. Claude Code 외 GitHub Copilot, Cursor, Gemini CLI 등 20개 이상의 플랫폼과 26개 보안 도메인을 즉시 지원한다.</p>
+        <div class="application">Claude Code나 Cursor 등 에이전트 환경에서 보안 감시 자동화, 취약점 탐지, MITRE 기반 위협 매핑 작업을 표준화된 스킬 세트로 즉시 구현할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="grid">
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>CISA 대규모 데이터 유출, 의회 추궁 시작</h3>
+        <p class="summary">CISA 계약직 직원이 개인 GitHub에 AWS 키·RSA 개인키·관리자 자격증명을 평문으로 공개. 발견 후 1주일 이상 지났는데도 노출된 키 무효화 미완료. 의회가 CISA의 보안 리스크 관리와 인력 축소 관계 규명 요구.</p>
+        <div class="application">조직 보안팀은 개발자가 개인 클라우드 계정으로 회사 자격증명을 동기화하는 행태를 탐지·차단할 침입탐지·엔드포인트 모니터링 정책 수립 필요.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://krebsonsecurity.com/2026/05/lawmakers-demand-answers-as-cisa-tries-to-contain-data-leak/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>CodeGraph — Claude Code용 로컬 코드 지식 그래프</h3>
+        <p class="summary">Claude Code, Cursor, Copilot 등 AI 코딩 에이전트를 위한 사전 인덱싱된 코드 지식 그래프. 로컬에서 100% 동작하며 토큰 사용량과 도구 호출 횟수를 대폭 감소시킨다.</p>
+        <div class="application">자신의 코드베이스를 CodeGraph로 인덱싱한 후 Claude Code에 연동하면, RAG 서버 없이도 토큰 비용과 API 호출을 절약하면서 더 정확한 코드 컨텍스트를 에이전트에 제공할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/colbymchenry/codegraph" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Multica — 관리형 AI 에이전트 플랫폼</h3>
+        <p class="summary">오픈소스 에이전트 플랫폼으로 코딩 에이전트를 실제 팀원처럼 운영 가능.
+작업 할당, 진행 추적, 스킬 복합으로 자율 루프 팀 워크플로우 구성.</p>
+        <div class="application">장기 실행 AI 코딩 프로젝트에서 여러 에이전트를 팀으로 묶어 작업 분산·진행 추적·협업하는 인프라로 직접 활용.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/multica-ai/multica" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>마이크로소프트, AI 비용이 인간 직원보다 비싸다고 보고</h3>
+        <p class="summary">마이크로소프트가 광범위한 Claude Code 도입 후 비용 급증으로 라이선스 대부분 취소. 에이전트 AI는 토큰 소비가 급격하게 증가하면서 개별 토큰 가격 하락에도 총 비용은 상승. 우버는 4개월만에 2026년 AI 예산을 전부 소진한 사례 제시.</p>
+        <div class="application">엔터프라이즈 AI 도입 시 총 비용 구조(토큰 가격×사용량)를 명시적으로 추산하고, 초기 파일럿 규모의 3~6개월 비용 외삽 추정 후 예산 승인 여부를 결정할 것.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://fortune.com/2026/05/22/microsoft-ai-cost-problem-tokens-agents/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>병렬 에이전트를 실행하는 오픈소스 칸반 데스크톱 앱</h3>
+        <p class="summary">각 카드에서 독립적으로 AI 에이전트를 병렬 실행할 수 있는 칸반 보드 형태의 오픈소스 데스크톱 애플리케이션.
+작업 카드별로 에이전트를 할당하여 자동화된 워크플로우를 관리하고 진행도를 추적할 수 있는 도구.</p>
+        <div class="application">복수 에이전트 기반 자동화 작업(데이터 처리, 콘텐츠 생성, 시스템 모니터링)을 칸반 보드로 시각화하여 진행 상황을 한눈에 관리하고 에이전트 간 작업 분배를 체계화할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://www.kanbots.dev/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Understand-Anything: 코드를 인터랙티브 지식 그래프로 변환</h3>
+        <p class="summary">코드베이스를 탐색 가능한 인터랙티브 지식 그래프로 자동 변환하는 도구. Claude Code, Copilot, Cursor 등 주요 AI 에디터와 통합되며, 그래프 검색과 자연어 질의 기능 지원.</p>
+        <div class="application">대규모 레거시 코드베이스를 빠르게 이해해야 할 때 구조를 시각화해서 온보딩 시간 단축 및 리팩토링 범위 파악에 활용 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/Lum1104/Understand-Anything" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Anthropic 지식 작업 플러그인</h3>
+        <p class="summary">Anthropic이 공개한 오픈소스 플러그인 레포지토리. Claude와 함께 사용하는 지식 근로자용 플러그인 모음을 제공합니다. 실제 업무 자동화와 생산성 향상을 위한 도구들을 포함합니다.</p>
+        <div class="application">Claude 플러그인 개발 시 실전 패턴과 베스트 프랙티스를 레퍼런스로 활용하거나, 기존 플러그인을 팀 문서 작업·데이터 처리·자동화 실무에 바로 통합 가능합니다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/anthropics/knowledge-work-plugins" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>pi — CLI·TUI·웹 UI 통합 AI 에이전트 툴킷</h3>
+        <p class="summary">CLI, TUI, 웹 UI를 단일 라이브러리로 제공하는 AI 에이전트 개발 프레임워크. Slack 봇 통합과 vLLM 포드 배포를 기본 지원하여 코딩 에이전트부터 운영 배포까지 엔드-투-엔드 지원.</p>
+        <div class="application">내부 LLM 에이전트를 Slack 채널에 배포하거나, vLLM 기반 로컬 모델을 다중 클라이언트(CLI/웹/TUI)로 제어해야 할 때 기본 틀로 활용 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/earendil-works/pi" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>AI는 기존 기술 역량에 곱셈 효과를 준다</h3>
+        <p class="summary">AI 모델은 프로그래밍 작업에서 실용적 도구이지만 개발자를 대체하지 않으며, 기존 기술 역량을 증폭하는 역할을 한다.
+LLM이 모든 규모 프로젝트를 완전히 설계·구축해 인간 개발자가 불필요해질 것이라는 증거는 없다.</p>
+        <div class="application">조직에서 LLM 도입 시 개발자 완전 자동화보다 기존 팀의 생산성 증대에 초점을 맞춰 전략을 수립할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=29807" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>밑바닥부터 AI 엔지니어링 배우고 구축해서 남들과 나누기</h3>
+        <p class="summary">AI 엔지니어링의 핵심 원리를 단계별로 학습하고 직접 구현한 뒤 실제로 사용 가능한 결과물로 만드는 완전한 실습 과정을 다룬 오픈소스 저장소. 이론 학습, 손으로 직접 짜기, 배포 및 공개까지의 전체 사이클을 포함.</p>
+        <div class="application">AI 기초부터 프로덕션 배포까지 단계적으로 체계적인 커리큘럼이 필요한 개발팀이나 신입 AI 엔지니어의 학습 로드맵으로 활용 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Anthropic 공식 Claude 코드 플러그인 디렉토리</h3>
+        <p class="summary">Anthropic이 관리하는 고품질 Claude Code 플러그인의 공식 저장소. 검증된 플러그인들을 중앙집중식으로 관리하고 개발자들에게 제공.</p>
+        <div class="application">Claude Code 개발 시 공식 검증 플러그인을 빠르게 찾아 프로젝트에 통합할 수 있으며, 신뢰할 수 있는 확장 기능만 선별해서 사용 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/anthropics/claude-plugins-official" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>manaflow-ai/cmux — Ghostty 기반 AI 코딩 에이전트용 macOS 터미널</h3>
+        <p class="summary">Ghostty 터미널을 기반으로 세로 탭과 알림 기능을 추가한 AI 코딩 에이전트 전용 macOS 터미널.
+AI 에이전트가 여러 작업을 동시 진행할 때 탭 관리와 실시간 알림으로 상태 추적 간소화.</p>
+        <div class="application">Claude Code 등 멀티태스킹 에이전트 환경에서 에이전트 출력을 세로 탭으로 분리 표시하고, 작업 완료 시 알림받아 모니터링 오버헤드 감소.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/manaflow-ai/cmux" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>free-claude-code: 터미널, VSCode, 디스코드에서 무료로 Claude Code 사용</h3>
+        <p class="summary">Claude Code를 터미널, VSCode 확장, 디스코드 등 다양한 인터페이스에서 무료로 사용할 수 있는 오픈소스 프로젝트.
+음성 입력도 지원하며, OpenClaw와 유사한 접근성을 제공해 Claude의 코딩 기능을 보다 자유롭게 활용 가능.</p>
+        <div class="application">로컬 개발 환경이나 VSCode에서 Claude의 코드 생성/수정 기능을 추가 비용 없이 활용하거나, 팀의 디스코드 채널에서 공동 코딩 작업을 자동화할 때 사용 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/Alishahryar1/free-claude-code" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Daily AI News · 자동 생성 · 매일 08:00 갱신</span>
+    <span>
+      <a href="https://github.com/chodolmu/daily-ai-news" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  window.__SITE__ = {
+    current: "2026-05-24",
+    latest: "2026-05-26",
+    assetPrefix: "../",
+    calendar: {"days": {"2026-05-02": 6, "2026-05-03": 8, "2026-05-04": 5, "2026-05-05": 14, "2026-05-06": 18, "2026-05-07": 14, "2026-05-08": 12, "2026-05-09": 7, "2026-05-10": 11, "2026-05-11": 11, "2026-05-12": 13, "2026-05-13": 17, "2026-05-14": 15, "2026-05-15": 11, "2026-05-16": 16, "2026-05-17": 14, "2026-05-18": 12, "2026-05-19": 22, "2026-05-20": 19, "2026-05-21": 22, "2026-05-22": 13, "2026-05-23": 17, "2026-05-24": 15, "2026-05-25": 0, "2026-05-26": 15}, "latest": "2026-05-26", "earliest": "2026-05-02"}
+  };
+</script>
+<script src="../assets/calendar.js"></script>
+</body>
+</html>

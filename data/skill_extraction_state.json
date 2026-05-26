@@ -19,9 +19,14 @@
     "2026-05-18",
     "2026-05-19",
     "2026-05-20",
-    "2026-05-21"
+    "2026-05-21",
+    "2026-05-22",
+    "2026-05-23",
+    "2026-05-24",
+    "2026-05-25",
+    "2026-05-26"
   ],
-  "last_run": "2026-05-21T23:10:54",
+  "last_run": "2026-05-26T23:46:36",
   "applied": [
     {
       "date": "2026-05-07",
@@ -366,6 +371,54 @@
       "name": "auto_reference_ref_multica_managed_agents",
       "url": "https://github.com/multica-ai/multica",
       "ts": "2026-05-21T23:10:54"
+    },
+    {
+      "date": "2026-05-22",
+      "title": "앤드레이 카르파티 LLM 코딩 함정 스킬 모음",
+      "decision": "memory",
+      "name": "auto_reference_ref_karpathy_skills_multica.md",
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "ts": "2026-05-25T19:09:21"
+    },
+    {
+      "date": "2026-05-22",
+      "title": "Anthropic 사이버보안 스킬: AI 에이전트용 754개 구조화된 보안 기술",
+      "decision": "memory",
+      "name": "auto_reference_ref_anthropic_cybersecurity_skills",
+      "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "ts": "2026-05-25T19:09:41"
+    },
+    {
+      "date": "2026-05-22",
+      "title": "pi — AI 에이전트 툴킷",
+      "decision": "memory",
+      "name": "auto_reference_ref_pi_agent_toolkit",
+      "url": "https://github.com/earendil-works/pi",
+      "ts": "2026-05-25T19:10:32"
+    },
+    {
+      "date": "2026-05-26",
+      "title": "ECC — 에이전트 하네스 성능 최적화 시스템",
+      "decision": "memory",
+      "name": "auto_reference_ref_ecc_agent_harness_performance.md",
+      "url": "https://github.com/affaan-m/ECC",
+      "ts": "2026-05-26T23:45:59"
+    },
+    {
+      "date": "2026-05-26",
+      "title": "맛 스킬 - AI에게 좋은 취향을 부여하기",
+      "decision": "memory",
+      "name": "auto_reference_ref_taste_skill_llm_quality",
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "ts": "2026-05-26T23:46:19"
+    },
+    {
+      "date": "2026-05-26",
+      "title": "Flue - 샌드박스 에이전트 프레임워크",
+      "decision": "memory",
+      "name": "auto_reference_ref_flue_sandbox_agent",
+      "url": "https://news.hada.io/topic?id=29849",
+      "ts": "2026-05-26T23:46:36"
     }
   ]
 }
