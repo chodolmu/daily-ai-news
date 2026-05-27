@@ -24,9 +24,11 @@
     "2026-05-23",
     "2026-05-24",
     "2026-05-25",
-    "2026-05-26"
+    "2026-05-26",
+    "2026-05-27",
+    "2026-05-28"
   ],
-  "last_run": "2026-05-26T23:46:36",
+  "last_run": "2026-05-28T00:13:31",
   "applied": [
     {
       "date": "2026-05-07",
@@ -419,6 +421,14 @@
       "name": "auto_reference_ref_flue_sandbox_agent",
       "url": "https://news.hada.io/topic?id=29849",
       "ts": "2026-05-26T23:46:36"
+    },
+    {
+      "date": "2026-05-27",
+      "title": "AI 텍스트의 인공적 특징 제거 스킬",
+      "decision": "memory",
+      "name": "auto_reference_ref_stop_slop_ai_writing.md",
+      "url": "https://github.com/hardikpandya/stop-slop",
+      "ts": "2026-05-28T00:09:08"
     }
   ]
 }
