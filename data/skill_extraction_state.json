@@ -26,9 +26,10 @@
     "2026-05-25",
     "2026-05-26",
     "2026-05-27",
-    "2026-05-28"
+    "2026-05-28",
+    "2026-05-29"
   ],
-  "last_run": "2026-05-28T00:13:31",
+  "last_run": "2026-05-29T13:24:22",
   "applied": [
     {
       "date": "2026-05-07",
@@ -429,6 +430,14 @@
       "name": "auto_reference_ref_stop_slop_ai_writing.md",
       "url": "https://github.com/hardikpandya/stop-slop",
       "ts": "2026-05-28T00:09:08"
+    },
+    {
+      "date": "2026-05-29",
+      "title": "Anthropic 에이전트 스킬 공개 저장소",
+      "decision": "memory",
+      "name": "auto_reference_ref_anthropic_skills_repo",
+      "url": "https://github.com/anthropics/skills",
+      "ts": "2026-05-29T13:23:51"
     }
   ]
 }
