@@ -30,9 +30,10 @@
     "2026-05-29",
     "2026-05-30",
     "2026-05-31",
-    "2026-06-01"
+    "2026-06-01",
+    "2026-06-02"
   ],
-  "last_run": "2026-06-01T20:44:56",
+  "last_run": "2026-06-02T08:05:25",
   "applied": [
     {
       "date": "2026-05-07",
@@ -481,6 +482,14 @@
       "name": "auto_reference_ref_impeccable_design_language",
       "url": "https://github.com/pbakaus/impeccable",
       "ts": "2026-06-01T20:44:56"
+    },
+    {
+      "date": "2026-06-02",
+      "title": "Odysseus – 자체 호스팅형 AI 워크스페이스",
+      "decision": "memory",
+      "name": "auto_reference_ref_odysseus_self_hosted_workspace",
+      "url": "https://github.com/pewdiepie-archdaemon/odysseus",
+      "ts": "2026-06-02T08:05:25"
     }
   ]
 }
