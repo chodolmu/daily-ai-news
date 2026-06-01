@@ -29,9 +29,10 @@
     "2026-05-28",
     "2026-05-29",
     "2026-05-30",
-    "2026-05-31"
+    "2026-05-31",
+    "2026-06-01"
   ],
-  "last_run": "2026-05-31T08:03:53",
+  "last_run": "2026-06-01T20:44:56",
   "applied": [
     {
       "date": "2026-05-07",
@@ -456,6 +457,30 @@
       "name": "auto_reference_ref_mistral_onpremises_agent",
       "url": "https://koenvangilst.nl/lab/mistral-ai-now-summit",
       "ts": "2026-05-31T08:03:53"
+    },
+    {
+      "date": "2026-06-01",
+      "title": "슈퍼메모리 — AI 시대를 위한 메모리 API",
+      "decision": "memory",
+      "name": "auto_reference_ref_supermemory_api",
+      "url": "https://github.com/supermemoryai/supermemory",
+      "ts": "2026-06-01T20:43:46"
+    },
+    {
+      "date": "2026-06-01",
+      "title": "하네스(Harness) — 도메인별 에이전트 팀 설계 메타스킬",
+      "decision": "memory",
+      "name": "auto_reference_ref_harness_agent_team_meta_skill",
+      "url": "https://github.com/revfactory/harness",
+      "ts": "2026-06-01T20:44:05"
+    },
+    {
+      "date": "2026-06-01",
+      "title": "임펙커블 — AI를 위한 디자인 언어",
+      "decision": "memory",
+      "name": "auto_reference_ref_impeccable_design_language",
+      "url": "https://github.com/pbakaus/impeccable",
+      "ts": "2026-06-01T20:44:56"
     }
   ]
 }
