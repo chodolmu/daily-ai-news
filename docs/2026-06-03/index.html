@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daily AI News · 2026-06-03</title>
+<meta name="description" content="매일 정리되는 AI 소식 — 2026-06-03" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand-mini" href="../">Daily AI News</a>
+    <span class="last-updated">마지막 업데이트 · 2026-06-03 08:06</span>
+  </div>
+</div>
+
+<header class="page-header">
+  <h1 class="brand">Daily AI News</h1>
+  <p class="subtitle">매일 정리되는 AI 소식</p>
+
+  <div class="header-bottom">
+    <nav class="nav-c" aria-label="날짜 이동" id="navC"
+         data-current="2026-06-03" data-latest="2026-06-03">
+      <a class="today-link" href="../">오늘</a>
+        <a class="arrow" href="../2026-06-02/" aria-label="이전 날짜">‹</a>
+      <button class="date-pill" type="button" id="datePillC">
+        <span class="date-text">2026년 6월 3일</span>
+        <span class="day-text">수요일</span>
+        <span class="caret">▾</span>
+      </button>
+        <span class="arrow disabled" aria-label="다음 날짜 없음">›</span>
+
+      <div class="calendar-pop" role="dialog" aria-label="날짜 선택" id="calendarPop">
+        <!-- JS로 동적 채움 -->
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+    <div class="hero-row">
+      <article class="card hero src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>스탠포드 CS336 AI 에이전트 교육 가이드라인</h3>
+        <p class="summary">AI 에이전트가 코딩 교육에서 답안 생성기 아닌 학습 보조 도구로 기능하도록 하는 가이드. 에이전트는 직접 코드를 작성하지 않고 학생이 스스로 문제를 해결하도록 질문과 개념 설명으로 유도해야 함. 토크나이저·트랜스포머·최적화기·Triton 커널 구현 등 핵심 컴포넌트는 절대 완성해주면 안 됨.</p>
+        <div class="application">자신의 LLM 코딩 에이전트 시스템에 교육 모드 혹은 멘토링 모드를 추가할 때 직접 구현 제공→가이드 기반 학습으로 전환하는 프롬프트 패턴 참고.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/stanford-cs336/assignment1-basics/blob/main/CLAUDE.md" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card hero src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Headroom: LLM 입력 전 토큰 압축 도구</h3>
+        <p class="summary">도구 출력, 로그, 파일, RAG 청크 등을 LLM 입력 전에 압축해 60~95% 토큰 절감. 라이브러리, 프록시, MCP 서버 세 가지 형태로 제공. 압축 후에도 모델의 답변 품질 유지.</p>
+        <div class="application">API 비용 제약이 있는 프로덕션 RAG 시스템이나 장기 에이전트 루프에서 토큰 한도 초과 없이 더 많은 컨텍스트를 처리할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/chopratejas/headroom" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="grid">
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>ECC: 에이전트 하네스 성능 최적화 시스템</h3>
+        <p class="summary">Claude Code, Codex, Cursor 등 AI 코딩 에이전트의 성능 최적화 프레임워크. 스킬·본능·메모리·보안·연구 우선 개발 패턴을 통합.</p>
+        <div class="application">자체 Claude Code 워크플로에 성능 최적화 기법(메모리 압축, 스킬 구성)을 적용해 응답 지연 감소·컨텍스트 효율성 개선.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>geo-seo-claude - Claude Code용 GEO 우선 SEO 스킬</h3>
+        <p class="summary">AI 검색 엔진(ChatGPT, Claude, Perplexity, Google AI Overview)이 참조하는 콘텐츠를 우선 최적화하면서 전통 SEO도 병행하는 Claude Code 스킬. 콘텐츠 구조, 크롤러 접근성, 브랜드 노출을 통합 진단하여 AI 및 검색 엔진 양쪽 가시성을 확보.</p>
+        <div class="application">웹사이트 콘텐츠 구조를 Claude Code로 자동 분석해 AI 검색 엔진 최적화 과제(citation 친화적 마크업, RAG 호환 콘텐츠 포맷)를 식별하고 전통 SEO 점수와 함께 제시하는 감시 대시보드 구축.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=30091" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>AI 시대의 기술 면접 평가 방식 재설계</h3>
+        <p class="summary">AI 도구가 코딩·코드 리뷰까지 침투하는 상황에서 면접은 AI 사용을 배제하고 기초 역량 중심으로 평가해야 한다. 좋은 면접은 신호 품질(signal quality)과 회사 비용(cost to company) 두 축으로 평가된다.</p>
+        <div class="application">채용 담당자·면접관은 AI 시대에 맞춰 문제 난이도·제약 조건을 재설계하고, 기초 알고리즘·시스템 설계 이해도 측정에 집중해야 한다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=30086" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>깃허브와 소프트웨어에 대한 범죄</h3>
+        <p class="summary">깃허브가 월 수십 건의 장애로 SLA를 위반하며 저장소 페이지 로딩에 22초 이상 소요. 신뢰성과 성능 개선은 무시되고 AI 기능 투자만 집중되는 우선순위 왜곡 발생. 소규모 오픈소스 대안들이 더 빠른 성능을 제공하는 역설적 상황을 지적.</p>
+        <div class="application">개발팀은 깃허브의 신뢰성과 성능 저하를 모니터링해 필요시 Codeberg 등 대안 저장소 평가 및 마이그레이션 검토.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://eblog.fly.dev/githubbad.html" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>Anthropic, SEC에 기밀 S-1 초안 제출 (IPO 신청)</h3>
+        <p class="summary">Anthropic이 2026년 6월 1일 SEC에 S-1 등록신청서를 기밀로 제출했다. 이는 공개상장(IPO) 준비 단계이며, 최근 $65억 Series H 펀딩(기업가치 $965억)과 Claude Opus 4.8 출시 직후의 결정이다.</p>
+        <div class="application">Anthropic의 IPO 일정·공개 가능 시점을 추적해 AI 산업 자금 흐름 및 경쟁사 밸류에이션 비교 분석에 활용할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://www.anthropic.com/news/confidential-draft-s1-sec" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Supermemory — AI 시대의 메모리 엔진</h3>
+        <p class="summary">AI 에이전트 및 애플리케이션용 확장 가능한 메모리 저장소 및 API. 고속 검색과 상태 관리를 통해 장기 맥락 유지를 지원하며, 기존 LLM 애플리케이션과 통합 가능한 인프라.</p>
+        <div class="application">장기 실행 에이전트에서 과거 작업 기록·사용자 선호도·도메인 지식을 검색 가능한 형태로 저장해, 매 세션마다 컨텍스트 윈도우 낭비 없이 관련 정보만 주입하기</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/supermemoryai/supermemory" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>OpenAI의 최신형 모델과 코덱스, AWS에서 공식 제공 시작</h3>
+        <p class="summary">OpenAI가 자사의 최신 frontier 모델과 Codex를 AWS 플랫폼을 통해 공식 제공하기로 발표했다. AWS 고객은 자체 AWS 인프라 내에서 OpenAI 모델을 직접 활용할 수 있다. 이는 엔터프라이즈 고객의 데이터 주권과 통합 운영을 강화한다.</p>
+        <div class="application">AWS를 주 클라우드 인프라로 사용하는 엔터프라이즈는 별도 통합 없이 AWS 콘솔에서 OpenAI 모델 접근 권한을 구성하고 IAM 인증으로 보안 통제할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>DuckDuckGo, 'AI 없는' 검색 엔진 접근성 강화로 트래픽 급증</h3>
+        <p class="summary">DuckDuckGo가 Chrome·Firefox 브라우저 확장 프로그램을 출시해 AI 미사용 검색 접근성을 개선했다. AI 생성 결과의 신뢰성 우려로 개인정보 보호와 전통적 검색을 선호하는 사용자 수요가 증가했으며, 주류 검색 엔진의 AI 통합 추세와 대비되는 차별화 전략으로 평가된다.</p>
+        <div class="application">조직의 검색 기술 로드맵 수립 시 사용자 신뢰도 vs AI 기능성 트레이드오프를 정량 검토하고, 프라이버시 우선 사용자층 확보 전략을 의사결정에 반영할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://techcrunch.com/2026/06/01/duckduckgo-makes-its-no-ai-search-engine-easier-to-access-as-its-traffic-booms/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>머신러닝을 이용한 알고리즘 트레이딩 (2판)</h3>
+        <p class="summary">알고리즘 트레이딩을 위한 머신러닝 기법을 다루는 교과서 2판의 코드 구현 저장소. 시계열 데이터 처리, 특성 엔지니어링, 모델 학습부터 백테스트까지 실무 워크플로우를 포함.</p>
+        <div class="application">자산 가격 예측 모델을 구축하거나 트레이딩 전략을 정량적으로 평가할 때 참고할 수 있는 실제 코드 예제와 베스트 프랙티스를 습득할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/stefan-jansen/machine-learning-for-trading" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>알파벳, AI 인프라 및 컴퓨팅 확대를 위해 800억 달러 규모 유상증자 계획 발표</h3>
+        <p class="summary">알파벳이 AI 인프라 및 컴퓨팅 역량 확대를 위해 800억 달러 규모의 유상증자를 계획했다. 이는 AI 경쟁에서 컴퓨팅 자원에 대한 대규모 투자 필요성을 보여주는 사례다.</p>
+        <div class="application">AI 인프라 투자 규모와 방향성을 참고해 자사의 AI 컴퓨팅 로드맵 및 자본 배분 전략 수립 시 벤치마킹 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Proposed-80-Billion-Equity-Capital-Raise-to-Expand-AI-Infrastructure-and-Compute-2026-b0myAMewCa/default.aspx" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Hermes WebUI: 웹과 모바일에서 사용하는 Hermes Agent 인터페이스</h3>
+        <p class="summary">Hermes Agent를 브라우저와 모바일에서 접근 가능한 웹 기반 UI로 제공하는 오픈소스 프로젝트. 기존 CLI/API 중심의 에이전트를 사용자 친화적인 웹 인터페이스로 재포장.</p>
+        <div class="application">로컬 에이전트 시스템(Hermes)을 팀 내 공유 도구로 배포할 때, CLI 진입장벽 제거 및 모바일 접근성 확보 목적으로 활용 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/nesquena/hermes-webui" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Daily AI News · 자동 생성 · 매일 08:00 갱신</span>
+    <span>
+      <a href="https://github.com/chodolmu/daily-ai-news" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  window.__SITE__ = {
+    current: "2026-06-03",
+    latest: "2026-06-03",
+    assetPrefix: "../",
+    calendar: {"days": {"2026-05-02": 6, "2026-05-03": 8, "2026-05-04": 5, "2026-05-05": 14, "2026-05-06": 18, "2026-05-07": 14, "2026-05-08": 12, "2026-05-09": 7, "2026-05-10": 11, "2026-05-11": 11, "2026-05-12": 13, "2026-05-13": 17, "2026-05-14": 15, "2026-05-15": 11, "2026-05-16": 16, "2026-05-17": 14, "2026-05-18": 12, "2026-05-19": 22, "2026-05-20": 19, "2026-05-21": 22, "2026-05-22": 13, "2026-05-23": 17, "2026-05-24": 15, "2026-05-25": 0, "2026-05-26": 15, "2026-05-27": 16, "2026-05-28": 14, "2026-05-29": 22, "2026-05-30": 15, "2026-05-31": 10, "2026-06-01": 13, "2026-06-02": 14, "2026-06-03": 13}, "latest": "2026-06-03", "earliest": "2026-05-02"}
+  };
+</script>
+<script src="../assets/calendar.js"></script>
+</body>
+</html>
