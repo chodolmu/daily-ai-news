@@ -32,9 +32,10 @@
     "2026-05-31",
     "2026-06-01",
     "2026-06-02",
-    "2026-06-03"
+    "2026-06-03",
+    "2026-06-04"
   ],
-  "last_run": "2026-06-03T08:06:17",
+  "last_run": "2026-06-04T08:42:34",
   "applied": [
     {
       "date": "2026-05-07",
@@ -515,6 +516,14 @@
       "name": "auto_reference_ref_headroom_token_compression",
       "url": "https://github.com/chopratejas/headroom",
       "ts": "2026-06-03T08:06:17"
+    },
+    {
+      "date": "2026-06-04",
+      "title": "Headroom — LLM 입력 전 토큰 압축 (60~95% 절감)",
+      "decision": "memory",
+      "name": "reference_headroom_token_compression",
+      "url": "https://github.com/chopratejas/headroom",
+      "ts": "2026-06-04T08:42:20"
     }
   ]
 }
