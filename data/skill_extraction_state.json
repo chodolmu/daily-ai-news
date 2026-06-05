@@ -33,9 +33,10 @@
     "2026-06-01",
     "2026-06-02",
     "2026-06-03",
-    "2026-06-04"
+    "2026-06-04",
+    "2026-06-05"
   ],
-  "last_run": "2026-06-04T08:42:34",
+  "last_run": "2026-06-05T23:24:29",
   "applied": [
     {
       "date": "2026-05-07",
@@ -524,6 +525,38 @@
       "name": "reference_headroom_token_compression",
       "url": "https://github.com/chopratejas/headroom",
       "ts": "2026-06-04T08:42:20"
+    },
+    {
+      "date": "2026-06-05",
+      "title": "last30days-skill: AI 에이전트용 멀티소스 주제 리서치 스킬",
+      "decision": "memory",
+      "name": "auto_reference_ref_last30days_skill",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "ts": "2026-06-05T23:23:06"
+    },
+    {
+      "date": "2026-06-05",
+      "title": "MemPalace: 오픈소스 AI 메모리 시스템",
+      "decision": "memory",
+      "name": "auto_reference_ref_mempalace_ai_memory",
+      "url": "https://github.com/MemPalace/mempalace",
+      "ts": "2026-06-05T23:23:26"
+    },
+    {
+      "date": "2026-06-05",
+      "title": "코파일럿킷(CopilotKit): 에이전트와 생성형 UI를 위한 프론트엔드 스택",
+      "decision": "memory",
+      "name": "auto_reference_ref_copilotkit_agent_ui",
+      "url": "https://github.com/CopilotKit/CopilotKit",
+      "ts": "2026-06-05T23:24:05"
+    },
+    {
+      "date": "2026-06-05",
+      "title": "Agent Executor - Google의 분산 에이전트 런타임 오픈소스",
+      "decision": "memory",
+      "name": "auto_reference_ref_agent_executor_google_distributed",
+      "url": "https://news.hada.io/topic?id=30158",
+      "ts": "2026-06-05T23:24:29"
     }
   ]
 }
