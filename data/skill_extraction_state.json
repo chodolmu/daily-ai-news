@@ -36,9 +36,10 @@
     "2026-06-04",
     "2026-06-05",
     "2026-06-06",
-    "2026-06-07"
+    "2026-06-07",
+    "2026-06-08"
   ],
-  "last_run": "2026-06-07T19:14:59",
+  "last_run": "2026-06-08T22:40:47",
   "applied": [
     {
       "date": "2026-05-07",
@@ -575,6 +576,22 @@
       "name": "auto_reference_ref_agent_reach_scraping",
       "url": "https://github.com/Panniantong/Agent-Reach",
       "ts": "2026-06-07T19:10:21"
+    },
+    {
+      "date": "2026-06-08",
+      "title": "Google 에이전트 스킬 라이브러리",
+      "decision": "memory",
+      "name": "auto_reference_ref_google_agent_skills",
+      "url": "https://github.com/google/skills",
+      "ts": "2026-06-08T22:39:56"
+    },
+    {
+      "date": "2026-06-08",
+      "title": "개인용 AI 인프라(Personal AI Infrastructure)",
+      "decision": "memory",
+      "name": "auto_reference_ref_personal_ai_infrastructure",
+      "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
+      "ts": "2026-06-08T22:40:47"
     }
   ]
 }
