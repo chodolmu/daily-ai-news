@@ -37,9 +37,10 @@
     "2026-06-05",
     "2026-06-06",
     "2026-06-07",
-    "2026-06-08"
+    "2026-06-08",
+    "2026-06-09"
   ],
-  "last_run": "2026-06-08T22:40:47",
+  "last_run": "2026-06-09T08:04:28",
   "applied": [
     {
       "date": "2026-05-07",
@@ -592,6 +593,14 @@
       "name": "auto_reference_ref_personal_ai_infrastructure",
       "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
       "ts": "2026-06-08T22:40:47"
+    },
+    {
+      "date": "2026-06-09",
+      "title": "Claude Code 완전 가이드: 기본부터 고급 에이전트까지",
+      "decision": "memory",
+      "name": "auto_reference_ref_claude_code_howto_guide",
+      "url": "https://github.com/luongnv89/claude-howto",
+      "ts": "2026-06-09T08:04:28"
     }
   ]
 }
