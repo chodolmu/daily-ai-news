@@ -42,9 +42,10 @@
     "2026-06-10",
     "2026-06-11",
     "2026-06-12",
-    "2026-06-13"
+    "2026-06-13",
+    "2026-06-14"
   ],
-  "last_run": "2026-06-13T22:33:02",
+  "last_run": "2026-06-14T12:55:00",
   "applied": [
     {
       "date": "2026-05-07",
@@ -669,6 +670,14 @@
       "name": "auto_reference_ref_ai_agent_aws_cost_blowout",
       "url": "https://lantian.pub/en/article/fun/ai-agent-bankrupted-their-operator-scan-dn42lantian.lantian/",
       "ts": "2026-06-13T22:33:02"
+    },
+    {
+      "date": "2026-06-14",
+      "title": "macOS에서 로컬 코딩 에이전트 설정하기",
+      "decision": "memory",
+      "name": "auto_reference_ref_local_coding_agent_macos",
+      "url": "https://ikyle.me/blog/2026/how-to-setup-a-local-coding-agent-on-macos",
+      "ts": "2026-06-14T12:54:50"
     }
   ]
 }
