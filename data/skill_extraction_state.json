@@ -45,9 +45,10 @@
     "2026-06-13",
     "2026-06-14",
     "2026-06-15",
-    "2026-06-16"
+    "2026-06-16",
+    "2026-06-17"
   ],
-  "last_run": "2026-06-16T20:17:59",
+  "last_run": "2026-06-17T23:26:20",
   "applied": [
     {
       "date": "2026-05-07",
@@ -688,6 +689,30 @@
       "name": "auto_reference_ref_re_gent_agent_version_control",
       "url": "https://news.hada.io/topic?id=30496",
       "ts": "2026-06-16T20:17:19"
+    },
+    {
+      "date": "2026-06-17",
+      "title": "Superpowers: 에이전트 스킬 프레임워크 & 소프트웨어 개발 방법론",
+      "decision": "memory",
+      "name": "skip",
+      "url": "https://github.com/obra/superpowers",
+      "ts": "2026-06-17T23:25:05"
+    },
+    {
+      "date": "2026-06-17",
+      "title": "CodebaseMemory MCP — 고성능 코드 지식 그래프 서버",
+      "decision": "memory",
+      "name": "auto_reference_ref_codebasememory_mcp",
+      "url": "https://github.com/DeusData/codebase-memory-mcp",
+      "ts": "2026-06-17T23:25:24"
+    },
+    {
+      "date": "2026-06-17",
+      "title": "HN 질문: 일상 개발에서 Claude/GPT를 로컬 모델로 완전히 바꾼 개발자 있나요?",
+      "decision": "memory",
+      "name": "auto_reference_ref_local_llm_replace_cloud_hn.md",
+      "url": "https://news.hada.io/topic?id=30525",
+      "ts": "2026-06-17T23:26:20"
     }
   ]
 }
