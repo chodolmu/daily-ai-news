@@ -46,9 +46,10 @@
     "2026-06-14",
     "2026-06-15",
     "2026-06-16",
-    "2026-06-17"
+    "2026-06-17",
+    "2026-06-18"
   ],
-  "last_run": "2026-06-17T23:26:20",
+  "last_run": "2026-06-18T23:07:34",
   "applied": [
     {
       "date": "2026-05-07",
@@ -713,6 +714,22 @@
       "name": "auto_reference_ref_local_llm_replace_cloud_hn.md",
       "url": "https://news.hada.io/topic?id=30525",
       "ts": "2026-06-17T23:26:20"
+    },
+    {
+      "date": "2026-06-18",
+      "title": "Claude Code 수석 디자이너가 공개하는 AI 기반 제품 개발 워크플로우",
+      "decision": "memory",
+      "name": "auto_reference_ref_claude_code_worktree_parallel_workflow",
+      "url": "https://news.hada.io/topic?id=30562",
+      "ts": "2026-06-18T23:07:14"
+    },
+    {
+      "date": "2026-06-18",
+      "title": "Alibaba Zvec - 경량 고속 인메모리 벡터 데이터베이스",
+      "decision": "memory",
+      "name": "auto_reference_ref_alibaba_zvec_vector_db",
+      "url": "https://github.com/alibaba/zvec",
+      "ts": "2026-06-18T23:07:34"
     }
   ]
 }
