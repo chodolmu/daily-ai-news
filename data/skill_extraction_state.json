@@ -47,9 +47,10 @@
     "2026-06-15",
     "2026-06-16",
     "2026-06-17",
-    "2026-06-18"
+    "2026-06-18",
+    "2026-06-19"
   ],
-  "last_run": "2026-06-18T23:07:34",
+  "last_run": "2026-06-19T22:22:09",
   "applied": [
     {
       "date": "2026-05-07",
@@ -730,6 +731,14 @@
       "name": "auto_reference_ref_alibaba_zvec_vector_db",
       "url": "https://github.com/alibaba/zvec",
       "ts": "2026-06-18T23:07:34"
+    },
+    {
+      "date": "2026-06-19",
+      "title": "OpenMontage: 오픈소스 에이전트 기반 영상 제작 시스템",
+      "decision": "memory",
+      "name": "auto_reference_ref_openmontage_agent_video",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "ts": "2026-06-19T22:21:17"
     }
   ]
 }

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Daily AI News · 2026-06-19</title>
+<meta name="description" content="매일 정리되는 AI 소식 — 2026-06-19" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand-mini" href="../">Daily AI News</a>
+    <span class="last-updated">마지막 업데이트 · 2026-06-19 22:22</span>
+  </div>
+</div>
+
+<header class="page-header">
+  <h1 class="brand">Daily AI News</h1>
+  <p class="subtitle">매일 정리되는 AI 소식</p>
+
+  <div class="header-bottom">
+    <nav class="nav-c" aria-label="날짜 이동" id="navC"
+         data-current="2026-06-19" data-latest="2026-06-19">
+      <a class="today-link" href="../">오늘</a>
+        <a class="arrow" href="../2026-06-18/" aria-label="이전 날짜">‹</a>
+      <button class="date-pill" type="button" id="datePillC">
+        <span class="date-text">2026년 6월 19일</span>
+        <span class="day-text">금요일</span>
+        <span class="caret">▾</span>
+      </button>
+        <span class="arrow disabled" aria-label="다음 날짜 없음">›</span>
+
+      <div class="calendar-pop" role="dialog" aria-label="날짜 선택" id="calendarPop">
+        <!-- JS로 동적 채움 -->
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+    <div class="hero-row">
+      <article class="card hero src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>CodebaseMemory MCP — 코드베이스 지식 그래프 고성능 서버</h3>
+        <p class="summary">158개 언어를 지원하는 코드 인덱싱 MCP 서버. 코드베이스를 영속적인 지식 그래프로 변환해 밀리초 단위 쿼리 응답을 제공합니다. 토큰 소비를 99% 줄이면서도 외부 의존성 없는 단일 바이너리로 배포 가능합니다.</p>
+        <div class="application">Claude Code 등 AI 코딩 에이전트에서 토큰 예산을 3~50배 절약하며 대규모 코드베이스 검색·RAG을 구축할 때 직접 활용 가능합니다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/DeusData/codebase-memory-mcp" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card hero src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>로봇이 당신을 향해 달려온다. Claude와 Grok 중 누가 이기나?</h3>
+        <p class="summary">OpenRouter의 배틀로얄 게임 실험에서 Grok 4.1 Fast가 Claude Sonnet보다 게임 승리 대비 비용 대비 27배 효율적으로 우수했다. 일반 벤치마크와 달리 실전 복잡한 시나리오에서 모델 선택이 중요함을 시사한다. Claude는 협력과 신중함 훈련이 '정렬 세금'으로 작용해 공격성 부족, Grok은 공격 전략 실행 시 더 효율적이었다.</p>
+        <div class="application">AI 모델 선택 시 공개 벤치마크 순위보다 실제 작업 환경에서의 실제 수행 능력·비용 효율성을 먼저 검증하고, 모델별 정렬 특성(보수성 vs 공격성)이 태스크에 미치는 영향을 측정해야 한다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://openrouter.ai/blog/insights/royale-last-agent-standing/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="grid">
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>Adam (YC W25) – 오픈소스 AI CAD</h3>
+        <p class="summary">자연언어와 이미지를 3D CAD 모델로 변환하는 웹 기반 AI 도구. Claude API를 활용해 OpenSCAD 코드 자동 생성 후 WebAssembly로 실시간 렌더링.
+STL, SCAD, DXF 형식 내보내기 지원. 매개변수 슬라이더로 모델 실시간 조정 가능.</p>
+        <div class="application">제조·산업용 복잡한 기계 부품(기어, 나사산, 터빈)을 텍스트 설명만으로 자동 설계해 CAD 엔지니어 작업 효율화.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/Adam-CAD/CADAM" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Headroom — LLM 입력 전 토큰 압축 (60~95% 절감)</h3>
+        <p class="summary">LLM 입력 직전 도구 출력, 로그, 파일, RAG 청크를 자동 압축해 토큰 소비 60~95% 감소. 답변 품질은 유지하면서 비용 절감. 라이브러리, 프록시, MCP 서버 형태 제공.</p>
+        <div class="application">Claude Code 에이전트 또는 장시간 RAG 파이프라인에서 자동으로 도구 출력을 압축해 API 비용·응답 지연 단축, 컨텍스트 윈도우 여유 확보 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/chopratejas/headroom" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>GLM-5: 직관적 코딩에서 에이전트 공학으로의 전환</h3>
+        <p class="summary">GLM-5는 744B 파라미터 규모의 대규모 언어모델로, 1M 토큰 컨텍스트를 안정적으로 유지하며 장기 호라이즌 에이전트 작업에 특화. DeepSeek 스파스 어텐션을 도입해 배포 비용을 줄이면서도 코딩 성능(Terminal-Bench 81.0)에서 이전 버전 대비 큰 폭의 향상을 달성.</p>
+        <div class="application">복잡한 소프트웨어 엔지니어링 문제를 수백 라운드·수천 도구 호출로 자율 해결해야 하는 시스템(에이전트 기반 개발 플랫폼, 자동화 CI/CD 파이프라인)에 직접 배포 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/zai-org/GLM-5" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>Anthropic, 서울 사무소 개소…네이버·넥슨·삼성SDS·LG CNS 등과 전략적 파트너십 본격화</h3>
+        <p class="summary">Anthropic이 서울 여의도에 아시아·태평양 지역 세 번째 거점을 공식 개소했다. 한국이 1인당 Claude 사용량에서 116개국 중 세계 평균의 3.5배를 기록하며 핵심 전략 시장으로 부상했다.</p>
+        <div class="application">한국 대형 IT 기업들(네이버·삼성·LG 등)과의 파트너십 체결로 enterprise AI 도입 시 공식 채널 확보 가능; 한국 Claude 생태계 확산으로 API 가격·성능 경쟁이 심화될 전망.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=30600" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>창업자 플레이북: AI-native 스타트업 만들기</h3>
+        <p class="summary">Anthropic이 창업자를 위한 AI 활용 플레이북을 공개했으며, 아이디어 검증부터 확장까지의 실전 방법론을 제시한다. 코딩 경험 없는 창업자도 프로덕션 애플리케이션을 출시하고 초기 수익화를 달성할 수 있는 구체적인 프레임워크와 프롬프트 예제를 함께 제공한다.</p>
+        <div class="application">초기 스타트업 창업자가 엔지니어 고용 전에 Claude를 이용해 MVP 검증 및 프로토타입 출시의 속도를 높이고, 자동화 워크플로우로 초기 수익화 달성 가능성을 검증할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=30598" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>TimesFM: 시계열 예측을 위한 구글 파운데이션 모델</h3>
+        <p class="summary">구글 리서치가 개발한 TimesFM은 시계열 데이터 예측 전문 파운데이션 모델이다. 사전 학습된 모델로 다양한 시계열 예측 태스크에 즉시 적용 가능하며, 특화된 아키텍처로 기존 방법 대비 높은 정확도를 제공한다.</p>
+        <div class="application">금융/에너지/기후 등 시계열 데이터가 많은 도메인에서 재학습 없이 즉시 배포 가능한 예측 모델로 활용할 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/google-research/timesfm" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>OpenMontage: 오픈소스 에이전트 기반 영상 제작 시스템</h3>
+        <p class="summary">AI 코딩 어시스턴트를 완전한 영상 제작 스튜디오로 변환하는 오픈소스 플랫폼. 12개 파이프라인, 52개 도구, 500개 이상의 에이전트 스킬로 자동화된 영상 처리 가능.</p>
+        <div class="application">Claude Code나 Cursor 같은 AI 어시스턴트에 연동해 프롬프트 기반 스크린샷→영상 편집→자막 생성→배포까지 자동화.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Flue — 헤드리스 샌드박스 에이전트 프레임워크</h3>
+        <p class="summary">Astro가 공개한 TypeScript 기반 헤드리스 에이전트 하네스. AI 에이전트가 격리된 샌드박스 환경에서 안전하게 실행되도록 설계되었으며, 자율 루프와 도구 실행을 프로그래머블하게 제어할 수 있음.</p>
+        <div class="application">Claude Code나 Cursor 같은 AI 코딩 에이전트를 자신의 프로젝트에 내장할 때, 샌드박스 격리와 실행 검증 게이트를 구현하는 기초 아키텍처로 활용 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/withastro/flue" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Superpowers — 에이전틱 스킬 프레임워크 & 소프트웨어 개발 방법론</h3>
+        <p class="summary">에이전트가 코드 생성, 테스트, 배포 등 개발 작업을 자율 수행하도록 지원하는 구조화된 스킬 프레임워크. 스킬 메타데이터 설계와 조합 패턴을 명시적으로 제공하여 AI 에이전트의 능력을 모듈화·확장 가능하게 구성.</p>
+        <div class="application">Claude Code, Cursor 등 AI 코딩 에이전트 프로젝트에서 스킬을 체계적으로 정의하고 조합하여 자율 개발 루프(아이디어→프로토타입→테스트→배포) 구축 시 직접 활용 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gn">
+        <div class="card-header">
+          <span class="source-name">GeekNews</span>
+        </div>
+        <h3>미국 소비자 60%, 브랜드의 AI 메시지에 거부감</h3>
+        <p class="summary">WordPress VIP 2026년 조사에서 미국 소비자 74%가 인터넷이 10년 전보다 덜 인간적이라고 응답했다. 소비자 60%는 브랜드의 AI 메시징에 거부감을 보이며, 기업들의 AI 활용이 신뢰할 만한 성공 사례를 아직 만들지 못하고 있다.</p>
+        <div class="application">브랜드 커뮤니케이션 전략 수립 시 AI 활용의 투명성과 인간미를 강조해야 하며, AI 메시지보다는 진정성 있는 인간적 상호작용을 우선해야 한다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://news.hada.io/topic?id=30589" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>생성형 AI 가이드 — 종합 레포지토리</h3>
+        <p class="summary">생성형 AI 연구 동향, 인터뷰 자료, Jupyter 노트북, 실전 예제를 한 곳에서 제공하는 오픈소스 리소스 모음. 논문부터 실습 자료까지 초심자와 전문가 모두를 위한 학습 자료 수집소.</p>
+        <div class="application">LLM·에이전트 개발 팀이 최신 생성형 AI 논문과 기법을 빠르게 학습하고, 인터뷰 문제로 팀원 역량을 평가하거나, 제공된 노트북으로 실제 모델을 직접 실행해볼 수 있다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/aishwaryanr/awesome-generative-ai-guide" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Kong/Insomnia — 오픈소스 크로스플랫폼 API 클라이언트</h3>
+        <p class="summary">GraphQL, REST, WebSockets, SSE, gRPC를 지원하는 오픈소스 API 클라이언트. 클라우드, 로컬, Git 스토리지 옵션 제공으로 팀 협업과 버전 관리가 가능한 Postman 대안.</p>
+        <div class="application">마이크로서비스/API 개발 시 로컬 또는 Git 기반으로 API 스펙을 버전 관리하면서 팀원과 테스트 설정 공유 가능.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/Kong/insomnia" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>미국인 16%만 AI가 사회에 긍정적 영향 준다고 인식—신규 연구 발표</h3>
+        <p class="summary">Pew Research 조사에 따르면 미국인의 16%만이 AI가 사회에 긍정적 영향을 미칠 것으로 예상합니다. 월스트리트와 기술업계의 낙관론과 달리 일반 대중은 AI 도입에 대해 회의적 입장을 보이고 있습니다. 기업과 대중 간 AI 인식 격차가 뚜렷하게 드러났습니다.</p>
+        <div class="application">AI 기업 및 정책입안자는 일반 대중의 우려사항을 파악해 신뢰 구축 커뮤니케이션 전략을 수립할 때 이 데이터를 참고할 수 있습니다.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://techcrunch.com/2026/06/17/only-16-percent-of-americans-think-ai-will-have-a-positive-impact-on-society-a-new-study-shows/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-gh">
+        <div class="card-header">
+          <span class="source-name">GitHub Trending</span>
+        </div>
+        <h3>Palmier Pro: AI를 위한 macOS 비디오 에디터</h3>
+        <p class="summary">macOS에서 AI 기반 비디오 편집을 목표로 설계된 전문 도구.
+GitHub 트렌딩에 오른 오픈소스 프로젝트로, AI 워크플로우 통합에 최적화.</p>
+        <div class="application">AI 생성 영상, 자동 자막, 음성 합성 같은 AI 도구를 기본 통합한 비디오 편집 파이프라인 구축 시 기반 도구로 활용.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://github.com/palmier-io/palmier-pro" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+      <article class="card src-hn">
+        <div class="card-header">
+          <span class="source-name">HackerNews</span>
+        </div>
+        <h3>Emacs 31이 곧 출시됩니다: 매일 사용 중인 변경사항들</h3>
+        <p class="summary">Emacs 31의 주요 변경사항과 신기능을 실제 사용 경험을 바탕으로 소개합니다.
+텍스트 에디터 커뮤니티에서 기대되는 새로운 기능들을 실용적 관점에서 검토합니다.</p>
+        <div class="application">Emacs를 주력 코딩 에디터로 사용하는 개발자가 업그레이드 전 주요 변경사항을 미리 파악해 워크플로우 조정.</div>
+        <div class="card-footer">
+          <a class="read-more" href="https://www.rahuljuliato.com/posts/emacs-31-around-the-corner" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </article>
+    </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>Daily AI News · 자동 생성 · 매일 08:00 갱신</span>
+    <span>
+      <a href="https://github.com/chodolmu/daily-ai-news" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  window.__SITE__ = {
+    current: "2026-06-19",
+    latest: "2026-06-19",
+    assetPrefix: "../",
+    calendar: {"days": {"2026-05-02": 6, "2026-05-03": 8, "2026-05-04": 5, "2026-05-05": 14, "2026-05-06": 18, "2026-05-07": 14, "2026-05-08": 12, "2026-05-09": 7, "2026-05-10": 11, "2026-05-11": 11, "2026-05-12": 13, "2026-05-13": 17, "2026-05-14": 15, "2026-05-15": 11, "2026-05-16": 16, "2026-05-17": 14, "2026-05-18": 12, "2026-05-19": 22, "2026-05-20": 19, "2026-05-21": 22, "2026-05-22": 13, "2026-05-23": 17, "2026-05-24": 15, "2026-05-25": 0, "2026-05-26": 15, "2026-05-27": 16, "2026-05-28": 14, "2026-05-29": 22, "2026-05-30": 15, "2026-05-31": 10, "2026-06-01": 13, "2026-06-02": 14, "2026-06-03": 13, "2026-06-04": 15, "2026-06-05": 16, "2026-06-06": 13, "2026-06-07": 10, "2026-06-08": 15, "2026-06-09": 12, "2026-06-10": 15, "2026-06-11": 24, "2026-06-12": 20, "2026-06-13": 12, "2026-06-14": 10, "2026-06-15": 9, "2026-06-16": 10, "2026-06-17": 13, "2026-06-18": 14, "2026-06-19": 17}, "latest": "2026-06-19", "earliest": "2026-05-02"}
+  };
+</script>
+<script src="../assets/calendar.js"></script>
+</body>
+</html>
