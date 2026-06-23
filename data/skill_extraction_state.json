@@ -51,9 +51,10 @@
     "2026-06-19",
     "2026-06-20",
     "2026-06-21",
-    "2026-06-22"
+    "2026-06-22",
+    "2026-06-23"
   ],
-  "last_run": "2026-06-22T21:25:11",
+  "last_run": "2026-06-23T22:59:12",
   "applied": [
     {
       "date": "2026-05-07",
@@ -750,6 +751,14 @@
       "name": "auto_reference_ref_garry_tan_gstack_roles",
       "url": "https://github.com/garrytan/gstack",
       "ts": "2026-06-22T21:25:02"
+    },
+    {
+      "date": "2026-06-23",
+      "title": "Claude Code에서 문장 전체를 LLM이 읽고 윤문하는 스킬 개발",
+      "decision": "memory",
+      "name": "auto_reference_ref_llm_proofreading_skill",
+      "url": "https://news.hada.io/topic?id=30713",
+      "ts": "2026-06-23T22:59:12"
     }
   ]
 }
