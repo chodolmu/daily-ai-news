@@ -53,9 +53,13 @@
     "2026-06-21",
     "2026-06-22",
     "2026-06-23",
-    "2026-06-24"
+    "2026-06-24",
+    "2026-06-25",
+    "2026-06-26",
+    "2026-06-27",
+    "2026-06-28"
   ],
-  "last_run": "2026-06-24T12:31:13",
+  "last_run": "2026-06-28T00:38:43",
   "applied": [
     {
       "date": "2026-05-07",
@@ -768,6 +772,54 @@
       "name": "auto_reference_ref_claude_code_best_practice_md",
       "url": "https://github.com/shanraisshan/claude-code-best-practice",
       "ts": "2026-06-24T12:31:13"
+    },
+    {
+      "date": "2026-06-25",
+      "title": "AI 시대의 버크셔: Claude Code 기반 가치투자 연구 프레임워크",
+      "decision": "memory",
+      "name": "auto_reference_ref_ai_berkshire_multi_agent_research",
+      "url": "https://github.com/xbtlin/ai-berkshire",
+      "ts": "2026-06-28T00:23:29"
+    },
+    {
+      "date": "2026-06-25",
+      "title": "설계 시스템을 코딩 에이전트에 설명하는 DESIGN.md 포맷",
+      "decision": "memory",
+      "name": "auto_reference_ref_design_md_format",
+      "url": "https://github.com/google-labs-code/design.md",
+      "ts": "2026-06-28T00:23:56"
+    },
+    {
+      "date": "2026-06-25",
+      "title": "오픈코드: 오픈소스 코딩 에이전트",
+      "decision": "memory",
+      "name": "auto_reference_ref_opencode_agent",
+      "url": "https://github.com/anomalyco/opencode",
+      "ts": "2026-06-28T00:24:16"
+    },
+    {
+      "date": "2026-06-25",
+      "title": "Cognee: AI 에이전트용 오픈소스 영속 메모리 플랫폼",
+      "decision": "memory",
+      "name": "auto_reference_ref_cognee_agent_memory",
+      "url": "https://github.com/topoteretes/cognee",
+      "ts": "2026-06-28T00:24:48"
+    },
+    {
+      "date": "2026-06-27",
+      "title": "AI 어시스턴트 해킹 도전 후 어떻게 되었나: 2,000명 공격 0 성공",
+      "decision": "memory",
+      "name": "auto_reference_ref_prompt_injection_crowdsource_test",
+      "url": "https://www.fernandoi.cl/posts/hackmyclaw/",
+      "ts": "2026-06-28T00:33:19"
+    },
+    {
+      "date": "2026-06-28",
+      "title": "Google Labs 디자인MD — 코딩 에이전트용 디자인 시스템 명세",
+      "decision": "memory",
+      "name": "auto_reference_ref_google_labs_design_md",
+      "url": "https://github.com/google-labs-code/design.md",
+      "ts": "2026-06-28T00:37:52"
     }
   ]
 }
