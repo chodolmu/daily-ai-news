@@ -57,9 +57,10 @@
     "2026-06-25",
     "2026-06-26",
     "2026-06-27",
-    "2026-06-28"
+    "2026-06-28",
+    "2026-06-29"
   ],
-  "last_run": "2026-06-28T00:38:43",
+  "last_run": "2026-06-29T21:30:50",
   "applied": [
     {
       "date": "2026-05-07",
@@ -820,6 +821,38 @@
       "name": "auto_reference_ref_google_labs_design_md",
       "url": "https://github.com/google-labs-code/design.md",
       "ts": "2026-06-28T00:37:52"
+    },
+    {
+      "date": "2026-06-29",
+      "title": "Paca - 인간과 AI 에이전트 협업을 위한 오픈소스 프로젝트 관리 도구",
+      "decision": "memory",
+      "name": "auto_reference_ref_paca_human_ai_collab",
+      "url": "https://news.hada.io/topic?id=30901",
+      "ts": "2026-06-29T21:29:18"
+    },
+    {
+      "date": "2026-06-29",
+      "title": "OpenAI Codex의 민감한 파일 제외 기능 — 미해결 이슈로 남아있음",
+      "decision": "memory",
+      "name": "reference_codex_sensitive_file_exclusion",
+      "url": "https://github.com/openai/codex/issues/2847",
+      "ts": "2026-06-29T21:30:00"
+    },
+    {
+      "date": "2026-06-29",
+      "title": "Vibe-Trading: 개인용 AI 거래 에이전트",
+      "decision": "memory",
+      "name": "auto_reference_ref_vibe_trading_agent",
+      "url": "https://github.com/HKUDS/Vibe-Trading",
+      "ts": "2026-06-29T21:30:26"
+    },
+    {
+      "date": "2026-06-29",
+      "title": "Agency-Agents: 다중 역할 AI 에이전트 팀 오픈소스",
+      "decision": "memory",
+      "name": "auto_reference_ref_agency_agents_team",
+      "url": "https://github.com/msitarzewski/agency-agents",
+      "ts": "2026-06-29T21:30:50"
     }
   ]
 }
