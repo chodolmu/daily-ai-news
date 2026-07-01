@@ -58,9 +58,11 @@
     "2026-06-26",
     "2026-06-27",
     "2026-06-28",
-    "2026-06-29"
+    "2026-06-29",
+    "2026-06-30",
+    "2026-07-01"
   ],
-  "last_run": "2026-06-29T21:30:50",
+  "last_run": "2026-07-01T23:19:19",
   "applied": [
     {
       "date": "2026-05-07",
@@ -853,6 +855,38 @@
       "name": "auto_reference_ref_agency_agents_team",
       "url": "https://github.com/msitarzewski/agency-agents",
       "ts": "2026-06-29T21:30:50"
+    },
+    {
+      "date": "2026-06-30",
+      "title": "Facebook Astryx — 에이전트 친화형 오픈소스 디자인 시스템",
+      "decision": "memory",
+      "name": "auto_reference_ref_facebook_astryx_design_system",
+      "url": "https://github.com/facebook/astryx",
+      "ts": "2026-07-01T23:13:43"
+    },
+    {
+      "date": "2026-06-30",
+      "title": "Herdr: 터미널 기반 에이전트 멀티플렉서",
+      "decision": "memory",
+      "name": "auto_reference_ref_herdr_agent_multiplexer",
+      "url": "https://github.com/ogulcancelik/herdr",
+      "ts": "2026-07-01T23:14:03"
+    },
+    {
+      "date": "2026-06-30",
+      "title": "고도 지능의 의회 — 18명의 AI 인격체로 구성된 의사결정 시스템",
+      "decision": "memory",
+      "name": "auto_reference_ref_council_of_high_intelligence",
+      "url": "https://github.com/0xNyk/council-of-high-intelligence",
+      "ts": "2026-07-01T23:14:44"
+    },
+    {
+      "date": "2026-07-01",
+      "title": "Memora: 장기 작업을 위한 확장형 메모리 시스템",
+      "decision": "memory",
+      "name": "auto_reference_ref_memora_memory_system",
+      "url": "https://news.hada.io/topic?id=30956",
+      "ts": "2026-07-01T23:18:35"
     }
   ]
 }
